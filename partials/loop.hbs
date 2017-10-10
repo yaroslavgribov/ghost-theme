@@ -1,0 +1,35 @@
+{{!-- Previous/next page links - only displayed on page 2+ --}}
+<!--<div class="extra-pagination inner">-->
+
+<!--</div>-->
+
+{{!-- This is the post loop - each post will be output using this markup --}}
+<div class="mateblock">
+    {{#foreach posts limit="11"}}
+        <article class="block {{post_class}}">
+            <a href="{{url}}">
+
+                <div class="rela post__image">
+                    <img src="{{image}}" />
+
+                    <span class="type">
+                        {{#foreach tags limit="1"}}
+                            {{name}}
+                        {{/foreach}}
+                    </span>
+                </div>
+                <h2 class="post-title">
+                    {{title}}
+                </h2>
+                <span class="text"> {{excerpt words="20"}} </span>
+
+            </a>
+            <!--<div class="comme">21</div>-->
+        </article>
+    {{/foreach}}
+</div>
+<button type="button" id="load-posts" class="button more">
+    показать больше
+</button>
+
+{{!-- Previous/next page links - displayed on every page --}}

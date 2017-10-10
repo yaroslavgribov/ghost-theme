@@ -1,0 +1,34 @@
+{{!< default}}
+
+{{!-- The comment above "< default" means - insert everything in this file into
+    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+    <main class="content content--post">
+    <article class="{{post_class}}">
+        <div class="mateblock inside">
+            <div class="block blockbig fullnew">
+                <div class="rela post-header" style="background-image: url({{image}})">
+                    <div class="zatem">
+                        <h class="main-post-title">{{title}}</h>
+                        {{#author}}
+                            <section class="author">
+                                <div class="text">
+                                    <a href="{{url}}" class="author__url">{{name}}</a>,
+                                    <span class="post-date"
+                                          datetime="{{date published_at timeago="true" format="YYYY-MM-DD"}}">{{date
+                                            updated_at format="DD MMMM YYYY"}}</span>
+                                </div>
+                            </section>
+                        {{/author}}
+                    </div>
+
+                    <div class="type">{{tags limit="1"}}</div>
+                </div>
+                <div class="fulltext">
+                    {{content}}
+                </div>
+            </div>
+        </div>
+{{/post}}

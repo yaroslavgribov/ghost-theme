@@ -1,0 +1,92 @@
+.menu {
+  float: right;
+  position: relative;
+  z-index: 4;
+  padding-right: 50px;
+}
+/*.menu a:last-child {
+	margin-right: 50px;
+}*/
+.menu a {
+  font-family: 'proxima_nova_rgbold';
+  display: block;
+  float: left;
+  color: #1c0f06;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  padding-left: 25px;
+  line-height: 60px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  
+	@media(max-width: 1470px) {
+		font-size: 14px;
+		padding-left: 20px;
+	}
+	
+}
+
+.menu a:hover {
+  color: #000;
+}
+
+.menu-button {
+  z-index: 3;
+  position: absolute;
+  top: 6px;
+  right: 0px;
+  display: none;
+  padding: 47px 41px;
+  width: 71px;
+  cursor: pointer;
+  transform: translateX(122px);
+  -webkit-transform: translateX(122px);
+  -moz-transform: translateX(122px);
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+.menu-button.active div:first-child {
+  transform: rotate(90deg) translateY(12px) translateX(12px);
+  -webkit-transform: rotate(90deg) translateY(12px) translateX(12px);
+  -moz-transform: rotate(90deg) translateY(12px) translateX(12px);
+}
+.menu-button.active div:nth-child(2) {
+  transform: rotate(90deg) translateY(0px);
+  -webkit-transform: rotate(90deg) translateY(0px);
+  -moz-transform: rotate(90deg) translateY(0px);
+}
+.menu-button.active div:nth-child(3) {
+  transform: rotate(90deg) translateY(-12px) translateX(-12px);
+  -webkit-transform: rotate(90deg) translateY(-12px) translateX(-12px);
+  -moz-transform: rotate(90deg) translateY(-12px) translateX(-12px);
+}
+.menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.menu-button div {
+  width: 100%;
+  height: 4px;
+  margin-top: 8px;
+  background-color: #000;
+  transform: translateX(122px);
+  -webkit-transform: translateX(122px);
+  -moz-transform: translateX(122px);
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+.menu-button div:first-child {
+  margin-top: 0;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+.menu-button div:nth-child(3) {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}

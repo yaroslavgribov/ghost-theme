@@ -1,0 +1,64 @@
+.fltrt {
+  float: right;
+  margin-left: 8px;
+}
+.fltlft {
+  float: left;
+  margin-right: 8px;
+}
+.clearfloat {
+  clear: both;
+  height: 0;
+  font-size: 1px;
+  line-height: 0px;
+}
+.clearfloat {
+  clear: both;
+  height: 0;
+  font-size: 1px;
+  line-height: 0px;
+}
+.clearfloat2:after {
+  clear: both;
+  height: 0;
+  font-size: 1px;
+  line-height: 0px;
+  display: block;
+  content: "";
+}
+.rela {
+  position: relative;
+  margin-bottom: 15px;
+}
+.container {
+  z-index: 2;
+  max-width: 1700px;
+  padding: 0px 50px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.image {
+  max-width: 100%;
+
+  &--rounded {
+    position: relative;
+    border-radius: 100%;
+    vertical-align: center;
+    text-align: center;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+    }
+  }
+}
+
+body.pmt {
+  overflow: hidden;
+}

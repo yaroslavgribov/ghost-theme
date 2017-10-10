@@ -1,0 +1,8 @@
+.idea
+assets/css/screen.css
+data/
+images/
+npm-debug.log
+**/.DS_Store
+node_modules/
+dist/

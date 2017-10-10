@@ -1,0 +1,37 @@
+<div id="navigation" class="header clearfloat2">
+    <section class="header-container">
+        {{#if @blog.logo}}
+            <a class="logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+        {{/if}}
+        <div class="menu">
+            {{#foreach navigation}}
+                <a href="{{url absolute="true"}}">{{label}}</a>
+            {{/foreach}}
+            <button type="button" class="search-init js-searchStart">
+                <i class="icon-search_icon"></i>
+            </button>
+        </div>
+        <!-- Search -->
+        <section class="search-overlay js-searchOverlay">
+            <form id="search" class="search-overlay__form search-container js-searchContainer">
+                <input type="search" class="search-container__input js-searchInput" placeholder="Search">
+                <div class="search-container__results overlay">
+                    <ul class="search-results js-searchResults">
+                    </ul>
+                </div>
+            <img class="search-container__loading js-loadingSpin" src="{{asset "icons/loading.gif"}}" />
+            </form>
+            <button type="button" class="search-overlay__close js-searchClose">
+                <i class="icon-close"></i>
+            </button>
+        </section>
+        <!-- end Search-->
+        <div class="menu-button">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    <!-- end .header -->
+    </section>
+</div>
+<!-- End Header -->

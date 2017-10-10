@@ -1,0 +1,18 @@
+<div id="news" class="sidebar1 sidebar--news">
+    <h2>Новости</h2>
+    <!-- news block daily-->
+    {{#get "posts" filter="tags:newsblock+image:-null" limit="8" order="published_at desc"}}
+        {{#foreach posts}}
+            <div class="news">
+                <a href="{{url}}">
+                    <img src="{{image}}"/>
+                    {{title}}
+                </a>
+            </div>
+        {{/foreach}}
+        <a href="/tag/newsblock" class="button">
+            <span>еще новости</span>
+        </a>
+    {{/get}}
+    <!-- end news block -->
+</div>

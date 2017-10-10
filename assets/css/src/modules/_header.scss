@@ -1,0 +1,106 @@
+.header {
+  padding: 30px 0px;
+  background: white;
+  z-index: 10;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+
+    @media (max-width: 975px) {
+      padding: 0;
+    }
+  }
+
+  &-container {
+    position: relative;
+    max-width: 1700px;
+    padding: 0px 50px;
+    margin: 0 auto;
+    @media all and (max-width: 975px) {
+      padding: 0 20px;
+    }
+  }
+}
+.sidebar1 {
+  float: left;
+  padding: 20px;
+  max-width: 380px;
+  width: 22.35294117647059%;
+  background-color: #ffffff;
+  padding-bottom: 10px;
+  float: left;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.sidebar1 h2 {
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+}
+.content {
+  padding: 0px 0;
+  margin: 0 25.35294117647059%;
+
+  &--post {
+    margin: 0 25.35294117647059% 0 0;
+  }
+
+  &.full {
+    margin: 0;
+
+    .button.more {
+      max-width: 46%;
+      margin: 0 auto;
+    }
+  }
+
+}
+.sidebar2 {
+  float: right;
+  max-width: 380px;
+  width: 22.35294117647059%;
+  padding: 0px 0;
+
+}
+.content ul, .content ol {
+  padding: 0 15px 15px 40px;
+}
+ul.nav {
+  list-style: none;
+  border-top: 1px solid #666;
+  margin-bottom: 15px;
+}
+ul.nav li {
+  border-bottom: 1px solid #666;
+}
+ul.nav a, ul.nav a:visited {
+  padding: 5px 5px 5px 15px;
+  display: block;
+  width: 160px;
+  text-decoration: none;
+  background-color: #C6D580;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
+  background-color: #ADB96E;
+  color: #FFF;
+}
+
+.logo img {
+  height: 60px;
+  position: relative;
+  z-index: 101;
+}
+.whiteplank {
+  height: 36%;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  background-color: #fff;
+}
+.logo {
+  float: left;
+}
