@@ -1,25 +1,33 @@
-import {convertDate} from './convertDate';
+import { convertDate } from './convertDate'
 
 export function insertPost(postData, options) {
   //start the inserting of the html
-  let postExcerpt = $(postData.html).text().split(' ').slice(0, 20).join(' ');
+  let postExcerpt = $(postData.html)
+    .text()
+    .split(' ')
+    .slice(0, 20)
+    .join(' ')
 
-  let tagText = options ? options.includeTags ?
-    `<span class="type"> 
+  let tagText = options
+    ? options.includeTags
+      ? `<span class="type"> 
     ${postData.tags[0].name}
-    </span>` : '' : '';
+    </span>`
+      : ''
+    : ''
 
-  let classList = 'block post ';
-  classList += options ? options.addClass ? options.addClass : '' : '';
-  let date = options ? options.includeDate ? `<p>${convertDate(postData.published_at)}</p>` : '' : '';
+  let classList = 'block post '
+  classList += options ? (options.addClass ? options.addClass : '') : ''
+  let date = options ? (options.includeDate ? `<p>${convertDate(postData.published_at)}</p>` : '') : ''
 
-  let imageContainer = postData.image ?
-    `<div class="rela post__image">
+  let imageContainer = postData.image
+    ? `<div class="rela post__image">
       <img src="${postData.image}" /> 
       ${tagText}
-    </div>` : '';
+    </div>`
+    : ''
 
-  let postContent = postData.html ? `<span class="text">${postExcerpt}...</span>` : '';
+  let postContent = postData.html ? `<span class="text">${postExcerpt}...</span>` : ''
 
   return `
     <article class="${classList}">
@@ -31,5 +39,5 @@ export function insertPost(postData, options) {
       </h2>
       ${postContent}
       </a>
-    </article>`;
+    </article>`
 }

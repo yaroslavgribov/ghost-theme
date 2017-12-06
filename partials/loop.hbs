@@ -28,8 +28,14 @@
         </article>
     {{/foreach}}
 </div>
+{{!-- 
 <button type="button" id="load-posts" class="button more">
     показать больше
-</button>
-
+</button> 
+--}}
+{{#if pagination.pages}}
+    <script>
+        var maxPages = parseInt('{{pagination.pages}}');
+    </script>
+{{/if}}
 {{!-- Previous/next page links - displayed on every page --}}
