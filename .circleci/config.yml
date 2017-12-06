@@ -9,6 +9,4 @@ jobs:
       - run: echo "everything is a success"
       - deploy:
         name: digital-ocean
-        command:
-        - echo 'deploying master branch'
-        - ssh -v $DROPLET_USER@$DROPLET_IP "cd /var/www/cinemaholics/; echo 'hi from circleci' >> hi.txt" 
+        command: ssh -v $DROPLET_USER@$DROPLET_IP "cd /var/www/cinemaholics/; echo 'hi from circleci' >> hi.txt" 
