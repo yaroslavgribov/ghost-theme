@@ -6,9 +6,8 @@ jobs:
       - image: circleci/node:7
     steps:
       - run: echo "everything is a success"
-  deployment:
-    master:
-      branch: master
-      commands:
-        - echo 'deploying master branch'
-        - ssh -v $DROPLET_USER@$DROPLET_IP "cd /var/www/cinemaholics/; echo 'hi from circleci' >> hi.txt" 
+  deploy:
+    name: digital-ocean
+    command:
+      - echo 'deploying master branch'
+      - ssh -v $DROPLET_USER@$DROPLET_IP "cd /var/www/cinemaholics/; echo 'hi from circleci' >> hi.txt" 
