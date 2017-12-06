@@ -7,5 +7,3 @@ Theme for cinemaholics
 ```
 npm i && npm start
 ```
-
-
