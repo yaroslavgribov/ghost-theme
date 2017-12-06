@@ -1,5 +1,8 @@
-version: 1
+version: 2
 jobs:
   build:
+    working_directory: ~/tmp
+    docker:
+      - image: circle/node:7
     steps:
-      - run: echo "hello world!"
+      - run: echo "hi"
