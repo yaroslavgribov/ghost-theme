@@ -1,21 +1,9 @@
 {
   "name": "cinemaholics",
-  "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
-  "demo": "https://demo.ghost.io",
-  "version": "1.3.5",
   "engines": {
     "ghost": ">=0.9.0 <1.0.0"
   },
   "license": "MIT",
-  "screenshots": {
-    "desktop": "assets/screenshot-desktop.jpg",
-    "mobile": "assets/screenshot-mobile.jpg"
-  },
-  "author": {
-    "name": "Ghost Foundation",
-    "email": "hello@ghost.org",
-    "url": "https://ghost.org"
-  },
   "gpm": {
     "type": "theme",
     "categories": [
@@ -29,10 +17,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/TryGhost/Casper.git"
+    "url": "https://github.com/yaroslavgribov/ghost-theme"
   },
-  "bugs": "https://github.com/TryGhost/Casper/issues",
-  "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
+  "bugs": "https://github.com/yaroslavgribov/ghost-theme/issues",
+  "contributors": ["https://github.com/yaroslavgribov/"],
   "dependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.0.0",
@@ -52,10 +40,6 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^2.4.1"
-  },
-  "optionalDependencies": {
-    "mysql": "2.1.1",
-    "pg": "6.1.2"
   },
   "devDependencies": {},
   "scripts": {
