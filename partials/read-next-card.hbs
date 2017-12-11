@@ -1,17 +1,18 @@
-{{#get "posts" filter="author:{{author.slug}}+id:-{{id}}" limit="4" order="published_at desc" as |related_posts|}} 
+{{#get "posts" filter="author:{{author.slug}}+id:-{{id}}" limit="5" order="published_at desc" as |related_posts|}} 
 {{#if related_posts}}
 <article class="read-next-card">
-  <header class="read-next-card__header">
-    {{!-- <small> --}}
-      {{!-- {{@blog.title}} --}}
-    {{!-- </small>  --}} 
-    {{#../author}}
-    <h3>
-      {{name}}
-    </h3>
-    {{/../author}}
-  </header>
+  
   <div class="read-next-card__content">
+    <header class="read-next-card__header">
+      <small>
+        more by {{@blog.title}}
+      </small>  
+      {{#../author}}
+      <h3>
+        {{name}}
+      </h3>
+      {{/../author}}
+    </header>
     <ul>
       {{#foreach related_posts}}
       <li>

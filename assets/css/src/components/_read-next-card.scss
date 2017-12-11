@@ -5,41 +5,62 @@
   flex-direction: column;
   overflow: hidden;
   margin: 0 20px 40px;
-  padding: 25px;
+  padding: 0;
   color: #fff;
-  background: #15171a 50%;
+  background: white;
   background-size: cover;
   border-radius: 5px;
-  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
-    1px 3px 8px rgba(39, 44, 49, 0.03);
 
   &__header,
   &__content,
   &__footer {
-    text-align: center;
-    color: white;
+    color: $text-color-default;
 
     a {
-      color: white;
+      color: $text-color-default;
+    }
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__content,
+  &__footer {
+    text-align: left;
+
+    a {
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
   &__content {
     display: flex;
     flex-grow: 1;
+    flex-direction: column;
+    padding: 25px 25px 0;
 
     ul {
       display: flex;
       flex-direction: column;
       list-style: none;
-      margin: 0;
       padding: 0;
+      margin: 0 0 20px;
     }
 
     a {
       display: block;
       padding: 10px 0;
-      color: white;
+      color: $text-color-default;
+      border-bottom: 1px solid #e8e8e8;
     }
+  }
+
+  &__footer {
+    padding: 0 25px 25px;
   }
 }
