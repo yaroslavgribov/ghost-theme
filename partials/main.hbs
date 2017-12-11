@@ -1,8 +1,3 @@
-{{!-- Previous/next page links - only displayed on page 2+ --}}
-<!--<div class="extra-pagination inner">-->
-
-<!--</div>-->
-
 {{!-- This is the post loop - each post will be output using this markup --}}
 <div class="mateblock post-feed">
     {{#get "posts" include="tags,author,excerpt" filter="featured:true" order="published_at desc"}}
@@ -10,7 +5,7 @@
             <article class="block {{post_class}}">
                 <a href="{{url}}">
                     <div class="rela">
-                        <img src="{{image}}" />
+                        <img src="{{image}}" alt="{{title}}" />
 
                         <span class="type">
                             {{#foreach tags limit="1"}}
@@ -33,7 +28,7 @@
                 <a href="{{url}}">
 
                     <div class="rela post__image">
-                        <img src="{{image}}" />
+                        <img src="{{image}}" alt={{title}}"/>
 
                         <span class="type">
                             {{#foreach tags limit="1"}}
@@ -46,17 +41,14 @@
                     </h2>
                     <span class="text"> {{excerpt words="20"}}... </span>
                 </a>
-                <!--<div class="comme">21</div>-->
+
             </article>
         {{/foreach}}
     {{/get}}
 </div>
-{{!-- <button type="button" id="load-posts" class="button more">
-    показать больше
-</button> --}}
+
 {{#if pagination.pages}}
     <script>
         var maxPages = parseInt('{{pagination.pages}}');
     </script>
 {{/if}}
-{{!-- Previous/next page links - displayed on every page --}}

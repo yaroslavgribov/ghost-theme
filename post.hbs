@@ -5,30 +5,51 @@
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
-    <main class="content content--post">
-    <article class="{{post_class}}">
-        <div class="mateblock inside">
-            <div class="block blockbig fullnew">
-                <div class="rela post-header" style="background-image: url({{image}})">
-                    <div class="zatem">
-                        <h class="main-post-title">{{title}}</h>
-                        {{#author}}
-                            <section class="author">
-                                <div class="text">
-                                    <a href="{{url}}" class="author__url">{{name}}</a>,
-                                    <span class="post-date"
-                                          datetime="{{date published_at timeago="true" format="YYYY-MM-DD"}}">{{date
-                                            updated_at format="DD MMMM YYYY"}}</span>
-                                </div>
-                            </section>
-                        {{/author}}
-                    </div>
+<main class="content content--post" role="main">
+<article class="{{post_class}}">
+    <div class="mateblock inside">
+        <div class="block blockbig fullnew">
+            <div class="rela post-header" style="background-image: url({{image}})">
+                <div class="zatem">
+                    <h class="main-post-title">{{title}}</h>
+                    {{#author}}
+                        <section class="author">
+                            <div class="text">
+                                <a href="{{url}}" class="author__url">{{name}}</a>,
+                                <span class="post-date"
+                                        datetime="{{date published_at timeago="true" format="YYYY-MM-DD"}}">{{date
+                                        updated_at format="DD MMMM YYYY"}}</span>
+                            </div>
+                        </section>
+                    {{/author}}
+                </div>
 
-                    <div class="type">{{tags limit="1"}}</div>
-                </div>
-                <div class="fulltext">
-                    {{content}}
-                </div>
+                <div class="type">{{tags limit="1"}}</div>
+            </div>
+            <div class="fulltext">
+                {{content}}
             </div>
         </div>
+    </div>
+</article>
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            {{> "read-next-card" }}
+
+            {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
+            {{#next_post}}
+                {{> "post-card"}}
+            {{/next_post}}
+
+            {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
+            {{#prev_post}}
+                {{> "post-card"}}
+            {{/prev_post}}
+
+        </div>
+    </div>
+</aside>
 {{/post}}

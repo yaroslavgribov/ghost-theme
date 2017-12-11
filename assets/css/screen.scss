@@ -14,8 +14,11 @@
 @import "src/modules/menu";
 @import "src/modules/news";
 @import "src/modules/search";
+@import "src/modules/read-next-feed";
 
 @import "src/components/author";
+@import "src/components/read-next-card";
+@import "src/components/post-card";
 
 @import "src/views/default";
 @import "src/views/page";
