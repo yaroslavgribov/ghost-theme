@@ -1,0 +1,46 @@
+.read-next-card {
+  display: flex;
+  position: relative;
+  flex: 1 1 300px;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0 20px 40px;
+  padding: 25px;
+  color: #fff;
+  background: #15171a 50%;
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
+    1px 3px 8px rgba(39, 44, 49, 0.03);
+
+  &__header,
+  &__content,
+  &__footer {
+    text-align: center;
+    color: white;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-grow: 1;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      display: block;
+      padding: 10px 0;
+      color: white;
+    }
+  }
+}

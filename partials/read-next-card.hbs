@@ -1,0 +1,31 @@
+{{#get "posts" filter="author:{{author.slug}}+id:-{{id}}" limit="4" order="published_at desc" as |related_posts|}} 
+{{#if related_posts}}
+<article class="read-next-card">
+  <header class="read-next-card__header">
+    <small>
+      {{@blog.title}}
+    </small> 
+    {{#../author}}
+    <h3>
+      {{name}}
+    </h3>
+    {{/../author}}
+  </header>
+  <div class="read-next-card__content">
+    <ul>
+      {{#foreach related_posts}}
+      <li>
+        <a href="{{url}}">{{title}}</a>
+      </li>
+      {{/foreach}}
+    </ul>
+  </div>
+  <footer class="read-next-card__footer">
+    {{#../author}}
+    <a href="{{url}}">
+      {{plural ../pagination.total empty='Пока нет постов' singular='% постов' plural='Посмотреть все % постов'}} →
+    </a>
+    {{/../author}}
+  </footer>
+</article>
+{{/if}} {{/get}}

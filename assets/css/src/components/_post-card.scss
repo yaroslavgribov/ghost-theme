@@ -1,0 +1,15 @@
+.post-card {
+  -ms-flex: 1 1 300px;
+  flex: 1 1 300px;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0 20px 40px;
+  min-height: 300px;
+  background: #fff 50%;
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: 12px 14px 38px rgba(39, 44, 49, 0.06),
+    1px 3px 8px rgba(39, 44, 49, 0.03);
+  transition: all 0.5s ease;
+}
