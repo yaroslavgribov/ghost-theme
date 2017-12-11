@@ -1,14 +1,25 @@
 <article class="post-card {{post_class}}">
-  <a class="post-card__image" href="{{url}}">
-    <img src="{{image}}" />
+  {{#if image}}
+  <a class="post-card-image__link" href="{{url}}">
+    <div class="post-card__image" style="background-image: url({{image}})"></div>
   </a>
-  <div class="post-card__content">
+  {{/if}}
+  <div class="post-card__content post-card-content">
     <a class="post-card-content__link" href="{{url}}">
-      <h2 class="post-title">
-        {{title}}
-      </h2>
-      <span class="text"> {{excerpt words="20"}} </span>
+      <header class="post-card__header">
+        <h2 class="post-card-title">
+          {{title}}
+        </h2>
+      </header>
+      <section class="post-card__excerpt">
+        <p> {{excerpt words="20"}} ... </p>
+      </section>
     </a>
+    <footer class="post-card__meta">
+      {{#author}}
+        <a href={{url}}>{{name}}</a>
+      {{/author}}
+    </footer>
   </div>
   <!--<div class="comme">21</div>-->
 </article>
