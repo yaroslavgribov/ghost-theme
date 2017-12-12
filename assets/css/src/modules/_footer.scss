@@ -1,53 +1,91 @@
-.footer {
-  padding: 110px 0;
+.site-footer {
   background-color: #262626;
   position: relative;
-  clear: both;
-  margin-top: 110px;
+  padding: 20px 0;
+  font-family: 'proxima_nova_rgregular';
+  font-size: 13px;
+
+  &__container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 250px;
+    color: #efefef;
+
+    .logosmall {
+      width: 50%;
+      margin-bottom: 10px;
+
+      @media(max-width: 452px) {
+        width: 70%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    @media(max-width: 767px) {
+      display: block;
+      margin-top: 20px;
+    }
+
+    a {
+      color: hsla(0,0%,100%,.7);
+      text-decoration: none;
+      font-size: 100%;
+      
+      &:not(:last-child) {
+        margin-right: 2%;
+      }
+
+      @media(max-width: 767px) {
+        font-size: 80%;
+      }
+
+      &:hover {
+        color: hsla(0,0%,100%,1);
+        transition: color .2s;
+      }
+    }
+  }
 }
-.footer .sidebar1 {
-  background-color: transparent;
-  color: #707070;
-  font-size: 16px;
-  padding: 6px 20px 20px 20px;
-    font-family: 'proxima_nova_rgregular';
+
+.copyright {
+  color: hsla(0,0%,100%,.7);
+
+  a {
+    color: hsla(0,0%,100%,.7);
+    text-decoration: none;
+
+    &:hover{
+      color: hsla(0,0%,100%,1);
+      transition: color .2s;
+    }
+  }
 }
-.footer .logosmall {
-  display: block;
-  margin-bottom: 10px;
-}
-.footer .logosmall img {
-  width: 70%;
-}
-.footer .socials img {
-  width: 38px;
-}
-.footer .socials {
+
+.socials {
   margin-top: 20px;
   opacity: 0.2;
+
+  a {
+    margin-right: 10px;
+  }
+
+  img {
+    width: 38px;
+  }
 }
-.footer .socials a {
-  margin-right: 10px;
-  margin-top: 10px;
-}
-.footer .sidebar2 {
-display: none;
-}
-.prefot {
-  max-width: 1700px;
-  margin: 0 auto;
-  padding: 0px 50px;
-}
-.footmenu a {
-  color: #efefef;
-  text-decoration: none;
-  font-size: 16px;
-  margin-right: 2%;
-}
-.footmenu {
-  text-align: justify;
-  display: inline-block;
-  padding-bottom: 80px;
-  border-bottom: 1px solid #3b3b3b;
-  font-family: 'proxima_nova_rgregular';
-}
+
