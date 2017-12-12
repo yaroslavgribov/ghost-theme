@@ -1,9 +1,13 @@
 .site-footer {
   background-color: #262626;
   position: relative;
-  padding: 20px 0;
+  padding: 40px 0;
   font-family: 'proxima_nova_rgregular';
   font-size: 13px;
+
+  @media(max-width: 767px) {
+    padding: 20px 0;
+  }
 
   &__container {
     display: flex;

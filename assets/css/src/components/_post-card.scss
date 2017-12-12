@@ -39,15 +39,18 @@
 
   &__excerpt {
     p {
+      font: 14px/1.25 'PT Serif', serif;
       margin: 0 0 1.5em;
     }
   } 
 
   &__meta {
-    padding: 0 25px 25px;
-
+    padding: 0 20px 20px;
+    font: 14px/1.25 'PT Serif', serif;
+    
     a {
       color: $heading-color-active;
+
       &:hover {
         text-decoration: underline;
       }
@@ -61,7 +64,7 @@
     flex-direction: column;
     flex-grow: 1;
     text-decoration: none;
-    padding: 25px 25px 0;
+    padding: 20px 20px 0;
     color: $text-color-default;
   }
 }
