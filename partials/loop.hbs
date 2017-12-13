@@ -4,28 +4,9 @@
 <!--</div>-->
 
 {{!-- This is the post loop - each post will be output using this markup --}}
-<div class="mateblock">
+<div class="mateblock post-feed">
     {{#foreach posts limit="11"}}
-        <article class="block {{post_class}}">
-            <a href="{{url}}">
-
-                <div class="rela post__image">
-                    <img src="{{image}}" />
-
-                    <span class="type">
-                        {{#foreach tags limit="1"}}
-                            {{name}}
-                        {{/foreach}}
-                    </span>
-                </div>
-                <h2 class="post-title">
-                    {{title}}
-                </h2>
-                <span class="text"> {{excerpt words="20"}} </span>
-
-            </a>
-            <!--<div class="comme">21</div>-->
-        </article>
+        {{> "post-card" }}
     {{/foreach}}
 </div>
 {{!-- 

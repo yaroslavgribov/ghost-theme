@@ -1,0 +1,8 @@
+.post-feed {
+  .post-card:nth-child(7n + 1):not(.no-image) {
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
