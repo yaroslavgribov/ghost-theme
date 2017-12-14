@@ -17,12 +17,16 @@
 }
 
 .mateblock {
+  width: 100%;
+  margin-bottom: 6%;
+}
+
+.post-feed {
   display: flex;
   flex-flow: row wrap;
   align-items: stretch;
   justify-content: space-between;
-  width: 100%;
-  margin-bottom: 6%;
+  margin: 0 -20px;
 }
 
 /*.type {

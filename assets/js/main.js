@@ -1,8 +1,10 @@
 import toggleBanner from './helpers/toggleBanner'
 import { hideMainBanner, insertPost, splitDateAndTitle } from './helpers'
+import loadposts from './helpers/loadposts'
 import './modules/search'
 import './modules/scroll'
-import './modules/infinitescroll'
+// import './modules/infinitescroll'
+import './modules/floatingheader'
 
 $(document).ready(() => {
   // find date and title container on the page
@@ -32,6 +34,16 @@ $('.menu-button').on('click', function() {
   $('body').toggleClass('pmt')
   let menu_oheight = nav.outerHeight(),
     menu_iheight = $('div.menu a:last-child').position()
+})
+
+var currentPage = 1
+var nextPage = 2
+
+$('#load-posts').on('click', () => {
+  loadposts(currentPage, nextPage)
+    .done(() => {
+      nextPage++
+    })
 })
 
 $('img')

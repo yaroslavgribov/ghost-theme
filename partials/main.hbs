@@ -1,16 +1,22 @@
 {{!-- This is the post loop - each post will be output using this markup --}}
-<div class="mateblock post-feed">
-    {{#get "posts" include="tags, author, excerpt" filter="featured:true" order="published_at desc"}}
-        {{#foreach posts limit="1"}}
-            {{> "post-card" }}
-        {{/foreach}}
-    {{/get}}
-    {{#get "posts" include="tags, author, excerpt" filter="tags:-newsblock+image:-null" order="published_at desc"}}
-        {{#foreach posts limit="10"}}
-            {{> "post-card" }}
-        {{/foreach}}
-    {{/get}}
+<div class="mateblock">
+    <div class="post-feed">
+        {{#get "posts" include="tags, author, excerpt" filter="featured:true" order="published_at desc"}}
+            {{#foreach posts limit="1"}}
+                {{> "post-card" }}
+            {{/foreach}}
+        {{/get}}
+        {{#get "posts" include="tags, author, excerpt" filter="tags:-newsblock+image:-null" order="published_at desc"}}
+            {{#foreach posts limit="10"}}
+                {{> "post-card" }}
+            {{/foreach}}
+        {{/get}}
+    </div>
 </div>
+
+<button type="button" id="load-posts" class="button more">
+    показать больше
+</button> 
 
 {{#if pagination.pages}}
     <script>

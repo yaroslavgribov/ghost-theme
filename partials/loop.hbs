@@ -4,16 +4,18 @@
 <!--</div>-->
 
 {{!-- This is the post loop - each post will be output using this markup --}}
-<div class="mateblock post-feed">
-    {{#foreach posts limit="11"}}
-        {{> "post-card" }}
-    {{/foreach}}
+<div class="mateblock">
+    <div class="post-feed">
+        {{#foreach posts limit="11"}}
+            {{> "post-card" }}
+        {{/foreach}}
+    </div>
 </div>
-{{!-- 
+
 <button type="button" id="load-posts" class="button more">
     показать больше
 </button> 
---}}
+
 {{#if pagination.pages}}
     <script>
         var maxPages = parseInt('{{pagination.pages}}');

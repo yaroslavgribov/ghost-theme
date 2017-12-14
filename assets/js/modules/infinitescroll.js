@@ -1,4 +1,5 @@
 import { insertPost } from '../helpers/insertPost'
+import loadposts from '../helpers/loadposts'
 
 $(function($) {
   var currentPage = 1
@@ -33,7 +34,6 @@ $(function($) {
   function onScroll() {
     lastScrollY = window.scrollY
     requestTick()
-    console.log('scroll')
   }
 
   function onResize() {
@@ -69,31 +69,10 @@ $(function($) {
     isLoading = true
 
     // next page
-    currentPage++
 
     // Load more
 
-    $.ajax({
-      url: ghost.url.api('posts', {
-        order: 'published_at desc',
-        include: 'tags, author',
-        page: nextPage,
-        filter: filter
-      }),
-      type: 'get'
-    })
-      .done(function(data) {
-        $.each(data.posts, function(i, post) {
-          var postHtml = insertPost(post)
-          $('.mateblock').append(postHtml)
-        })
-        nextPage += 1
-      })
-      .done(function(data) {
-        if (nextPage == data.meta.pagination.total || data.posts.length <= 0) {
-          $('#load-posts').hide()
-        }
-      })
+    loadposts(currentPage, nextPage)
       .fail(function(xhr) {
         // 404 indicates we've run out of pages
         if (xhr.status === 404) {
@@ -108,8 +87,10 @@ $(function($) {
       })
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true })
-  window.addEventListener('resize', onResize)
+  if ($('.post-feed').length) {
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onResize)
 
-  infiniteScroll()
+    infiniteScroll()
+  }
 })
