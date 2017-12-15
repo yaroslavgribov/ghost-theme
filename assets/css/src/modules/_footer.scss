@@ -35,6 +35,12 @@
     }
   }
 
+  &__subscriptions {
+    display: flex;
+    flex-direction: column;
+    flex: 0;
+  }
+
   &__nav {
     display: flex;
     flex-grow: 1;
@@ -65,6 +71,32 @@
       }
     }
   }
+}
+
+.subscription {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+
+  &__title {
+    color: rgba(255, 255, 255, 0.7);;
+  }
+}
+
+.subscribe-form {
+
+}
+
+.subscribe-input {
+  width: 100%;
+  padding: 5px;
+}
+
+.subscribe-button {
+  width: 100%;
+  background: transparent;
+  outline: 0;
+  color: rgba(255, 255, 255, 0.7) !important;
+  border-color: white;
 }
 
 .copyright {

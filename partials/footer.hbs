@@ -22,6 +22,25 @@
         </a>
       </nav>
     </div>
+    <section class="site-footer__subscriptions">
+      {{#if @labs.subscribers}}
+        <section class="subscription">
+          <h3 class="subscription__title">Subscribe to {{@blog.title}}</h3>
+          <p>Напиши свой e-mail и мы сообщим тебе о новых записях прямо на почту</p>
+          {{subscribe_form form_class="subscribe-form"
+            input_class="subscribe-input"
+            button_class="button subscribe-button"
+            placeholder="youremail@example.com"}}
+        </section>
+      {{/if}}
+
+      <script type="text/javascript" src="//vk.com/js/api/openapi.js?151"></script>
+        <!-- VK Widget -->
+        <div id="vk_groups"></div>
+        <script type="text/javascript">
+          VK.Widgets.Group("vk_groups", {mode: 3, color1: '262626', color2: 'FCF6F6'}, 35595350);
+        </script>
+    </section>
     <nav class="site-footer__nav">
         <a href="/help/">Помощь</a>
         <a href="/about/">О сайте </a>
