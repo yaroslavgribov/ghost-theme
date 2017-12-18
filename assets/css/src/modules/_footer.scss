@@ -46,6 +46,7 @@
     flex-grow: 1;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: flex-start;
 
     @media(max-width: 767px) {
       display: block;
