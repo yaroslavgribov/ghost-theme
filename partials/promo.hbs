@@ -2,7 +2,7 @@
     {{#get "posts" filter="tags:commercial"}}
         {{#foreach posts limit="1"}}
             <a href="{{url}}">
-                <img src="{{image}}" class="banner" />
+                <img src="{{img_url}}" class="banner" />
             </a>
         {{/foreach}}
     {{/get}}
@@ -12,7 +12,7 @@
             <div class="poster">
                 <a href="{{url}}" class="poster__content">
                     <figure>
-                        <img src="{{image}}">
+                        <img src="{{img_url}}">
                     </figure>
                     <h2 class="js-titleContainer">{{title}}</h2>
                     <h4 class="js-dateContainer"></h4>       
