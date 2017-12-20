@@ -21,12 +21,13 @@
         "no-unreachable": "warn",
         "no-unused-vars": "warn",
         "constructor-super": "warn",
-        "semi": ["error", "never"],
+        "semi": [2, "never"],
         "valid-typeof": "warn",
         "indent": ["error", 2],
         "no-console": "off",
         "max-len": ["error", 120],
         "quotes": ["error", "single", { "allowTemplateLiterals": true }],
-        "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }]
+        "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+        "prefer-const": [1]
     }
 }
