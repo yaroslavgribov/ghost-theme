@@ -1,16 +1,15 @@
-var webpack = require('webpack')
-
+const webpack = require('webpack')
+const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const extractSass = new ExtractTextPlugin({
-  filename: '[name].css'
-})
+const autoprefixer = require('autoprefixer')
 
 module.exports = {
-  entry: __dirname + '/entry.js',
+  target: 'web',
+  entry: path.join(__dirname, 'entry.js'),
   devtool: 'source-map',
   output: {
-    path: __dirname + '/assets/dist',
+    path: path.join(__dirname, 'assets/dist'),
     filename: 'main.js'
   },
   module: {
@@ -25,33 +24,31 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true
-            }
-          }
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
       },
       {
-        test: /\.scss$/,
-        use: extractSass.extract({
+        test: /\.styl$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
               options: {
-                url: false
+                importLoaders: 1
               }
             },
             {
-              loader: 'sass-loader',
-              options: {}
-            }
-          ],
-          // use style-loader in development
-          fallback: 'style-loader'
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [autoprefixer],
+                sourceMap: true
+              }
+            },
+            'stylus-loader'
+          ]
         })
       },
       {
@@ -60,5 +57,17 @@ module.exports = {
       }
     ]
   },
-  plugins: [extractSass]
+  resolve: {
+    extensions: ['.js', '.styl', '.css'],
+    modules: [path.join(__dirname, 'src'), 'node_modules']
+  },
+
+  plugins: [
+    new ExtractTextPlugin({
+      filename: '[name].css'
+    }),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.IgnorePlugin(/\.(jpe|jpg|woff|woff2|eot|ttf|svg|png)(\?.*$|$)/)
+  ]
 }

@@ -1,4 +1,4 @@
-.post-card {
+.post-card 
   display: flex;
   -ms-flex: 1 1 300px;
   flex: 1 1 300px;
@@ -14,68 +14,61 @@
     1px 3px 8px rgba(39, 44, 49, 0.03);
   transition: all 0.5s ease;
 
-  &:hover {
+  &:hover 
     box-shadow: 0 0 1px rgba(39,44,49,.1), 0 3px 16px rgba(39,44,49,.07);
     transition: all .3s ease;
     transform: translate3D(0,-1px,0);
-  }
-
-  a {
+  
+  a 
     text-decoration: none;
-  }
 
-  &__image {
+  &--sm 
+    min-height 0
+
+  &__image 
     height: 200px;
     width: auto;
     background-size: cover;
     background-position: center;
-  }
-
-  &__content {
+  
+  &__content 
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     justify-content: space-between;
-  }
 
-  &__excerpt {
-    p {
+  &__excerpt 
+    p 
       font: 14px/1.25 'PT Serif', serif;
       margin: 0 0 1.5em;
-    }
-  } 
 
-  &__meta {
+  &__meta 
     padding: 0 20px 20px;
     font: 14px/1.25 'PT Serif', serif;
     
-    a {
-      color: $heading-color-active;
+    a 
+      color: heading-color-active;
 
-      &:hover {
+      &:hover 
         text-decoration: underline;
-      }
-    }
-  }
-}
 
-.post-card-content {
-  &__link {
+.post-card-content 
+  &__link 
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     text-decoration: none;
     padding: 20px 20px 0;
     color: $text-color-default;
-  }
-}
+  
 
-.post-card-title {
+
+.post-card-title 
   font-size: 16px;
   margin: 0 0 .5em;
   transition: all 0.2s, transform 0.2s;
 
-  &:hover {
+  &:hover 
     color: $heading-color-active;
-  }
-}
+  
+

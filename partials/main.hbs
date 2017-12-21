@@ -6,11 +6,9 @@
                 {{> "post-card" }}
             {{/foreach}}
         {{/get}}
-        {{#get "posts" include="tags, author, excerpt" filter="tags:-newsblock+image:-null" order="published_at desc"}}
-            {{#foreach posts limit="10"}}
-                {{> "post-card" }}
-            {{/foreach}}
-        {{/get}}
+        {{#foreach posts}}
+            {{> "post-card" }}
+        {{/foreach}}
     </div>
 </div>
 

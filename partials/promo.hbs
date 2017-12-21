@@ -1,25 +1,27 @@
 <div class="sidebar2">
-    {{#get "posts" filter="tags:commercial"}}
-        {{#foreach posts limit="1"}}
-            <a href="{{url}}">
-                <img src="{{img_url}}" class="banner" />
-            </a>
-        {{/foreach}}
-    {{/get}}
+  {{#get "posts" filter="tags:commercial"}}
+    {{#foreach posts limit="1"}}
+      <a href="{{url}}">
+        <img src="{{img_url}}" class="banner" alt="banner"/>
+      </a>
+    {{/foreach}}
+  {{/get}}
 
-    {{#get "posts" filter="tags:incinemas"}}
-        {{#foreach posts limit="1"}}
-            <div class="poster">
-                <a href="{{url}}" class="poster__content">
-                    <figure>
-                        <img src="{{img_url}}">
-                    </figure>
-                    <h2 class="js-titleContainer">{{title}}</h2>
-                    <h4 class="js-dateContainer"></h4>       
-                </a>
-            </div>
-        {{/foreach}}
-    {{/get}}
-
-    <!-- end .sidebar2 -->
+  {{#get "posts" filter="tags:incinemas"}}
+    {{#foreach posts limit="1"}}
+      <div class="poster">
+        <a href="{{url}}" class="poster__content">
+          <figure>
+            <img src="{{img_url}}">
+          </figure>
+          <h2 class="js-titleContainer">{{title}}</h2>
+          <h4 class="js-dateContainer"></h4>       
+        </a>
+      </div>
+    {{/foreach}}
+  {{/get}}
+  {{#is "post"}}
+  <a class="twitter-timeline" data-height="600" href="https://twitter.com/Cinemaholics_?ref_src=twsrc%5Etfw">Tweets by Cinemaholics_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  {{/is}}
+  <!-- end .sidebar2 -->
 </div>

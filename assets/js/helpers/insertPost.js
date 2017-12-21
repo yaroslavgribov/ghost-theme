@@ -17,8 +17,8 @@ export function insertPost(postData, options) {
       : ''
     : ''
 
-  let classList = options ? (options.addClass ? options.addClass : '') : ''
-  let date = options ? (options.includeDate ? `<p>${convertDate(published_at)}</p>` : '') : ''
+  const classList = options ? (options.addClass ? options.addClass : '') : ''
+  const date = options ? (options.includeDate ? `<p>${convertDate(published_at)}</p>` : '') : ''
 
   let imageContainer = ''
   if (image) {
@@ -29,9 +29,8 @@ export function insertPost(postData, options) {
     <article class="post-card ${classList}">
     ${image &&
       `<a class="post-card-image__link" href="${url}">
-        <div class="post-card__image" style="background-image: url(${image})"></div>
-      </a>`
-    }
+        <div class="post-card__image" style="background-img_url: url(${image})"></div>
+      </a>`}
     <div class="post-card__content post-card-content">
       <a class="post-card-content__link" href="${url}">
         <header class="post-card__header">
@@ -44,9 +43,7 @@ export function insertPost(postData, options) {
         </section>
       </a>
       <footer class="post-card__meta">
-        ${author &&
-        `<a href="/author/${author.slug}">${author.name}</a>`
-        }
+        ${author && `<a href="/author/${author.slug}">${author.name}</a>`}
       </footer>
     </div>
   </article>`

@@ -1,7 +1,7 @@
 <div id="news" class="sidebar1 sidebar--news">
     <h2>Новости</h2>
     <!-- news block daily-->
-    {{#get "posts" filter="tags:newsblock+image:-null" limit="8" order="published_at desc"}}
+    {{#get "posts" filter="tags:newsblock" limit="10" order="published_at desc"}}
         {{#foreach posts}}
             <div class="news">
                 <a href="{{url}}">
