@@ -3,7 +3,7 @@ import {insertPost} from './insertPost'
 export default (current, next = 2) => {
   const $result = $('.post-feed')
 
-  const filter = 'image:-null'
+  const filter = 'img_url:-null'
 
   return $.ajax({
     url: ghost.url.api('posts', {

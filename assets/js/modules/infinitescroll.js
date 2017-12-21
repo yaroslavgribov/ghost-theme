@@ -1,6 +1,4 @@
-import { insertPost } from '../helpers/insertPost'
-import loadposts from '../helpers/loadposts'
-
+// Code snippet inspired by https://github.com/douglasrodrigues5/ghost-blog-infinite-scroll
 $(function($) {
   var currentPage = 1
   var pathname = window.location.pathname
@@ -14,19 +12,6 @@ $(function($) {
   var lastScrollY = window.scrollY
   var lastWindowHeight = window.innerHeight
   var lastDocumentHeight = $document.height()
-  var nextPage = 2,
-    //Set this to match the pagination used in your blog
-
-    filter = 'image:-null'
-
-  // if homepage
-  var path = window.location.pathname,
-    pathParts = path.split('/'),
-    page = pathParts[1],
-    id = pathParts[2]
-
-  if (path.length <= 1) {
-  }
 
   // remove hash params from pathname
   pathname = pathname.replace(/#(.*)$/g, '').replace('///g', '/')
@@ -69,10 +54,19 @@ $(function($) {
     isLoading = true
 
     // next page
+    currentPage++
 
     // Load more
+    var nextPage = pathname + 'page/' + currentPage + '/'
 
-    loadposts(currentPage, nextPage)
+    $.get(nextPage, function(content) {
+      $result.append(
+        $(content)
+          .find('.post')
+          .hide()
+          .fadeIn(100)
+      )
+    })
       .fail(function(xhr) {
         // 404 indicates we've run out of pages
         if (xhr.status === 404) {
@@ -87,10 +81,8 @@ $(function($) {
       })
   }
 
-  if ($('.post-feed').length) {
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onResize)
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('resize', onResize)
 
-    infiniteScroll()
-  }
+  infiniteScroll()
 })

@@ -8,8 +8,8 @@
   <title>{{meta_title}}</title>
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> {{!-- Brand icon --}}
-  <link rel="shortcut icon" href="{{asset " /favicon.ico "}}"> {{!-- Styles'n'Scripts --}}
-  <link rel="stylesheet" type="text/css" href="{{asset " dist/main.css "}}" />
+  <link rel="shortcut icon" href="{{asset "/favicon.ico "}}"> {{!-- Styles'n'Scripts --}}
+  <link rel="stylesheet" type="text/css" href="{{asset "dist/main.css"}}" />
   <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'> {{!-- Ghost outputs important style and meta data with this tag --}} {{ghost_head}}
 </head>
 
@@ -30,7 +30,7 @@
   {{> "footer"}} {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
   <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script> {{!-- Ghost outputs important scripts and data with this tag --}} {{ghost_foot}} {{!-- Fitvids makes video embeds responsive
   and awesome --}}
-  <script type="text/javascript" src="{{asset " dist/main.js "}}"></script>
+  <script type="text/javascript" src="{{asset "dist/main.js"}}"></script>
 </body>
 
 </html>

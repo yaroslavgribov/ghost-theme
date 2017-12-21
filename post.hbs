@@ -10,7 +10,7 @@
 <article class="{{post_class}}">
     <div class="mateblock inside">
         <div class="block blockbig fullnew">
-            <div class="rela post-header" style="background-image: url({{img_url}})">
+            <div class="rela post-header" style="background-img_url: url({{img_url}})">
                 <div class="zatem">
                     <h class="main-post-title post-full-title">{{title}}</h>
                     {{#author}}
@@ -34,22 +34,22 @@
     </div>
 </article>
 
+<aside class="share">
+  {{#foreach tags}}
+    <a href="{{url}}">@{{name}}</a>
+  {{/foreach}}
+</aside>
+
 <aside class="read-next outer">
-    <div class="inner">
-        <div class="read-next-feed">
-            {{> "read-next-card" }}
-
-            {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#next_post}}
-                {{> "post-card"}}
-            {{/next_post}}
-
-            {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#prev_post}}
-                {{> "post-card"}}
-            {{/prev_post}}
-
-        </div>
+  <div class="inner">
+    <h3>Похожие: </h3>
+    <div class="read-next-feed">
+      {{#get "posts" include="tags, author" filter="primary_tag:{{primary_tag.slug}}" limit="6"}}
+        {{#foreach posts}}
+          {{> "post-small" }}
+        {{/foreach}}
+      {{/get}}
     </div>
+  </div>
 </aside>
 {{/post}}
