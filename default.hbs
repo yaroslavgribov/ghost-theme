@@ -15,24 +15,26 @@
 
 <body class="{{body_class}} nav-closed">
   <div class="whiteplank"></div>
-  {{!-- The blog navigation links --}} {{navigation}}
+
+  {{navigation}}
+
   <div class="container">
     <div class="slider">
-      <img class="js-mainImageContainer" src="{{@blog.cover_image}}" /> {{!--
-      <button type="button" name="button" class="js-toggleBanner">
-        Toggle
-      </button>--}}
+      <img class="js-mainImageContainer" src="{{@blog.cover_image}}" />
     </div>
 
     {{> "promo" }} 
-    {{^is "post, page, tag"}} 
+    {{^is "post, page, home"}} 
       {{> "news" }} 
-    {{/is}} {{!-- All the main content gets inserted here, index.hbs,
-    post.hbs, etc --}} {{{body}}} {{!-- The tiny footer at the very bottom --}}
+    {{/is}} 
+    {{{body}}} 
   </div>
-  {{> "footer"}} {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script> {{!-- Ghost outputs important scripts and data with this tag --}} {{ghost_foot}} {{!-- Fitvids makes video embeds responsive
-  and awesome --}}
+  {{> "footer"}} 
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script> 
+
+  {{ghost_foot}} 
+
   <script type="text/javascript" src="{{asset "dist/main.js"}}"></script>
 </body>
 

@@ -1,0 +1,28 @@
+.posts 
+  display flex
+  flex-direction column
+
+.posts-title
+  heading(30px)
+
+.posts-list 
+  margin 0 
+  margin-left: -(spacing-large)
+  margin-right: -(spacing-large)
+
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  flex 1
+  justify-content flex-start
+
+  .post-card:nth-child(7n + 1):not(.no-image) 
+    flex 1 1 100%
+    flex-direction row
+
+    .post-card-content 
+      flex: 1 1 360px
+
+    .post-card-image__link 
+      display block
+      flex: 1 1 auto

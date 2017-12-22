@@ -29,7 +29,7 @@ export function insertPost(postData, options) {
     <article class="post-card ${classList}">
     ${image &&
       `<a class="post-card-image__link" href="${url}">
-        <div class="post-card__image" style="background-img_url: url(${image})"></div>
+        <div class="post-card__image" style="background-image: url(${image})"></div>
       </a>`}
     <div class="post-card__content post-card-content">
       <a class="post-card-content__link" href="${url}">

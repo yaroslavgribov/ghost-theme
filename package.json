@@ -47,7 +47,7 @@
   "devDependencies": {},
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack --config webpack.dev.js",
+    "start": "webpack --config webpack.dev.js --watch",
     "test": "jest"
   },
   "config": {
