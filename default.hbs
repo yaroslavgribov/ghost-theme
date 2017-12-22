@@ -24,7 +24,10 @@
       </button>--}}
     </div>
 
-    {{> "promo" }} {{#is "post, page"}} {{else}} {{> "news" }} {{/is}} {{!-- All the main content gets inserted here, index.hbs,
+    {{> "promo" }} 
+    {{^is "post, page, tag"}} 
+      {{> "news" }} 
+    {{/is}} {{!-- All the main content gets inserted here, index.hbs,
     post.hbs, etc --}} {{{body}}} {{!-- The tiny footer at the very bottom --}}
   </div>
   {{> "footer"}} {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}

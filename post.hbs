@@ -34,40 +34,62 @@
 </article>
 
 <aside class="share">
-    <div class="inner">
-        <div class="share-list">
-            <span class="">
-                Поделиться: 
-            </span>
-            <a class="" href="https://vk.com/share.php?url={{url absolute="true"}}"
-                onclick="window.open(this.href, 'share-vk','width=580,height=296');return false;">
-                Вконтакте
-            </a>
-            <a class="" href="https://t.me/share/url?url={{url absolute="true"}}&text={{encode title}}"
-                onclick="window.open(this.href, 'share-telegram', 'width=550,height=235');return false;">
-                Telegram
-            </a>
-            <a class="" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
-                onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
-                Twitter
-            </a>
-            <a class="" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
-                Facebook
-            </a>
-        </div>
-    </div>
+  <div class="share-label">
+    Поделиться: 
+  </div>
+  <div class="share-list">
+    <a class="" href="https://vk.com/share.php?url={{url absolute="true"}}"
+       onclick="window.open(this.href, 'share-vk','width=580,height=296');return false;">
+      Вконтакте
+    </a>
+    <a class="" href="https://t.me/share/url?url={{url absolute="true"}}&text={{encode title}}"
+       onclick="window.open(this.href, 'share-telegram', 'width=550,height=235');return false;">
+      Telegram
+    </a>
+    <a class="" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+       onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+      Twitter
+    </a>
+    <a class="" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+       onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+      Facebook
+    </a>
+  </div>
 </aside>
 
 <aside class="tags">
+  <section class="tags-label">Теги:</section>
+  <div class="tags-list">
   {{#foreach tags}}
-    <a href="{{url}}">@{{name}}</a>
+    <a href="{{url}}" class="tag">
+      {{name}}
+    </a>
   {{/foreach}}
+  </div>
 </aside>
 
-<aside class="read-next outer">
-  <div class="inner">
-    <h3>Похожие: </h3>
+<aside class="suggestions outer">
+  <div class="prev-next">
+    {{#next_post}}
+      <div class="prev">
+          <section class="prev-title">
+            Раньше:
+          </section>
+          {{> "post-small"}}
+      </div>
+    {{/next_post}}
+    <div class="next">
+      <section class="next-title">
+        Дальше:
+      </section>
+      {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
+      {{#prev_post}}
+          {{> "post-small"}}
+      {{/prev_post}}
+    </div>
+  </div>
+  <div class="read-next">
+    <h3 class="read-next-title">Похожие cтатьи: </h3>
     <div class="read-next-feed">
       {{#get "posts" include="tags, author" filter="primary_tag:{{primary_tag.slug}}" limit="6"}}
         {{#foreach posts}}
@@ -76,5 +98,6 @@
       {{/get}}
     </div>
   </div>
+  
 </aside>
 {{/post}}

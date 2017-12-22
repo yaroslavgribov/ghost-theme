@@ -61,7 +61,10 @@ module.exports = {
     extensions: ['.js', '.styl', '.css'],
     modules: [path.join(__dirname, 'src'), 'node_modules']
   },
-
+  stats: {
+    colors: true,
+    errorDetails: false
+  },
   plugins: [
     new ExtractTextPlugin({
       filename: '[name].css'
