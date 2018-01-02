@@ -1,37 +1,83 @@
-<div id="navigation" class="header clearfloat2 {{#is "home"}}is-home{{/is}}">
-  <section class="header-container">
-    {{#if @blog.logo}}
-      <a class="logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
-    {{/if}}
-    <div class="menu navigation">
-      {{#foreach navigation limit="4"}}
-        <a href="{{url absolute="true"}}">{{label}}</a>
+{{!-- 
+  the point of that partial is that it is going to be shown on every page of the blog
+  how do we make it less annoying?
+--}}
+<div class="site-navigation" style="background-image: url({{@blog.cover_image}})">
+  <div id="navigation" class="header site-nav {{#is "home"}}is-home{{/is}}">
+    <div class="site-nav-left">
+      <!-- logo -->
+      <a class="site-logo logo" href="{{@blog.url}}">
+        {{> "icons/logo" }}
+      </a>
+
+      <!-- main site navigation -->
+      <nav class="menu navigation">
+        {{#foreach navigation limit="4"}}
+          <a href="{{url absolute="true"}}">{{label}}</a>
+        {{/foreach}}
+      </nav>
+    </div>
+    <div class="site-nav-right">
+      <!-- socials -->
+      <div class="social-links">
+        <a href="https://vk.com/public.cinemaholics" target="_blank" rel="noopener"><i class="icon-vk-no-border"></i></a>
+        <a href="https://twitter.com/cinemaholics_" target="_blank" rel="noopener"><i class="icon-tw-no-border"></i></a>
+        <a href="https://fb.com/cinemaholics" target="_blank" rel="noopener"><i class="icon-fb-no-border"></i></a>
+        <a href="https://t.me/cinemaholicsofficial" target="_blank" rel="noopener"><i class="icon-tg-no-border"></i></a>
+      </div>
+      <!-- mobile navigation -->
+      <div class="menu-button">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  
+  <article class="spotlight">
+    {{#get "posts" include="tags, author, excerpt" filter="featured:true" order="published_at desc"}}
+      {{#foreach posts limit="1"}}
+        <section class="spotlight-meta">
+          {{#author}}
+            <a href="{{url}}">{{name}}</a>
+          {{/author}} in 
+          {{#primary_tag}}
+          <a class="spotlight-tag" href="{{url}}">
+            {{name}}
+          </a>
+          {{/primary_tag}}
+        </section>
+        <a href="{{url}}" class="spotlight-content-link">
+          <header class="spotlight-title">
+            {{title}}
+          </header>
+          <section class="spotlight-excerpt">{{excerpt}}</section>
+        </a>
       {{/foreach}}
-    </div>
-    <button type="button" class="search-init js-searchStart">
-      <i class="icon-search_icon"></i>
-    </button>
-    <!-- Search -->
-    <section class="search-overlay js-searchOverlay">
-      <form id="search" class="search-overlay__form search-container js-searchContainer">
-        <input type="search" class="search-container__input js-searchInput" placeholder="Search">
-        <div class="search-container__results overlay">
-          <ul class="search-results js-searchResults">
-          </ul>
-        </div>
-        <img class="search-container__loading js-loadingSpin" src="{{asset "icons/loading.gif"}}" />
-      </form>
-      <button type="button" class="search-overlay__close js-searchClose">
-        <i class="icon-close"></i>
-      </button>
-    </section>
-    <!-- end Search-->
-    <div class="menu-button">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  <!-- end .header -->
-  </section>
+    {{/get}}
+  </article>
 </div>
+
+{{!-- gotta do something with this --}}
+
 <!-- End Header -->
+<!-- search -->
+{{!-- 
+<button type="button" class="search-init js-searchStart">
+  <i class="icon-search_icon"></i>
+</button>
+<section class="search-overlay js-searchOverlay">
+{{!-- 
+<form id="search" class="search-overlay__form search-container js-searchContainer">
+  <input type="search" class="search-container__input js-searchInput" placeholder="Search">
+  <div class="search-container__results overlay">
+    <ul class="search-results js-searchResults">
+    </ul>
+  </div>
+  <img class="search-container__loading js-loadingSpin" src="{{asset "icons/loading.gif"}}" />
+</form>
+  <button type="button" class="search-overlay__close js-searchClose">
+    <i class="icon-close"></i>
+  </button>
+</section>  
+--}}

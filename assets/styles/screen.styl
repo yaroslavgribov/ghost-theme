@@ -11,7 +11,11 @@
 @import "modules/header";
 @import "modules/footer";
 @import "modules/commercial";
+// -- main blog navigation
 @import "modules/menu";
+@import "modules/navigation";
+@import "modules/site-nav";
+// -- navigation
 @import "modules/news";
 @import "modules/search";
 @import "modules/suggestions";
@@ -24,6 +28,7 @@
 @import "components/post-card";
 @import "components/floating-header";
 @import "components/tags";
+@import "components/spotlight";
 
 @import "views/base"
 @import "views/default";
@@ -52,18 +57,6 @@
   }
 }
 @media all and (max-width:1280px) {
-  .logo {
-    max-width: 220px;
-  }
-
-  .header {
-    padding: 25px 0px;
-  }
-
-  .logo img {
-    max-width: 220px;
-  }
-
   .reklin h2 {
     padding-top: 10%;
     font-size: 18px;
@@ -98,44 +91,46 @@
     margin-right: 2px;
   }
 }
-	@media all and (max-width:1170px) {
-		.menu {
-			visibility: hidden;
-			margin-top: -9000px;
-		}
-		.menu-button {
-			padding: 18px;
-			display: block;
-		}
-		.search-init {
-			display: none;
-		}
-		body.pmt div.menu {
-			display: block;
-			position: absolute;
-			bottom: 0;
-			min-height: 500px;
-			top: 0;
-			left: 0;
-			right: 0;
-			z-index: 3;
-			overflow: hidden;
-			margin-left: 0;
-			background-color: #fbfbfb;
-			padding-top: 73px;
-			padding-bottom: 144px;
-			visibility: visible;
-			margin-top: 0px;
-			padding-right: 0px;
-		}
-		
-		 .menu-button {
-			-webkit-transform: translateX(0px);
-			-moz-transform: translateX(0px);
-			-ms-transform: translateX(0px);
-			transform: translateX(0px);
-		}
-	}
+
+@media all and (max-width:1170px) {
+  .menu {
+    visibility: hidden;
+    margin-top: -9000px;
+  }
+  .menu-button {
+    padding: 18px;
+    display: block;
+  }
+  .search-init {
+    display: none;
+  }
+  body.pmt div.menu {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    min-height: 500px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    overflow: hidden;
+    margin-left: 0;
+    background-color: #fbfbfb;
+    padding-top: 73px;
+    padding-bottom: 144px;
+    visibility: visible;
+    margin-top: 0px;
+    padding-right: 0px;
+  }
+  
+    .menu-button {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+
 @media all and (max-width:1170px) {
   .menu-button {
     padding: 18px;
@@ -337,14 +332,12 @@
   .fullnew .type {
     /*top: 10px;
     left: 10px;*/
-	font-size: 14px;
+	  font-size: 14px;
   }
 }
 
-@media all and (max-width:560px) {
-	.fullnew .type {
-	    left: 4.5%;
+@media all and (max-width:560px) 
+	.fullnew .type 
+    left: 4.5%;
 		top: 25px
-	}
-}
 /* MEDIA */

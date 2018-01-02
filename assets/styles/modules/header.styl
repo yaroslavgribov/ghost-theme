@@ -1,7 +1,9 @@
 .header {
-  padding: 10px 0px;
-  background: white;
+  padding: spacing;
   z-index: 10;
+
+  &:not(.is-home) {
+  }
 
   &.fixed {
     position: fixed;
@@ -25,6 +27,7 @@
     }
   }
 }
+
 .sidebar1 {
   float: left;
   padding: 20px;
@@ -72,18 +75,16 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
   color: #FFF;
 }
 
-.logo img {
-  height: 60px;
+.logo svg {
+  width: 100%
   position: relative;
   z-index: 101;
 }
+
 .whiteplank {
   height: 36%;
   position: absolute;
   z-index: 1;
   width: 100%;
   background-color: #fff;
-}
-.logo {
-  float: left;
 }

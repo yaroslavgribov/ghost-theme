@@ -14,19 +14,12 @@
 </head>
 
 <body class="{{body_class}} nav-closed">
-  <div class="whiteplank"></div>
-
   {{navigation}}
-
+  
   <div class="container">
-    <div class="slider">
-      <img class="js-mainImageContainer" src="{{@blog.cover_image}}" />
-    </div>
 
     {{> "promo" }} 
-    {{^is "post, page, home"}} 
-      {{> "news" }} 
-    {{/is}} 
+     
     {{{body}}} 
   </div>
   {{> "footer"}} 

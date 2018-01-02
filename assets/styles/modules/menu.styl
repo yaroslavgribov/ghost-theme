@@ -1,5 +1,4 @@
 .menu {
-  float: right;
   position: relative;
   z-index: 4;
   padding-right: 50px;
@@ -7,24 +6,22 @@
 
 .menu a 
   heading()
-
   display: block;
-  float: left;
-  color: #1c0f06;
+  color: white;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 16px;
-  padding-left: 25px;
-  line-height: 60px;
-  transition: all .2s ease-in-out;
-  
+  margin: 0 12px
+  border-bottom-color transparent 
+  border-bottom-style solid 
+  border-bottom-width 1px
+  transition: border .2s ease-in-out
+
 	@media(max-width: 1470px) 
 		font-size: 14px;
-		padding-left: 20px;
 	
 .menu a:hover {
-  color: #000;
+  border-bottom-color white
 }
 
 .menu-button {
