@@ -1,0 +1,28 @@
+{{!-- This partial should be used where author context exists e.g. post.hbs, author.hbs --}} 
+{{#author}}
+<section class="author">
+  <a href="{{url}}" class="author__url">{{name}}</a>
+  {{#if location}}
+    {{location}}
+  {{/if}}
+  {{#if bio}}
+    {{bio}} - the bio of the author
+  {{/if}}
+  <aside class="share">
+    <div class="share-label">Следи за мной еще: </div>
+    <div class="share-list">
+      {{#if website}}
+        <a href="{{website}}">Check out my Website</a> 
+      {{/if}}
+      {{#if twitter}}
+        <a href="{{twitter_url}}">Follow me on Twitter</a>
+      {{/if}}
+      {{#if facebook}}
+        <a href="{{facebook_url}}">Follow me on Facebook</a>
+      {{/if}}
+    </div>
+  </aside>
+  <img src="{{img_url profile_image}}" alt="Author's Profile Image"> - the profile image associated with the author (img_url helper)
+  <img src="{{img_url cover_image}}" alt="Author's Cover Image"> - the author's cover image (img_url helper)
+</section>
+{{/author}}

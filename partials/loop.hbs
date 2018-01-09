@@ -5,20 +5,20 @@
 
 {{!-- This is the post loop - each post will be output using this markup --}}
 <div class="mateblock">
-    <div class="post-feed">
-        {{#foreach posts limit="11"}}
-            {{> "post-card" }}
-        {{/foreach}}
-    </div>
+  <div class="post-feed posts-list">
+    {{#foreach posts limit="11"}}
+      {{> "post-card" }}
+    {{/foreach}}
+  </div>
 </div>
 
 <button type="button" id="load-posts" class="button more">
-    показать больше
+  показать больше
 </button> 
 
 {{#if pagination.pages}}
-    <script>
-        var maxPages = parseInt('{{pagination.pages}}');
-    </script>
+  <script>
+    var maxPages = parseInt('{{pagination.pages}}');
+  </script>
 {{/if}}
 {{!-- Previous/next page links - displayed on every page --}}
