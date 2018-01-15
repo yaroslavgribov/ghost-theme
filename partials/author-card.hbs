@@ -1,0 +1,34 @@
+{{!-- This partial should be used where author context exists e.g. post.hbs, author.hbs --}} 
+{{#author}}
+<section class="author-card">
+  <a href="{{url}}" class="author-name">{{name}}</a>
+  {{#if profile_image}}
+    <img class="author-image" src="{{img_url profile_image}}" alt="{{name}}">
+  {{/if}}
+  {{#if location}}
+    {{location}}
+  {{/if}}
+  <section class="author-card-content">
+    {{#if bio}}
+      {{bio}} - the bio of the author
+    {{/if}}
+    <aside class="share">
+      <div class="share-list">
+        {{#if website}}
+          <a href="{{website}}"><i class="icon icon-sphere"></i></a> 
+        {{/if}}
+        {{#if twitter}}
+          <a href="{{twitter_url}}">
+            <i class="icon icon-tw-no-border"></i>
+          </a>
+        {{/if}}
+        {{#if facebook}}
+          <a href="{{facebook_url}}">
+            <i class="icon icon-fb-no-border"></i>
+          </a>
+        {{/if}}
+      </div>
+    </aside>
+  </section>
+</section>
+{{/author}}

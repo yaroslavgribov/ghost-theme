@@ -7,9 +7,15 @@
   "license": "MIT",
   "gpm": {
     "type": "theme",
-    "categories": ["Minimal", "Personal Blogs"]
+    "categories": [
+      "Minimal",
+      "Personal Blogs"
+    ]
   },
-  "keywords": ["ghost", "theme"],
+  "keywords": [
+    "ghost",
+    "theme"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/yaroslavgribov/ghost-theme"
@@ -19,7 +25,9 @@
     "email": "yaroslavgribov@yandex.ru",
     "name": "Yaroslav Gribov"
   },
-  "contributors": ["https://github.com/yaroslavgribov/"],
+  "contributors": [
+    "https://github.com/yaroslavgribov/"
+  ],
   "dependencies": {
     "autoprefixer": "^7.2.3",
     "babel-core": "^6.25.0",
