@@ -2,19 +2,36 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 <main id="content" class="content js-content {{body_class}}" role="main">
-
-{{#get "posts" filter="primary_tag:newsblock"}}
-  <section class="posts">
-    <header class="posts-title">Последние новости: </header>
-    <section class="posts-list">
-    {{#foreach posts limit="6"}}
-      {{> "post-small"}}
-    {{/foreach}}
-    </section>
+<section class="highlight">
+  <section class="news">
+    {{#get "posts" include="tags" filter="primary_tag:newsblock"}}
+      {{#foreach posts limit="6"}}
+        <article class="post-card-small">
+          {{#primary_tag}}
+            <a href="{{slug}}" class="tag">{{name}}</a>
+          {{/primary_tag}}
+          <a href="{{url}}">
+            {{title}}
+            {{excerpt words="8"}}
+          </a>
+        </article>
+      {{/foreach}}
+    {{/get}}
+    <a class="btn btn-sm" href="/tag/newsblock">
+      Еще новости
+    </a>
   </section>
-{{/get}}
+  <section class="posts">
+    {{#get "posts" include="tags, author, excerpt" filter="featured:true" order="published_at desc"}}
+      {{#foreach posts limit="1"}}
+        {{> "featured-post"}}
+      {{/foreach}}
+    {{/get}}
+    </article>
+  </section>
+</section>
 
-{{#get "posts" filter="primary_tag:reviews"}}
+{{#get "posts" include="author,tags" filter="primary_tag:reviews"}}
   <section class="posts">
     <header class="posts-title">Рецензии: </header>
     <section class="posts-list">
@@ -25,7 +42,7 @@
   </section>
 {{/get}}
 
-{{#get "posts" filter="primary_tag:movies"}}
+{{#get "posts" include="author,tags" filter="primary_tag:movies"}}
   <section class="posts">
     <header class="posts-title">Про кино: </header>
     <section class="posts-list">
@@ -36,7 +53,7 @@
   </section>     
 {{/get}}
 
-{{#get "posts" filter="primary_tag:shows"}}
+{{#get "posts" include="author,tags" filter="primary_tag:shows"}}
   <section class="posts">
     <header class="posts-title">Про сериалы: </header>
     <section class="posts-list">
@@ -47,7 +64,7 @@
   </section> 
 {{/get}}
 
-{{#get "posts" filter="primary_tag:events"}}
+{{#get "posts" include="author,tags" filter="primary_tag:events"}}
   <section class="posts">
     <header class="posts-title">Про события: </header>
     <section class="posts-list">

@@ -34,28 +34,7 @@
     </div>
   </div>
   
-  <article class="spotlight">
-    {{#get "posts" include="tags, author, excerpt" filter="featured:true" order="published_at desc"}}
-      {{#foreach posts limit="1"}}
-        <section class="spotlight-meta">
-          {{#author}}
-            <a href="{{url}}">{{name}}</a>
-          {{/author}} in 
-          {{#primary_tag}}
-          <a class="spotlight-tag" href="{{url}}">
-            {{name}}
-          </a>
-          {{/primary_tag}}
-        </section>
-        <a href="{{url}}" class="spotlight-content-link">
-          <header class="spotlight-title">
-            {{title}}
-          </header>
-          <section class="spotlight-excerpt">{{excerpt}}</section>
-        </a>
-      {{/foreach}}
-    {{/get}}
-  </article>
+  
 </div>
 
 {{!-- gotta do something with this --}}

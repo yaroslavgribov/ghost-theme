@@ -37,9 +37,11 @@
 }
 
 .container {
+  display: flex;
+  flex-direction: row;
   z-index: 2;
   max-width: 1700px;
-  padding: 0px 50px;
+  padding: 0 spacing-large;
   margin: 0 auto;
   position: relative;
 }
@@ -62,9 +64,8 @@
   &.home-template 
     display flex
     flex-direction column
-    margin 0
-
-
+    margin: 0
+        
 .image {
   max-width: 100%;
 
@@ -84,6 +85,12 @@
       -moz-transform: translate(-50%, -50%);
     }
   }
+}
+
+.sidebar2 {
+  order: 2;
+  max-width: 380px;
+  width: 22.35294117647059%;
 }
 
 body.pmt {
