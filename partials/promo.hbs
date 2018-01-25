@@ -1,4 +1,22 @@
 <div class="sidebar2">
+  <section class="news">
+    {{#get "posts" include="tags" filter="primary_tag:newsblock"}}
+      {{#foreach posts limit="6"}}
+        <article class="post-card-small">
+          {{#primary_tag}}
+            <a href="{{slug}}" class="tag">{{name}}</a>
+          {{/primary_tag}}
+          <a href="{{url}}">
+            {{title}}
+            {{excerpt words="8"}}
+          </a>
+        </article>
+      {{/foreach}}
+    {{/get}}
+    <a class="btn btn-sm" href="/tag/newsblock">
+      Еще новости
+    </a>
+  </section>
   {{#get "posts" filter="tags:commercial"}}
     {{#foreach posts limit="1"}}
       <a href="{{url}}">

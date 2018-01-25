@@ -40,32 +40,37 @@
   display: flex;
   flex-direction: row;
   z-index: 2;
-  max-width: 1700px;
-  padding: 0 spacing-large;
+  max-width: 128rem;
+  padding: 0 base-spacing;
   margin: 0 auto;
   position: relative;
 }
 
-.content 
+.content {
   padding: spacing-large 0;
-  margin: 0 25.35294117647059%;
 
-  &--post 
-    margin: 0 25.35294117647059% 0 0;
-
-  &.full 
+  &--post {
     margin: 0;
+    flex: 1 1 100rem;
+  }
 
-    .button.more 
+  &.full {
+    margin: 0;
+    
+    .button.more {
       max-width: 46%;
       margin: 0 auto;
+    }
+  }
+    
 
-
-  &.home-template 
+  &.home-template {
     display flex
     flex-direction column
     margin: 0
-        
+  }
+}
+
 .image {
   max-width: 100%;
 
@@ -88,9 +93,7 @@
 }
 
 .sidebar2 {
-  order: 2;
-  max-width: 380px;
-  width: 22.35294117647059%;
+  flex: 0 0 28rem;
 }
 
 body.pmt {

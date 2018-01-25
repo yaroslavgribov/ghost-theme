@@ -1,8 +1,17 @@
 {{!< default}}
 
-<section class="posts">
+<section class="content newsblock">
 {{#foreach posts}}
-  <p>{{title}}</p>
+  <section class="post">
+    <figure>
+      {{#has tag="slowpoke"}} 
+      <img src="https://thumbs.gfycat.com/SmoggyFocusedGuernseycow-max-1mb.gif" /> 
+      {{else}}
+      <img src="{{feature_image}}" /> 
+      {{/has}}
+    </figure>
+    <p><b>{{title}}</b> {{excerpt words="20"}}</p>
+  </section>
 {{/foreach}}
 </section>
 

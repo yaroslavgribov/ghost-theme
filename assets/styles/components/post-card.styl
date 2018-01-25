@@ -1,19 +1,14 @@
 .post-card 
+  position: relative;
   display: flex;
-  -ms-flex: 1 1 300px;
-  flex: 1 1 300px;
-  -ms-flex-direction: column;
+  flex: 1 1 230px;
   flex-direction: column;
   overflow: hidden;
   margin: 0 20px 40px;
   min-height: 300px;
   background: #fff 50%;
   background-size: cover;
-  border-radius: 0;
-  box-shadow: 12px 14px 38px rgba(39, 44, 49, 0.06),
-    1px 3px 8px rgba(39, 44, 49, 0.03);
   transition: all 0.5s ease;
-  border: solid 2px black
   // Possible improvement to distint between posts
   // .posts-list & 
   //   &:nth-child(2n)
@@ -55,6 +50,11 @@
   //   transition: all .3s ease;
   //   transform: translate3D(0,-1px,0);
   
+  .tag 
+    position: absolute;
+    top: 0;
+    left: 0;
+
   a 
     text-decoration: none;
 
@@ -76,12 +76,12 @@
 
   &__excerpt 
     p 
-      font: 14px/1.25 'PT Serif', serif;
+      font: 16px/1.25 'PT Serif', serif;
       margin: 0 0 1.5em;
 
   &__meta 
     padding: 0 20px 20px;
-    font: 14px/1.25 'PT Serif', serif;
+    font: 16px/1.25 'PT Serif', serif;
     
     a 
       color: heading-color-active;
@@ -104,10 +104,10 @@
     flex-grow: 1;
     text-decoration: none;
     padding: 20px 20px 0;
-    color: $text-color-default;
+    color: text-color-default;
 
 .post-card-title 
-  font-size: 16px;
+  font-size: 22px;
   margin: 0 0 .5em;
   transition: all 0.2s, transform 0.2s;
 

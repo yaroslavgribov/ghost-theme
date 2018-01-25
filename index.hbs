@@ -3,31 +3,19 @@
 
 <main id="content" class="content js-content {{body_class}}" role="main">
 <section class="highlight">
-  <section class="news">
-    {{#get "posts" include="tags" filter="primary_tag:newsblock"}}
-      {{#foreach posts limit="6"}}
-        <article class="post-card-small">
-          {{#primary_tag}}
-            <a href="{{slug}}" class="tag">{{name}}</a>
-          {{/primary_tag}}
-          <a href="{{url}}">
-            {{title}}
-            {{excerpt words="8"}}
-          </a>
-        </article>
-      {{/foreach}}
-    {{/get}}
-    <a class="btn btn-sm" href="/tag/newsblock">
-      Еще новости
-    </a>
-  </section>
   <section class="posts">
-    {{#get "posts" include="tags, author, excerpt" filter="featured:true" order="published_at desc"}}
-      {{#foreach posts limit="1"}}
-        {{> "featured-post"}}
-      {{/foreach}}
-    {{/get}}
-    </article>
+    <section class="posts-list">
+      {{#get "posts" include="tags, author, excerpt" filter="featured:true" order="published_at desc"}}
+        {{#foreach posts limit="1"}}
+          {{> "featured-post"}}
+        {{/foreach}}
+      {{/get}}
+      {{#get "posts" include="tags, author, excerpt" filter="tags:-newsblock" order="published_at desc"}}
+        {{#foreach posts limit="3"}}
+          {{> "post-card"}}
+        {{/foreach}}
+      {{/get}}
+    </section>
   </section>
 </section>
 
@@ -35,7 +23,7 @@
   <section class="posts">
     <header class="posts-title">Рецензии: </header>
     <section class="posts-list">
-    {{#foreach posts limit="6"}}
+    {{#foreach posts limit="5"}}
       {{> "post-card"}}
     {{/foreach}}
     </section>
