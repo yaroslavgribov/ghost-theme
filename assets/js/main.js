@@ -1,6 +1,7 @@
 import toggleBanner from './helpers/toggleBanner'
 import { hideMainBanner, insertPost, splitDateAndTitle } from './helpers'
 import loadposts from './helpers/loadposts'
+import './counters'
 import './modules/search'
 import './modules/scroll'
 // import './modules/infinitescroll'
