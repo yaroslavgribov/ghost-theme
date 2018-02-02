@@ -1,0 +1,32 @@
+<header id="navigation" class="header">
+    <nav class="nav inner">
+
+      {{#if @blog.logo}}
+        <a class="logo" href="{{@blog.url}}">
+          <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+        </a>
+      {{/if}}
+
+      <ul class="menu">
+        {{#foreach navigation}}
+        <li>
+          <a href="{{url absolute="true"}}">{{label}}</a>
+        </li>
+        {{/foreach}}
+      </ul>
+
+      <button type="button" class="search-init js-searchStart">
+        <i class="icon-search_icon"></i>
+      </button>
+
+      <div class="menu-button">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <!-- Search -->
+    <!-- end .header -->
+
+    </nav>
+</header>
+<!-- End Header -->

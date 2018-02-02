@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> {{!-- Page Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" /> {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> {{!-- Brand icon --}}
+    <link rel="shortcut icon" href="{{asset "/favicon.ico"}}"> {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "dist/main.css"}}" />
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'> {{!-- Ghost outputs important style and meta data with this tag --}} {{ghost_head}}
+</head>
+
+<body class="{{body_class}} nav-closed">
+    {{!-- The blog navigation links --}} 
+    {{navigation}}
+
+    <div class="slider container">
+        <img class="js-mainImageContainer" src="{{@blog.cover_image}}" /> {{!--
+        <button type="button" name="button" class="js-toggleBanner">
+            Toggle
+        </button>--}}
+    </div>
+    <main class="inner container">
+        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}} 
+        {{{body}}} 
+        {{!-- The tiny footer at the very bottom --}}
+        <aside class="sidebar">
+            {{#is "post, page"}} 
+            {{else}} 
+            {{> "news" }} 
+            {{/is}} 
+
+            {{> "promo" }} 
+        </aside>
+    </main>
+    <div class="footer">
+        <div class="prefot">
+            <div class="sidebar2"> <a href="/contacts" class="feeadback"> Обратная связь </a> <a href="/" class="copyright"> Создание сайта — Gootica </a>                </div>
+            <div class="sidebar1"> <a href="{{@blog.url}}" class="logosmall"> <img src="{{asset "logosmall.png"}}"/> </a> {{@blog.title}} &copy;
+                {{date format="YYYY"}}
+                <div class="socials">
+                    <a href="https://vk.com/public.cinemaholics">
+                      <img src="{{asset "icons/ico_vk.png"}}" />
+                    </a>
+                    <a href="http://twitter.com/cinemaholics_"><img src="{{asset "icons/ico_tw.png"}}" /></a>
+                    <a href="http://facebook.com/cinemaholics"><img src="{{asset "icons/ico_mord.png"}}" /></a>
+                    <a href="https://instagram.com/thecinemaholics"><img src="{{asset "icons/ico_inst.png"}}" /></a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="footmenu">
+                    <a href="/help/">Помощь</a>
+                    <a href="/about/">О сайте </a>
+                    <a href="/commercial-cinemaholics/">Рекламодателям </a>
+                    <a href="/rules-dont-apply/">Соглашения и правила</a>
+                    <a href="/you-gotta-work-bitch/">Вакансии </a>
+                    <!--<a href="/">Контакты</a>-->
+                </div>
+            </div>
+        </div>a
+    </div>
+    <section class="search-overlay js-searchOverlay">
+        <form id="search" class="search-overlay__form search-container js-searchContainer">
+            <input type="search" class="search-container__input js-searchInput" placeholder="Search">
+            <div class="search-container__results overlay">
+                <ul class="search-results js-searchResults">
+                </ul>
+            </div>
+            <div class="nothing">
+                <heading>Мы ничего не нашли! Но вот отличные посты взамен.</heading>
+                <div class="post-feed">
+                    {{#get "posts" include="author, tags, excerpt" filter="featured:false"}}
+                        {{#foreach posts limit="3"}}
+                        <article class="block block--search">
+                            <a href="{{url}}">
+                                <h2 class="post-title">
+                                    {{title}}
+                                    <p datetime="{{date published_at timeago="true" format="DD/MM/YYYY"}}">
+                                        {{date published_at format="DD/MM/YYYY"}}
+                                    </p>
+                                </h2>
+                            </a>
+                        </article>
+                        {{/foreach}}
+                    {{/get}}
+                </div>
+            </div>
+        <img class="search-container__loading js-loadingSpin" src="{{asset "icons/loading.gif"}}" />
+        </form>
+        <button type="button" class="search-overlay__close js-searchClose">
+            <i class="icon-close"></i>
+        </button>
+    </section>
+    <!-- end Search-->
+        
+    {{#if pagination.pages}}
+    <script>
+        var maxPages = parseInt('{{pagination.pages}}');
+    </script>
+    {{/if}}
+
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    {{!-- Ghost outputs important scripts and data with this tag --}} {{ghost_foot}} {{!-- Fitvids makes video embeds responsive
+    and awesome --}}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    {{!-- The main JavaScript file for Casper --}}
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script type="text/javascript" src="{{asset "dist/main.js"}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<section class="recent">
+  <!-- news block daily-->
+  {{#get "posts" include="excerpt, tags, published_at" filter="tags:newsblock+feature_image:-null" limit="8"}}
+    <div class="newsfeed">
+    {{#foreach posts}}
+      <article class="news">
+        <header class="news-meta">
+          {{#primary_tag}}
+            <a href="{{slug}}">
+              <span class="tag">{{name}}</span>
+            </a>
+          {{/primary_tag}}
+          {{date format="DD MMM YYYY HH:mm"}}
+        </header>
+        <a class="news-content"href="{{url}}">
+          <sub>{{excerpt words="10"}}</sub>
+        </a>
+      </article>
+    {{/foreach}}
+    </div>
+    <a href="/tag/newsblock" class="button">
+      <span>еще новости</span>
+    </a>
+  {{/get}}
+  <!-- end news block -->
+</section>

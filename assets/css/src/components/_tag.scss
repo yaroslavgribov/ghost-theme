@@ -1,0 +1,14 @@
+.tag, a.tag {
+  background: black;
+  padding: 3px 5px;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  height: 25px;
+  line-height: 20px;
+  transform-origin: 0% 100%;
+  text-align: right;
+  margin-right: $spacing-small;
+  text-transform: uppercase;
+  font-family: $font-family-regular;
+}

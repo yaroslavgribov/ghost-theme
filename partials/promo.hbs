@@ -1,0 +1,25 @@
+<div class="sidebar2">
+  {{#get "posts" filter="tags:commercial"}}
+    {{#foreach posts limit="1"}}
+    <a href="{{url}}">
+        <img src="{{img_url feature_image}}" class="banner" />
+    </a>
+    {{/foreach}}
+  {{/get}}
+
+  {{#get "posts" filter="tags:incinemas"}}
+      {{#foreach posts limit="1"}}
+      <div class="poster">
+        <a href="{{url}}" class="poster__content">
+          <figure>
+              <img src="{{img_url feature_image}}">
+          </figure>
+          <h2 class="js-titleContainer">{{title}}</h2>
+          <h4 class="js-dateContainer"></h4>       
+        </a>
+      </div>
+      {{/foreach}}
+  {{/get}}
+
+    <!-- end .sidebar2 -->
+</div>
