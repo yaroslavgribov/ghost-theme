@@ -1,0 +1,72 @@
+.fltrt {
+  float: right;
+  margin-left: 8px;
+}
+.fltlft {
+  float: left;
+  margin-right: 8px;
+}
+
+.rela {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.container {
+  z-index: 2;
+  max-width: 1280px;
+  padding: 0px base-spacing;
+  margin: 0 auto;
+  position: relative;
+}
+
+.inner {
+  max-width: 128rem;
+  margin: 0 auto;
+  display: flex;
+  padding: 0 base-spacing;
+  flex-direction: row;
+}
+
+.content {
+  margin-right: base-spacing;
+
+  &.full {
+    margin: 0;
+
+    .button.more {
+      max-width: 46%;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+.content ul, .content ol {
+  padding: 0 15px 15px 40px;
+}
+
+.image {
+  max-width: 100%;
+
+  &--rounded {
+    position: relative;
+    border-radius: 100%;
+    vertical-align: center;
+    text-align: center;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+    }
+  }
+}
+
+body.pmt {
+  overflow: hidden;
+}
