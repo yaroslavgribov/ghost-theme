@@ -29,7 +29,7 @@
         {{{body}}} 
         {{!-- The tiny footer at the very bottom --}}
         <aside class="sidebar">
-            {{#is "post, page"}} 
+            {{#is "page, post"}} 
             {{else}} 
             {{> "news" }} 
             {{/is}} 
@@ -37,32 +37,7 @@
             {{> "promo" }} 
         </aside>
     </main>
-    <div class="footer">
-        <div class="prefot">
-            <div class="sidebar2"> <a href="/contacts" class="feeadback"> Обратная связь </a> <a href="/" class="copyright"> Создание сайта — Gootica </a>                </div>
-            <div class="sidebar1"> <a href="{{@blog.url}}" class="logosmall"> <img src="{{asset "logosmall.png"}}"/> </a> {{@blog.title}} &copy;
-                {{date format="YYYY"}}
-                <div class="socials">
-                    <a href="https://vk.com/public.cinemaholics">
-                      <img src="{{asset "icons/ico_vk.png"}}" />
-                    </a>
-                    <a href="http://twitter.com/cinemaholics_"><img src="{{asset "icons/ico_tw.png"}}" /></a>
-                    <a href="http://facebook.com/cinemaholics"><img src="{{asset "icons/ico_mord.png"}}" /></a>
-                    <a href="https://instagram.com/thecinemaholics"><img src="{{asset "icons/ico_inst.png"}}" /></a>
-                </div>
-            </div>
-            <div class="content">
-                <div class="footmenu">
-                    <a href="/help/">Помощь</a>
-                    <a href="/about/">О сайте </a>
-                    <a href="/commercial-cinemaholics/">Рекламодателям </a>
-                    <a href="/rules-dont-apply/">Соглашения и правила</a>
-                    <a href="/you-gotta-work-bitch/">Вакансии </a>
-                    <!--<a href="/">Контакты</a>-->
-                </div>
-            </div>
-        </div>a
-    </div>
+    {{> "footer"}}
     <section class="search-overlay js-searchOverlay">
         <form id="search" class="search-overlay__form search-container js-searchContainer">
             <input type="search" class="search-container__input js-searchInput" placeholder="Search">
