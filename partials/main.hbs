@@ -10,10 +10,6 @@
             {{> "post-card"}}
         {{/foreach}}
     {{/get}}
-<<<<<<< HEAD
-    {{#get "posts" include="tags, author, excerpt" filter="primary_tag:-newsblock+featured:false" limit="15"}}
-        {{#foreach posts}}
-=======
     </div>
 
 <h1 style="font-size: 30px">Рецензии</h1>
@@ -63,8 +59,8 @@
     {{#get "posts" include="tags, author, excerpt" filter="primary_tag:events+featured:false" limit="6"}}
         {{#foreach posts}}
             {{^has tag="newsblock"}}
->>>>>>> f5a483b2c0ce0fd8bed140ed186204044a8d7a47
             {{> "post-card"}}
+            {{/has}}
         {{/foreach}}
     {{/get}}
 </div>
