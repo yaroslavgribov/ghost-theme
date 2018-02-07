@@ -1,0 +1,31 @@
+heading(size = 16px) {
+  font bold size font-family-regular
+  text-transform uppercase
+  letter-spacing letter-spacing-headings
+}
+
+link() 
+  text-decoration underline
+  &:hover
+    text-decoration none
+
+link-reverse()
+  text-decoration none
+  &:hover
+    text-decoration underline
+
+borderify(borderColor = white)
+  border-bottom-color transparent
+  border-bottom-style solid 
+  border-bottom-width 1px
+  transition border-bottom .2s ease-in-out
+  &:hover
+    border-bottom-color borderColor
+
+borderify-reverse(borderColor = white)
+  border-bottom-color borderColor
+  border-bottom-style solid 
+  border-bottom-width 1px
+  transition border-bottom .2s ease-in-out
+  &:hover
+    border-bottom-color transparent

@@ -4,8 +4,7 @@
 
 .read-next-title {
   margin: spacing-large 0;
-  font-family: font-family-regular;
-  font-size: 30px;
+  heading(30px)
 }
 
 .prev-next {
@@ -27,6 +26,15 @@
 }
 .read-next-feed {
   display: flex;
-  flex-flow: row wrap;
-  margin: 0 -20px;
+  flex-flow: column wrap;
+  margin-left: -(spacing-large);
+  margin-right: -(spacing-large);
+
+  .post-card {
+    min-height: 0;
+    flex: 1;
+    margin: 0 base-spacing;
+
+    border-top: solid 1px black;
+  }
 }

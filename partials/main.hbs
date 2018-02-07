@@ -10,12 +10,61 @@
             {{> "post-card"}}
         {{/foreach}}
     {{/get}}
+<<<<<<< HEAD
     {{#get "posts" include="tags, author, excerpt" filter="primary_tag:-newsblock+featured:false" limit="15"}}
         {{#foreach posts}}
+=======
+    </div>
+
+<h1 style="font-size: 30px">Рецензии</h1>
+<div class="mateblock postfeed">
+    {{#get "posts" include="tags, author, excerpt" filter="primary_tag:review+featured:false"}}
+        {{#foreach posts limit="6"}}
+            {{^has tag="newsblock"}}
+            {{> "post-card"}}
+            {{/has}}
+        {{/foreach}}
+    {{/get}}
+</div>
+
+<h1 style="font-size: 30px">Топ</h1>
+<div class="mateblock postfeed">
+    {{#get "posts" include="tags, author, excerpt" filter="primary_tag:top+featured:false"}}
+        {{#foreach posts limit="6"}}
+            {{^has tag="newsblock"}}
+            {{> "post-card"}}
+            {{/has}}
+        {{/foreach}}
+    {{/get}}
+</div>
+
+<h1 style="font-size: 30px">Сериалы</h1>
+<div class="mateblock postfeed">
+    {{#get "posts" include="tags, author, excerpt" filter="primary_tag:shows+featured:false" limit="6"}}
+        {{#foreach posts}}
+            {{^has tag="newsblock"}}
+            {{> "post-card"}}
+            {{/has}}
+        {{/foreach}}
+    {{/get}}
+</div>
+<h1 style="font-size: 30px">Интервью</h1>
+<div class="mateblock postfeed">
+    {{#get "posts" include="tags, author, excerpt" filter="primary_tag:interviews+featured:false" limit="6"}}
+        {{#foreach posts}}
+            {{^has tag="newsblock"}}
+            {{> "post-card"}}
+            {{/has}}
+        {{/foreach}}
+    {{/get}}
+</div>
+<h1 style="font-size: 30px">События</h1>
+<div class="mateblock postfeed">
+    {{#get "posts" include="tags, author, excerpt" filter="primary_tag:events+featured:false" limit="6"}}
+        {{#foreach posts}}
+            {{^has tag="newsblock"}}
+>>>>>>> f5a483b2c0ce0fd8bed140ed186204044a8d7a47
             {{> "post-card"}}
         {{/foreach}}
     {{/get}}
 </div>
-<button type="button" id="load-posts" class="button more">
-    показать больше
-</button>
