@@ -12,7 +12,6 @@
     {{/get}}
     </div>
 
-<h1 style="font-size: 30px">Рецензии</h1>
 <div class="mateblock postfeed">
     {{#get "posts" include="tags, author, excerpt" filter="primary_tag:review+featured:false"}}
         {{#foreach posts limit="6"}}
@@ -23,7 +22,6 @@
     {{/get}}
 </div>
 
-<h1 style="font-size: 30px">Топ</h1>
 <div class="mateblock postfeed">
     {{#get "posts" include="tags, author, excerpt" filter="primary_tag:top+featured:false"}}
         {{#foreach posts limit="6"}}
@@ -34,7 +32,6 @@
     {{/get}}
 </div>
 
-<h1 style="font-size: 30px">Сериалы</h1>
 <div class="mateblock postfeed">
     {{#get "posts" include="tags, author, excerpt" filter="primary_tag:shows+featured:false" limit="6"}}
         {{#foreach posts}}
@@ -44,7 +41,6 @@
         {{/foreach}}
     {{/get}}
 </div>
-<h1 style="font-size: 30px">Интервью</h1>
 <div class="mateblock postfeed">
     {{#get "posts" include="tags, author, excerpt" filter="primary_tag:interviews+featured:false" limit="6"}}
         {{#foreach posts}}
@@ -54,7 +50,6 @@
         {{/foreach}}
     {{/get}}
 </div>
-<h1 style="font-size: 30px">События</h1>
 <div class="mateblock postfeed">
     {{#get "posts" include="tags, author, excerpt" filter="primary_tag:events+featured:false" limit="6"}}
         {{#foreach posts}}

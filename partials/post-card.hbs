@@ -1,10 +1,8 @@
 <article class="post-card {{post_class}}">
   {{#if primary_tag}}
-    {{^is "home"}}
     {{#primary_tag}}
     <a class="tag" href="{{url}}"><span>{{name}}</span></a>
     {{/primary_tag}}
-    {{/is}}
   {{/if}}
   {{#if feature_image}}
   <a class="post-card-image__link" href="{{url}}">
