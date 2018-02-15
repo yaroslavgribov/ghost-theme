@@ -1,6 +1,12 @@
 .post-meta
   font-family font-family-regular
-  padding: spacing-large spacing-extralarge
+  font-size font-size-xs
+  padding spacing-large base-spacing
+
+  @media phone
+    font-size inherit
+    padding spacing-large spacing-extralarge
+    
 
   .post-meta-author 
     link-reverse()
@@ -15,11 +21,20 @@
 
     li
       display inline-block
-      margin-right spacing
+      margin-left 0
+
+      & + li 
+        margin-left spacing
+        
 
 .post-main-title
+  heading(18px)
+  margin-bottom 0
+
+  @media phone
     heading(30px)
-    margin-bottom 0
+    
+
 
 
 .fullnew .type {

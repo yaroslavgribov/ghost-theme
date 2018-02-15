@@ -1,10 +1,10 @@
 .header {
-  padding: spacing-large 0px;
+  margin-bottom: base-spacing;
   background: white;
   z-index: 10;
 
-  @media all and (max-width:1280px) {
-    padding: base-spacing 0px;
+  @media tablet {
+    padding: spacing-large 0px;
   }
 
   &.fixed {
@@ -21,8 +21,17 @@
 }
 
 .nav {
+  position: relative;
+  
+  flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+
+  height: 6rem;
+
+  @media tablet {
+    height: auto;  
+  }
 
   .logo  {
     width: 100%;
@@ -34,7 +43,6 @@
 
     @media all and (max-width:1170px) {
       max-width: 236px;
-      margin-top: 8px;
     }
   }
 }

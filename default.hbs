@@ -18,12 +18,6 @@
     {{!-- The blog navigation links --}} 
     {{navigation}}
 
-    <div class="slider container">
-        <img class="js-mainImageContainer" src="{{@blog.cover_image}}" /> {{!--
-        <button type="button" name="button" class="js-toggleBanner">
-            Toggle
-        </button>--}}
-    </div>
     <main class="inner container">
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}} 
         {{{body}}} 
@@ -36,7 +30,7 @@
     {{> "footer"}}
     <section class="search-overlay js-searchOverlay">
         <form id="search" class="search-overlay__form search-container js-searchContainer">
-            <input type="search" class="search-container__input js-searchInput" placeholder="Search">
+            <input type="search" name="search" class="search-container__input js-searchInput" placeholder="Искать...">
             <div class="search-container__results overlay">
                 <ul class="search-results js-searchResults">
                 </ul>
@@ -46,15 +40,28 @@
                 <div class="post-feed">
                     {{#get "posts" include="author, tags, excerpt" filter="featured:false"}}
                         {{#foreach posts limit="3"}}
-                        <article class="block block--search">
-                            <a href="{{url}}">
-                                <h2 class="post-title">
-                                    {{title}}
-                                    <p datetime="{{date published_at timeago="true" format="DD/MM/YYYY"}}">
-                                        {{date published_at format="DD/MM/YYYY"}}
-                                    </p>
-                                </h2>
-                            </a>
+                        <article class="post post-card block--search">
+                            <div class="post-card__content post-card-content">
+                                <a class="post-card-content__link" href="{{url}}">
+                                    <header class="post-card__header">
+                                        <h2 class="post-card-title">
+                                            {{title}}
+                                        </h2>
+                                    </header>
+                                
+                                    <section class="post-card__excerpt">
+                                        <p> {{excerpt words="20"}} </p>
+                                    </section>
+                                </a>
+                                
+                                <footer class="post-card__meta">
+                                    {{#author}}
+                                        <a href="{{url}}">{{name}}</a>
+                                    {{/author}}
+                                        <span>{{date format="Do MMMM"}}</span>
+                                </footer>
+        
+                            </div>
                         </article>
                         {{/foreach}}
                     {{/get}}

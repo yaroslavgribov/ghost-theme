@@ -26,10 +26,19 @@
   display: flex;
   padding: 0 base-spacing;
   flex-direction: row;
+  flex-wrap: wrap;
+  
+  @media tablet {
+    flex-wrap: nowrap;
+  }
 }
 
 .content {
-  margin-right: base-spacing;
+  margin-right: 0;
+
+  @media tablet {
+    margin-right: base-spacing;
+  }
 
   &.full {
     margin: 0;

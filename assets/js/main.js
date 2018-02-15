@@ -55,13 +55,15 @@ $(document).ready(() => {
   })
 })
 
+const menuButton = document.querySelector('.menu-button')
+const menuList = document.querySelector('.menu')
+
+menuButton.addEventListener('click', (event) => {
+  menuButton.classList.toggle('active')
+  menuList.classList.toggle('expand')
+})
+
 $('.menu-button').on('click', function() {
-  let nav = $('div.menu'),
-    link_pad = $('div.menu a').height()
-  $(this).toggleClass('active')
-  $('body').toggleClass('pmt')
-  let menu_oheight = nav.outerHeight(),
-    menu_iheight = $('div.menu a:last-child').position()
 })
 
 $('.js-toggleBanner').on('click', function() {

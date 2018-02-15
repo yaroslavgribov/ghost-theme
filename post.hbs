@@ -20,7 +20,7 @@
           </li>
           <li>
             <i class="icon-calendar"></i>
-            {{date published_at format="Do MMMM YYYY"}}
+            {{date published_at format="Do MMMM"}}
           </li>
           {{!-- <li>
             <i class="icon-clock"></i>
@@ -48,19 +48,19 @@
           <div class="share-list">
             <a class="" href="https://vk.com/share.php?url={{url absolute="true"}}"
             onclick="window.open(this.href, 'share-vk','width=580,height=296');return false;">
-                Вконтакте
+                <i class="icon-vk-silhouette"></i>
             </a>
             <a class="" href="https://t.me/share/url?url={{url absolute="true"}}&text={{encode title}}"
             onclick="window.open(this.href, 'share-telegram', 'width=550,height=235');return false;">
-                Telegram
+                <i class="icon-telegram-silhouette"></i>
             </a>
             <a class="" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
-                Twitter
+              <i class="icon-twitter-silhouette"></i>
             </a>
             <a class="" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
-                Facebook
+              <i class="icon-facebook-silhouette"></i>
             </a>
           </div>
         </aside>

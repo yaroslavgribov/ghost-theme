@@ -4,7 +4,60 @@
 {{!-- The main content area on the homepage --}}
 <main id="content" class="content js-content" role="main">
 
-    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
-    {{> "main"}}
+<div class="mateblock postfeed">
+  {{#get "posts" include="tags,author,excerpt" filter="featured:true" order="published_at desc"}}
+      {{#foreach posts limit="4"}}
+          {{> "post-card"}}
+      {{/foreach}}
+  {{/get}}
+</div>
+
+<div class="mateblock postfeed">
+  {{#get "posts" include="tags, author, excerpt" filter="primary_tag:review+featured:false"}}
+    {{#foreach posts limit="6"}}
+      {{^has tag="newsblock"}}
+      {{> "post-card"}}
+      {{/has}}
+    {{/foreach}}
+  {{/get}}
+</div>
+
+<div class="mateblock postfeed">
+  {{#get "posts" include="tags, author, excerpt" filter="primary_tag:top+featured:false"}}
+    {{#foreach posts limit="6"}}
+      {{^has tag="newsblock"}}
+      {{> "post-card"}}
+      {{/has}}
+    {{/foreach}}
+  {{/get}}
+</div>
+
+<div class="mateblock postfeed">
+  {{#get "posts" include="tags, author, excerpt" filter="primary_tag:shows+featured:false" limit="6"}}
+    {{#foreach posts}}
+      {{^has tag="newsblock"}}
+      {{> "post-card"}}
+      {{/has}}
+    {{/foreach}}
+  {{/get}}
+</div>
+<div class="mateblock postfeed">
+  {{#get "posts" include="tags, author, excerpt" filter="primary_tag:interviews+featured:false" limit="6"}}
+    {{#foreach posts}}
+      {{^has tag="newsblock"}}
+      {{> "post-card"}}
+      {{/has}}
+    {{/foreach}}
+  {{/get}}
+</div>
+<div class="mateblock postfeed">
+  {{#get "posts" include="tags, author, excerpt" filter="primary_tag:events+featured:false" limit="6"}}
+    {{#foreach posts}}
+      {{^has tag="newsblock"}}
+      {{> "post-card"}}
+      {{/has}}
+    {{/foreach}}
+  {{/get}}
+</div>
 
 </main>

@@ -14,8 +14,8 @@ export function insertPost(post, options) {
     .slice(0, 20)
     .join(' ')
 
-  let classList = 'post post-card'
-  classList += options ? (options.addClass ? options.addClass : '') : ''
+  let classList = 'post post-card '
+  classList += options && (options.addClass ? options.addClass : '')
 
   // if post data contains html - show excerpt, if not - show expty string
 
@@ -48,10 +48,13 @@ export function insertPost(post, options) {
             `
           )}
         </a>
-        <footer class="post-card__meta">
-          <a href=${author.url}>${author.name}</a>
-          <span>${format(published_at, 'D MMMM', { locale: ruLocale })}</span>
-        </footer>
+        ${templates.if(author, `
+          <footer class="post-card__meta">
+            <a href="/author/${author.slug}">${author.name}</a>
+            <span>${format(published_at, 'Do MMMM', { locale: ruLocale })}</span>
+          </footer>
+        `)}
+        
       </div>
       
     </article>
