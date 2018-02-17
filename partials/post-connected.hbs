@@ -1,20 +1,13 @@
-<article class="post-card post-card--sm {{post_class}}">
+<article class="post-card post-card--sm {{post_class}}" style="background-image: url({{feature_image}}">
   <div class="post-card__content post-card-content">
     <a class="post-card-content__link" href="{{url}}">
       <header class="post-card__header">
-        {{!-- {{#if primary_tag}}
-          {{#primary_tag}}
-            <small class="post-card-tags">
-              {{name}}
-            </small>
-          {{/primary_tag}}
-        {{/if}} --}}
         <h2 class="post-card-title">
           {{title}}
         </h2>
       </header>
       <section class="post-card__excerpt">
-        <p> {{excerpt words="20"}} ... </p>
+        {{!-- <p> {{excerpt words="20"}} ... </p> --}}
       </section>
     </a>
     {{^is "post"}}

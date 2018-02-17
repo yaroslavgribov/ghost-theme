@@ -4,7 +4,7 @@
 <!--</div>-->
 
 {{!-- This is the post loop - each post will be output using this markup --}}
-<div class="mateblock post-feed">
+<div class="mateblock postfeed">
   {{#foreach posts limit="{{@config.posts_per_page}}"}}
     {{> "post-card"}}
   {{/foreach}}

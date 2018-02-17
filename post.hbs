@@ -80,7 +80,7 @@
           <div class="read-next-feed">
           {{#get "posts" include="tags, author" filter="tags:{{primary_tag.slug}}+id:-{{id}}+featured:false" limit="6"}}
             {{#foreach posts}}
-            {{> "post-small" }}
+            {{> "post-connected" }}
             {{/foreach}}
           {{/get}}
           </div>

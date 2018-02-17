@@ -26,15 +26,37 @@
 }
 .read-next-feed {
   display: flex;
-  flex-flow: column wrap;
-  margin-left: -(spacing-large);
-  margin-right: -(spacing-large);
+  flex-flow: row wrap;
+  margin-left: -(base-spacing / 2);
+  margin-right: -(base-spacing / 2);
 
   .post-card {
+    position: relative;
     min-height: 0;
-    flex: 1;
-    margin: 0 base-spacing;
+    margin: (base-spacing / 2);
+    flex: 1 1 20rem;
 
     border-top: solid 1px black;
+
+    .post-card-title {
+      color: white;
+      z-index: 6;
+    }
+
+    .post-card-content__link {
+      z-index: 6;
+      padding: base-spacing;
+    }
+
+    .post-card-content:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, .5);
+      z-index: 5;
+    }
   }
 }
