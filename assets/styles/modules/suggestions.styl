@@ -57,6 +57,13 @@
       bottom: 0;
       background: rgba(0, 0, 0, .5);
       z-index: 5;
+      transition: background .3s ease-in-out;
+    }
+
+    &:hover {
+      .post-card-content:after {
+        background: rgba(0, 0, 0, .3);
+      }
     }
   }
 }

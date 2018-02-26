@@ -41,6 +41,7 @@
     {{/foreach}}
   {{/get}}
 </div>
+
 <div class="mateblock postfeed">
   {{#get "posts" include="tags, author, excerpt" filter="primary_tag:interviews+featured:false" limit="6"}}
     {{#foreach posts}}
@@ -50,6 +51,7 @@
     {{/foreach}}
   {{/get}}
 </div>
+
 <div class="mateblock postfeed">
   {{#get "posts" include="tags, author, excerpt" filter="primary_tag:events+featured:false" limit="6"}}
     {{#foreach posts}}
