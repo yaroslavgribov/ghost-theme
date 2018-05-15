@@ -1,0 +1,26 @@
+$base-header-height: 165px;
+
+$spacing: 10px;
+$base-spacing: 15px;
+
+$spacing-small: $spacing / 2;
+$spacing-large: $spacing * 2;
+$spacing-extralarge: $spacing * 3;
+
+// start: colors
+$text-color-default: #42413C;;
+$background-color-default: #111;
+
+$heading-color-active: #1ed2cc;
+// end: colors
+
+$font-family-regular: 'proxima_nova_rgregular';
+$letter-spacing-default: 0;
+$letter-spacing-headings: 1px;
+$font-size-base : 1rem;
+$font-size-sm : 1.4rem;
+$font-size-medium : 1.6rem;
+$font-size-large : 1.8rem;
+$font-size-heading : 2rem;
+$font-size-heading-medium : 2.4rem;
+$font-size-heading-large : 3rem;

@@ -1,0 +1,5 @@
+body {
+  &.fixed-header {
+    padding-top: $base-header-height;
+  }
+}

@@ -1,0 +1,42 @@
+.author-block {
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  align-content: center;
+  align-items: center;
+
+  margin-bottom: 20px;
+
+  &__image {
+    width: 20%;
+    height: 150px;
+
+    & > .image {
+      background-size: contain;
+      background-position: center;
+      min-height: 100%;
+    }
+  }
+
+  &__info {
+    width: 80%;
+    padding: 20px;
+
+    h1 { text-transform: none;}
+  }
+
+  &-socials {
+    margin: $base-spacing 0 0;
+
+    .author-link {
+      font-size: 1.8em;
+
+      a {
+        text-decoration: none;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{{!-- Previous/next page links - only displayed on page 2+ --}}
+<!--<div class="extra-pagination inner">-->
+
+<!--</div>-->
+
+{{!-- This is the post loop - each post will be output using this markup --}}
+<div class="mateblock post-feed">
+    {{#get "posts" include="tags,author,excerpt" filter="featured:true" order="published_at desc"}}
+        {{#foreach posts limit="1"}}
+            {{> "post-card"}}
+        {{/foreach}}
+    {{/get}}
+    {{#get "posts" include="tags, author, excerpt" filter="primary_tag:-newsblock+featured:false"}}
+        {{#foreach posts limit="{{@config.posts_per_page}}"}}
+            {{> "post-card"}}
+        {{/foreach}}
+    {{/get}}
+</div>
+<button type="button" id="load-posts" class="button more">
+    показать больше
+</button>
