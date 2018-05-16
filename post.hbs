@@ -5,23 +5,29 @@
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
-    <main class="content content--post">
+<main class="content content--post">
     <section class="{{post_class}}">
         <div class="mateblock inside">
             <div class="block blockbig fullnew">
                 <div class="rela post-header" style="background-image: url({{img_url feature_image}})">
                     <div class="zatem">
                         <h class="main-post-title">{{title}}</h>
-                            <section class="author">
-                                <div class="text">
-                        {{#foreach authors}}
+
+                        <section class="author">
+                            <div class="text">
+                                {{#foreach authors to="3"}}
                                     <a href="{{url}}" class="author__url">{{name}}</a>,
-                        {{/foreach}}
-                                    <span class="post-date"
-                                          datetime="{{date published_at timeago="true" format="YYYY-MM-DD"}}">{{date
-                                            published_at format="DD MMMM YYYY"}}</span>
-                                </div>
-                            </section>
+                                {{/foreach}}
+                                {{#has author="count:>3"}}
+                                    {{#foreach authors from="4"}}
+                                        <a href="{{url}}" class="author__url">{{name}}</a>,
+                                    {{/foreach}}
+                                {{/has}}
+                                <span class="post-date" datetime="{{date published_at timeago="true" format="YYYY-MM-DD"}}">
+                                    {{date published_at format="DD MMMM YYYY"}}
+                                </span>
+                            </div>
+                        </section>
                     </div>
 
                     <div class="type">{{tags limit="1"}}</div>
@@ -88,7 +94,7 @@
                     {{> "post-card"}}
                 {{/prev_post}}
                 </div>
-            </div>
+            </div> 
         --}}
         <div class="read-next">
             <header class="read-next-title">Похожие cтатьи: </header>
@@ -101,5 +107,5 @@
             </div>
         </div>
     </aside>
-    </main>
+</main>
 {{/post}}
