@@ -310,6 +310,14 @@ font-family: 'proxima_nova_rgbold';
     width: 100%;
     max-width: 100%;
     margin: 40px 0px;
+
+    em {
+      display: block;
+      text-align: center;
+      font-style: normal;
+      margin-top: 10px;
+      color: $text-color-gray;
+    }
   }
 
   .paragraph {
