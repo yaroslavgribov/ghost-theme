@@ -13,10 +13,11 @@ jobs:
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
-
+    working_directory: ~/theme
     steps:
       - checkout
-
+      - attach_workspace:
+          at: ~/theme
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -34,17 +35,18 @@ jobs:
       # run build
       - run: yarn build
       - persist_to_workspace:
-          root: /tmp/theme
+          root: .
           paths:
             - assets/build
 
   deploy:
-    working_directory: ~/tmp/theme
     machine:
       enabled: true
+    working_directory: ~/theme
     steps:
+      - checkout
       - attach_workspace:
-          at: /tmp/theme
+          at: ~/theme
       - run:
           name: Deploy To DO
           command: |
