@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:7.10
+      - image: circleci/node:10
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -34,12 +34,22 @@ jobs:
       # run build
       - run: yarn build
 
-      - store_artifacts:
-          path: assets/dist
-
-  # deploy:
-  #   docker:
-  #     - image: circle/node:7.10
-
-    
-  
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - run:
+          name: Deploy To DO
+          command: |
+            ssh deploy@159.89.11.124 "bash dep.sh"
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
