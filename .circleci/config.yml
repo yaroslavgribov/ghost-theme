@@ -5,6 +5,7 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/tmp/theme
     docker:
       # specify the version you desire here
       - image: circleci/node:10
@@ -33,21 +34,29 @@ jobs:
 
       # run build
       - run: yarn build
+      - persist_to_workspace:
+          root: /tmp/theme
+          paths:
+            - assets/build
 
   deploy:
+    working_directory: ~/tmp/theme
     machine:
       enabled: true
     steps:
+      - attach_workspace:
+          at: /tmp/theme
       - run:
           name: Deploy To DO
           command: |
-            ssh deploy@159.89.11.124 "bash dep.sh"
+            rsync -avzP assets/build deploy@159.89.11.124:/home/deploy
 workflows:
   version: 2
   build-and-deploy:
     jobs:
       - build
       - deploy:
+          type: approval
           requires:
             - build
           filters:
