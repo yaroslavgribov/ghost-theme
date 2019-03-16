@@ -1,40 +1,45 @@
-import { convertDate } from './convertDate';
+import { convertDate } from './convertDate'
 
 export function insertPost(postData, options) {
   //start the inserting of the html
-  const { primary_tag, feature_image } = postData;
+  const { primary_tag, feature_image } = postData
 
   const postExcerpt = $(postData.html)
     .text()
     .split(' ')
     .slice(0, 20)
-    .join(' ');
+    .join(' ')
 
-  const tagText = options
-    && options.includeTags
-    && primary_tag 
-    && `
+  const tagText =
+    (options &&
+      options.includeTags &&
+      primary_tag &&
+      `
     <span class="type"> 
       ${primary_tag.name}
     </span>
-    `
-    || '';
+    `) ||
+    ''
 
-  let classList = 'block post ';
-  classList += options ? (options.addClass ? options.addClass : '') : '';
+  let classList = 'block post '
+  classList += options ? (options.addClass ? options.addClass : '') : ''
   const date = options
-    ? options.includeDate ? `<p>${convertDate(postData.published_at)}</p>` : ''
-    : '';
+    ? options.includeDate
+      ? `<p>${convertDate(postData.published_at)}</p>`
+      : ''
+    : ''
 
   const imageContainer = feature_image
     ? `<div class="rela post__image">
         <img src="${feature_image}" /> 
         ${tagText}
       </div>`
-    : '';
+    : ''
 
   // if post data contains html - show excerpt, if not - show expty string
-  const postContent = postData.html ? `<span class="text">${postExcerpt}...</span>` : '';
+  const postContent = postData.html
+    ? `<span class="text">${postExcerpt}...</span>`
+    : ''
 
   return `
     <article class="${classList}">
@@ -47,5 +52,5 @@ export function insertPost(postData, options) {
       ${postContent}
       </a>
     </article>
-  `;
+  `
 }
