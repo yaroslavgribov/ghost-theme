@@ -50,6 +50,7 @@ jobs:
       - run:
           name: Deploy To DO
           command: |
+            ls -a
             rsync -avzP assets/build deploy@159.89.11.124:/home/deploy
 workflows:
   version: 2
@@ -57,7 +58,6 @@ workflows:
     jobs:
       - build
       - deploy:
-          type: approval
           requires:
             - build
           filters:
