@@ -50,8 +50,7 @@ jobs:
       - run:
           name: Deploy To DO
           command: |
-            ls -a
-            rsync -avzP assets/build deploy@159.89.11.124:/home/deploy
+            rsync -avzP assets/build deploy@159.89.11.124:/var/www/ghost/content/themes/cinemaholics/assets
 workflows:
   version: 2
   build-and-deploy:
