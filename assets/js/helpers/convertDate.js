@@ -4,6 +4,5 @@ export function convertDate(dateString) {
     m = date.getMonth(),
     d = date.getDate()
 
-  console.log('test')
   return d + '/' + +(m + 1) + '/' + y
 }

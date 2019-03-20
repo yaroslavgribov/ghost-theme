@@ -36,10 +36,10 @@
         post.hbs, etc --}} {{{body}}} {{!-- The tiny footer at the very bottom --}}
     </div>
     <div class="footer">
-        <div class="prefot">
-            <div class="sidebar2"> <a href="/contacts" class="feeadback"> Обратная связь </a> <a href="/"
-                    class="copyright"> Создание сайта — Gootica </a> </div>
-            <div class="sidebar1"> <a href="{{@blog.url}}" class="logosmall"> <img src="{{asset "logosmall.png"}}" />
+        <div class="footer-inner container">
+            <div class="footer-socials"> 
+                <a href="{{@blog.url}}" class="logosmall"> 
+                    <img src="{{asset "logosmall.png"}}" />
                 </a> {{@blog.title}} &copy;
                 {{date format="YYYY"}}
                 <div class="socials">
@@ -51,17 +51,16 @@
                     <a href="https://instagram.com/thecinemaholics"><img src="{{asset "icons/ico_inst.png"}}" /></a>
                 </div>
             </div>
-            <div class="content">
-                <div class="footmenu">
-                    <a href="/help/">Помощь</a>
-                    <a href="/about/">О сайте </a>
-                    <a href="/commercial-cinemaholics/">Рекламодателям </a>
-                    <a href="/rules-dont-apply/">Соглашения и правила</a>
-                    <a href="/you-gotta-work-bitch/">Вакансии </a>
-                    <!--<a href="/">Контакты</a>-->
-                </div>
+
+            <div class="footer-links">
+                <a href="/help/">Помощь</a>
+                <a href="/about/">О сайте </a>
+                <a href="/commercial-cinemaholics/">Рекламодателям </a>
+                <a href="/rules-dont-apply/">Соглашения и правила</a>
+                <a href="/you-gotta-work-bitch/">Вакансии </a>
+                <!--<a href="/">Контакты</a>-->
             </div>
-        </div>a
+        </div>
     </div>
 
     {{#if pagination.pages}}

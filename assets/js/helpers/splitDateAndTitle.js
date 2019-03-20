@@ -10,7 +10,7 @@ export function splitDateAndTitle() {
   const firstDateIndex = titleText.search(/\d{1,2}[.]\d{2}[–,-]\d{2}[.]\d{2}/g)
   const title = titleText.slice(0, firstDateIndex)
   const date = titleText.slice(firstDateIndex, titleText.length)
-  console.log('title, date => ', title, date)
+
   titleContainer.text(title)
   $date.text(date)
 }
