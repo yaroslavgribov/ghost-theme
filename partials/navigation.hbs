@@ -1,16 +1,41 @@
 <div id="navigation" class="header clearfloat2">
-    <section class="header-container">
-        {{#if @blog.logo}}
-            <a class="logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
-        {{/if}}
-        <div class="menu">
-            {{#foreach navigation}}
-                <a href="{{url absolute="true"}}">{{label}}</a>
-            {{/foreach}}
-            <button type="button" class="search-init js-searchStart">
-                <i class="icon-search_icon"></i>
-            </button>
+    <section class="header-container nav">
+        <button type="button" class="menu-button">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        
+        <a class="logo" href="{{@blog.url}}">
+            <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+        </a>
+
+        <div class="nav-inner">
+            <div class="nav-menu menu">
+                {{#foreach navigation}}
+                    <a href="{{url absolute="true"}}">{{label}}</a>
+                {{/foreach}}
+            </div>
+            <div class="nav-socials">
+                <a href="https://vk.com/public.cinemaholics">
+                    <i class="icon icon-vk-outline"></i>
+                </a>
+                <a href="https://instagram.com/thecinemaholics">
+                    <i class="icon icon-instagram"></i>
+                </a>
+                <a href="http://facebook.com/cinemaholics">
+                    <i class="icon icon-facebook"></i>
+                </a>
+                <a href="http://twitter.com/cinemaholics_">
+                    <i class="icon icon-twitter"></i>
+                </a>
+            </div>
         </div>
+
+        <button type="button" class="search-init js-searchStart">
+            <i class="icon-search_icon"></i>
+        </button>
+        
         <!-- Search -->
         <section class="search-overlay js-searchOverlay">
             <form id="search" class="search-overlay__form search-container js-searchContainer">
@@ -45,11 +70,7 @@
             </button>
         </section>
         <!-- end Search-->
-        <div class="menu-button">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        
     <!-- end .header -->
     </section>
 </div>

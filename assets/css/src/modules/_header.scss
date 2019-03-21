@@ -100,7 +100,42 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
   z-index: 1;
   width: 100%;
   background-color: #fff;
+
+  @media all and (max-width:1170px) {
+    display: none;
+  }
 }
+
 .logo {
   float: left;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 4;
+}
+
+.nav-socials {
+  display: flex;
+  align-items: center;
+
+  font-size: 18px;
+
+  a {
+    text-decoration: none;
+    color: #1c0f06;
+
+    & + a {
+      margin-left: 20px;
+    }
+  }
+
+  @media all and (max-width:1170px) {
+    justify-content: center;
+    margin-top: 10px;
+    padding-top: 35px;
+    border-top: 1px solid #e8e8e8;
+  }
 }
