@@ -1,6 +1,10 @@
-ls -ld $(find .)
 mkdir -p public/assets
-cp -r assets/{build,fonts,icons,bill.svg,comments.png,favicon.ico,logosmall.png,rekblock.png} public/assets
+cp -r assets/build public/assets/
+cp -r assets/fonts public/assets/
+cp -r assets/icons public/assets/
+cp assets/logosmall.png public/assets/
+cp assets/rekblock.png public/assets/
+cp assets/favicon.ico public/assets/
 cp -r partials public/
 cp *.hbs public/
 cp package.json public/
