@@ -10,7 +10,7 @@
     {{> "post-card"}}
     {{/foreach}}
     {{/get}}
-    {{#get "posts" include="tags, author, excerpt" filter="primary_tag:-newsblock+featured:false"}}
+    {{#get "posts" include="tags, author, excerpt" filter="primary_tag:-[newsblock,hidden]+featured:false"}}
     {{#foreach posts limit="{{@config.posts_per_page}}"}}
     {{> "post-card"}}
     {{/foreach}}
