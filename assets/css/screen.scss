@@ -1,30 +1,31 @@
-@import "src/base/mixins";
-@import "src/base/variables";
-@import "src/base/fonts";
-@import "src/base/reset";
-@import "src/base/helpers";
+@import "base/mixins";
+@import "base/variables";
+@import "base/fonts";
+@import "base/reset";
+@import "base/helpers";
 
-@import "src/layout/grid";
-@import "src/layout/states";
-@import "src/layout/buttons";
+@import "layout/grid";
+@import "layout/states";
 
-@import "src/modules/header";
-@import "src/modules/footer";
-@import "src/modules/commercial";
-@import "src/modules/news";
-@import "src/modules/search";
-@import "src/modules/share";
-@import "src/modules/suggestions";
-@import "src/modules/tags";
+@import "modules/header";
+@import "modules/footer";
+@import "modules/commercial";
+@import "modules/news";
+@import "modules/search";
+@import "modules/share";
+@import "modules/suggestions";
+@import "modules/tags";
 
-@import "src/components/author";
-@import "src/components/post-card";
+@import "components/author";
+@import "components/post-card";
+@import "components/links";
+@import "components/button";
 
-@import "src/views/default";
-@import "src/views/page";
-@import "src/views/post";
-@import "src/views/tag";
-@import "src/views/author";
+@import "views/default";
+@import "views/page";
+@import "views/post";
+@import "views/tag";
+@import "views/author";
 
 @media all and (max-width:1440px) {
   .reklin h2 {
@@ -194,4 +195,4 @@
 	}
 }
 
-@import "src/modules/menu";
+@import "modules/menu";

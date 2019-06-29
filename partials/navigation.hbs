@@ -1,77 +1,73 @@
 <div id="navigation" class="header clearfloat2">
-    <section class="header-container nav">
-        <button type="button" class="menu-button">
-            <div></div>
-            <div></div>
-            <div></div>
-        </button>
-        
-        <a class="logo" href="{{@blog.url}}">
-            <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+  <section class="header-container nav">
+    <button type="button" class="menu-button">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+
+    <a class="logo" href="{{@blog.url}}">
+      <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+    </a>
+
+    <div class="nav-inner">
+      <div class="nav-menu menu">
+        {{#foreach navigation}}
+          <a href="{{url absolute="true"}}">{{label}}</a>
+        {{/foreach}}
+      </div>
+      <div class="nav-socials">
+        <a class="social-link" href="https://vk.com/public.cinemaholics">
+          {{> "icons/vk" }}
         </a>
+        <a class="social-link" href="http://twitter.com/cinemaholics_">
+          {{> "icons/twitter" }}
+        </a>
+        <a class="social-link" href="https://instagram.com/thecinemaholics">
+          {{> "icons/instagram" }}
+        </a>
+        <a class="social-link" href="http://facebook.com/cinemaholics">
+          {{> "icons/facebook" }}
+        </a>
+      </div>
+    </div>
 
-        <div class="nav-inner">
-            <div class="nav-menu menu">
-                {{#foreach navigation}}
-                    <a href="{{url absolute="true"}}">{{label}}</a>
-                {{/foreach}}
-            </div>
-            <div class="nav-socials">
-                <a href="https://vk.com/public.cinemaholics">
-                    <i class="icon icon-vk-outline"></i>
-                </a>
-                <a href="https://instagram.com/thecinemaholics">
-                    <i class="icon icon-instagram"></i>
-                </a>
-                <a href="http://facebook.com/cinemaholics">
-                    <i class="icon icon-facebook"></i>
-                </a>
-                <a href="http://twitter.com/cinemaholics_">
-                    <i class="icon icon-twitter"></i>
-                </a>
-            </div>
+    <button type="button" class="button-icon search-init js-searchStart">
+      {{> "icons/search" }}
+    </button>
+
+      <!-- Search -->
+    <section class="search-overlay js-searchOverlay">
+      <form id="search" class="search-overlay__form search-container js-searchContainer">
+        <input type="search" class="search-container__input js-searchInput" placeholder="Search">
+        <div class="search-container__results overlay">
+          <ul class="search-results js-searchResults">
+          </ul>
         </div>
-
-        <button type="button" class="search-init js-searchStart">
-            <i class="icon-search_icon"></i>
-        </button>
-        
-        <!-- Search -->
-        <section class="search-overlay js-searchOverlay">
-            <form id="search" class="search-overlay__form search-container js-searchContainer">
-                <input type="search" class="search-container__input js-searchInput" placeholder="Search">
-                <div class="search-container__results overlay">
-                    <ul class="search-results js-searchResults">
-                    </ul>
-                </div>
-                <div class="nothing">
-                    <heading>Мы ничего не нашли! Но вот отличные посты взамен.</heading>
-                    <div class="post-feed">
-                        {{#get "posts" include="author, tags, excerpt" filter="featured:false"}}
-                            {{#foreach posts limit="3"}}
-                            <article class="block block--search">
-                                <a href="{{url}}">
-                                    <h2 class="post-title">
-                                        {{title}}
-                                        <p datetime="{{date published_at timeago="true" format="DD/MM/YYYY"}}">
-                                            {{date published_at format="DD/MM/YYYY"}}
-                                        </p>
-                                    </h2>
-                                </a>
-                            </article>
-                            {{/foreach}}
-                        {{/get}}
-                    </div>
-                </div>
-            <img class="search-container__loading js-loadingSpin" src="{{asset "icons/loading.gif"}}" />
-            </form>
-            <button type="button" class="search-overlay__close js-searchClose">
-                <i class="icon-x"></i>
-            </button>
-        </section>
-        <!-- end Search-->
-        
-    <!-- end .header -->
+        <div class="nothing">
+          <heading>Мы ничего не нашли! Но вот отличные посты взамен.</heading>
+          <div class="post-feed">
+            {{#get "posts" include="author, tags, excerpt" filter="featured:false"}}
+            {{#foreach posts limit="3"}}
+            <article class="block block--search">
+              <a href="{{url}}">
+                <h2 class="post-title">
+                  {{title}}
+                  <p datetime="{{date published_at timeago="true" format="DD/MM/YYYY"}}">
+                    {{date published_at format="DD/MM/YYYY"}}
+                  </p>
+                </h2>
+              </a>
+            </article>
+            {{/foreach}}
+            {{/get}}
+          </div>
+        </div>
+        <img class="search-container__loading js-loadingSpin" src="{{asset "icons/loading.gif"}}" />
+      </form>
+      <button type="button" class="button-icon size-large search-overlay__close js-searchClose">
+        {{> "icons/close"}}
+      </button>
     </section>
+  </section>
 </div>
-<!-- End Header -->
