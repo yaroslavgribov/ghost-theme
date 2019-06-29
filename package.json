@@ -47,6 +47,7 @@
     "lodash": "^4.17.11",
     "node-sass": "^4.11.0",
     "path-match": "1.2.4",
+    "prettier": "^1.18.2",
     "resolve-url-loader": "^2.1.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",

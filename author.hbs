@@ -1,43 +1,45 @@
 {{!< default}}
 
 {{#author}}
-    <section class="author-block content">
-        <figure class="author-block__image">
-            <div class="image image--rounded">
-                <img src="{{img_url profile_image}}" alt="">
-            </div>
-        </figure>
-        <section class="author-block__info ">
-            <h1>{{name}}</h1>
-            {{#if bio}}
-                <h2 class="author-block-bio">{{bio}}</h2>
-            {{/if}}
-            <span class="author-block-stats"> {{plural ../pagination.total empty='Нет постов' singular='% пост' plural='% постов'}}</span>
-            <div class="author-block-socials">
-                {{#if facebook}}
-                    <span class="author-link ">
-                        <a href="{{facebook_url}}">
-                            <i class="icon-fb"></i>
-                        </a>
-                    </span>
-                {{/if}}
-                {{#if website}}
-                    <span class="author-link">
-                        <a href="{{website}}" >
-                            <i class="icon-vk"></i>
-                        </a>
-                    </span>
-                {{/if}}
-                {{#if twitter}}
-                    <span class="author-link">
-                        <a href="{{twitter_url}}">
-                            <i class="icon-twi"></i>
-                        </a>
-                    </span>
-                {{/if}}
-            </div>
-        </section>
+  <section class="author-block content">
+    <figure class="author-block__image">
+      <div class="image image--rounded">
+          <img src="{{img_url profile_image}}" alt="">
+      </div>
+    </figure>
+    <section class="author-block__info ">
+      <h1>{{name}}</h1>
+      {{#if bio}}
+        <h2 class="author-block-bio">{{bio}}</h2>
+      {{/if}}
+      <span class="author-block-stats"> {{plural ../pagination.total empty='Нет постов' singular='% пост' plural='% постов'}}</span>
+      <div class="author-block-socials">
+        {{#if facebook}}
+          <span class="author-link ">
+            <a class="social-link" href="{{facebook_url}}">
+              {{> "icons/facebook"}}
+            </a>
+          </span>
+        {{/if}}
+        
+        {{#if website}}
+          <span class="author-link">
+            <a class="social-link" href="{{website}}" >
+              {{> "icons/vk" }}
+            </a>
+          </span>
+        {{/if}}
+        
+        {{#if twitter}}
+          <span class="author-link">
+            <a class="social-link" href="{{twitter_url}}">
+              {{> "icons/twitter" }}
+            </a>
+          </span>
+        {{/if}}
+      </div>
     </section>
+  </section>
 {{/author}}
 <main id="content" class="content" role="main">
 
