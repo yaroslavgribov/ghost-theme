@@ -44,7 +44,7 @@
     "ignore-loader": "^0.1.2",
     "image-size": "0.5.1",
     "intl": "1.2.5",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "node-sass": "^4.11.0",
     "path-match": "1.2.4",
     "prettier": "^1.18.2",
