@@ -45,7 +45,7 @@
     "image-size": "0.5.1",
     "intl": "1.2.5",
     "lodash": "^4.17.11",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "path-match": "1.2.4",
     "prettier": "^1.18.2",
     "resolve-url-loader": "^2.1.0",
