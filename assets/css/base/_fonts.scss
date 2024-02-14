@@ -1,34 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700&subset=cyrillic,cyrillic-ext,latin-ext');
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,700&subset=cyrillic,cyrillic-ext,latin-ext");
 
 @font-face {
-  font-family: 'proxima_nova_rgbold';
-  src: url('../fonts/mark_simonson_-_proxima_nova_bold-webfont.woff2') format('woff2'), 
-       url('../fonts/mark_simonson_-_proxima_nova_bold-webfont.woff') format('woff'), 
-       url('../fonts/mark_simonson_-_proxima_nova_bold-webfont.ttf') format('truetype');
+  font-family: "proxima_nova_rgbold";
+  src: url("../fonts/mark_simonson_-_proxima_nova_bold-webfont.woff2")
+      format("woff2"),
+    url("../fonts/mark_simonson_-_proxima_nova_bold-webfont.woff")
+      format("woff"),
+    url("../fonts/mark_simonson_-_proxima_nova_bold-webfont.ttf")
+      format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'proxima_nova_rgregular';
-  src: url('../fonts/mark_simonson_-_proxima_nova_regular-webfont.woff2') format('woff2'),
-       url('../fonts/mark_simonson_-_proxima_nova_regular-webfont.woff') format('woff'), 
-       url('../fonts/mark_simonson_-_proxima_nova_regular-webfont.ttf') format('truetype');
+  font-family: "proxima_nova_rgregular";
+  src: url("../fonts/mark_simonson_-_proxima_nova_regular-webfont.woff2")
+      format("woff2"),
+    url("../fonts/mark_simonson_-_proxima_nova_regular-webfont.woff")
+      format("woff"),
+    url("../fonts/mark_simonson_-_proxima_nova_regular-webfont.ttf")
+      format("truetype");
   font-weight: normal;
   font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }

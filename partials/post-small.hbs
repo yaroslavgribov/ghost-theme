@@ -2,13 +2,6 @@
   <div class="post-card__content post-card-content">
     <a class="post-card-content__link" href="{{url}}">
       <header class="post-card__header">
-        {{!-- {{#if primary_tag}}
-          {{#primary_tag}}
-            <small class="post-card-tags">
-              {{name}}
-            </small>
-          {{/primary_tag}}
-        {{/if}} --}}
         <h2 class="post-card-title">
           {{title}}
         </h2>
@@ -17,13 +10,5 @@
         <p> {{excerpt words="20"}} ... </p>
       </section>
     </a>
-    {{^is "post"}}
-    <footer class="post-card__meta">
-      {{#author}}
-        <a href={{url}}>{{name}}</a>
-      {{/author}}
-    </footer>
-    {{/is}}
   </div>
-  <!--<div class="comme">21</div>-->
 </article>

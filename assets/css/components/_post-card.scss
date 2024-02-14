@@ -13,13 +13,11 @@
   box-shadow: 12px 14px 38px rgba(39, 44, 49, 0.06),
     1px 3px 8px rgba(39, 44, 49, 0.03);
   transition: all 0.5s ease;
-  border: solid 2px black
-  
-  a {
+  border: solid 2px black a {
     text-decoration: none;
   }
 
-  &--sm { 
+  &--sm {
     min-height: 0;
     margin: $spacing-large;
   }
@@ -31,25 +29,25 @@
     background-position: center;
   }
 
-  &__content { 
+  &__content {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  &__excerpt { 
-    p { 
-      font: 14px/1.25 'PT Serif', serif;
+  &__excerpt {
+    p {
+      font: 14px/1.25 "PT Serif", serif;
       margin: 0 0 1.5em;
     }
   }
 
-  &__meta { 
+  &__meta {
     padding: 0 20px 20px;
-    font: 14px/1.25 'PT Serif', serif;
+    font: 14px/1.25 "PT Serif", serif;
 
-    a { 
+    a {
       color: $heading-color-active;
       &:hover {
         text-decoration: underline;
@@ -58,21 +56,20 @@
   }
 }
 
-
 .post-card {
-  &.featured { 
+  &.featured {
     .post-card-content__link {
-      color: white
+      color: white;
     }
 
     .post-card-title {
       font-size: $font-size-heading-large;
-      color: white
+      color: white;
     }
   }
 }
-.post-card-content  {
-  &__link { 
+.post-card-content {
+  &__link {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -84,10 +81,10 @@
 
 .post-card-title {
   font-size: 16px;
-  margin: 0 0 .5em;
+  margin: 0 0 0.5em;
   transition: all 0.2s, transform 0.2s;
 
-  &:hover { 
+  &:hover {
     color: $heading-color-active;
   }
 }
@@ -95,8 +92,5 @@
 .post-card-small {
   padding: $spacing;
   font-size: $font-size-sm;
-  border-top: solid 2px black
+  border-top: solid 2px black;
 }
-
-  
-

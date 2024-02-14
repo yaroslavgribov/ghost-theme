@@ -1,3 +1,9 @@
-node_modules/
-build/
+node_modules
+build
 *.log
+.parcel-cache
+.yarn
+public
+.DS_Store
+*.zip
+*.sh
