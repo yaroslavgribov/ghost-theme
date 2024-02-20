@@ -5,13 +5,14 @@
 
 {{!-- This is the post loop - each post will be output using this markup --}}
 <div class="mateblock post-feed">
-  {{#get "posts" include="tags,authors,excerpt" filter="featured:true" order="published_at desc"}}
-    {{#foreach posts limit="1"}}
-      {{> "post-card"}}
+  {{#get "posts" filter="featured:true" include="tags" limit="1"}}
+    {{#foreach posts}}
+      {{> "post-card" imageSizes="600px"}}
     {{/foreach}}
   {{/get}}
-  {{#get "posts" include="tags, authors, excerpt" filter="primary_tag:-[newsblock,hidden]+featured:false"}}
-    {{#foreach posts limit="14"}}
+
+  {{#get "posts" include="tags, authors, excerpt" filter="primary_tag:-[newsblock,hidden]" limit="14"}}
+    {{#foreach posts}}
       {{> "post-card"}}
     {{/foreach}}
   {{/get}}

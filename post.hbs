@@ -1,87 +1,92 @@
 {{!< default}}
 
-{{!-- The comment above "< default" means - insert everything in this file into
-    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
-
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
-  <main class="content content--post">
+  <main class="container mx-auto px-4 py-12">
     <section class="{{post_class}}">
-      <div class="mateblock inside">
-        <div class="block blockbig fullnew">
-          <div class="rela post-header" style="background-image: url({{img_url feature_image}})">
-            <div class="zatem">
-              <h class="main-post-title">{{title}}</h>
+      <header class="max-w-3xl mx-auto">
+        <a class="text-sm uppercase" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+        <h1 class="text-4xl font-bold font-serif mt-5">{{title}}</h1>
 
-              <section class="author">
-                <div class="text">
-                  {{#foreach authors to="3"}}
-                    <a href="{{url}}" class="author__url">{{name}}</a>,
-                  {{/foreach}}
-                  {{#has author="count:>3"}}
-                    {{#foreach authors from="4"}}
-                      <a href="{{url}}" class="author__url">{{name}}</a>,
-                    {{/foreach}}
-                  {{/has}}
-                  <span class="post-date" datetime="{{date published_at timeago=" true" format="YYYY-MM-DD" }}">
-                    {{date published_at format="DD MMMM YYYY"}}
-                  </span>
-                </div>
-              </section>
+        {{#if custom_except}}
+          <p class="text-lg leading-8 font-serif">{{custom_excerpt}}</p>
+        {{/if}}
+
+        <section class="mt-5">
+          <div>
+            <h4 class="font-bold font-sans">{{authors}}</h4>
+            <div class="text-sm text-slate-500">
+              <time datetime="{{date published_at timeago='true' format='YYYY-MM-DD'}}">
+                {{date published_at format="DD MMMM YYYY"}}
+              </time>
+              {{#if reading_time}}
+                <span class="gh-article-meta-length"><span class="bull">—</span> {{reading_time}}</span>
+              {{/if}}
             </div>
-
-            <div class="type">{{tags limit="1"}}</div>
           </div>
-          <article class="fulltext gh-content">
-            {{content}}
-          </article>
-          <section class="post-footer">
-            <aside class="share">
-              <div class="share-label">
-                Поделиться:
-              </div>
-              <div class="share-list">
-                <a class="" href="https://vk.com/share.php?url={{url absolute=" true"}}"
-                  onclick="window.open(this.href, 'share-vk','width=580,height=296');return false;">
-                  Вконтакте
-                </a>
-                <a class="" href="https://t.me/share/url?url={{url absolute=" true"}}&text={{encode title}}"
-                  onclick="window.open(this.href, 'share-telegram', 'width=550,height=235');return false;">
-                  Telegram
-                </a>
-                <a class="" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute=" true"}}"
-                  onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
-                  Twitter
-                </a>
-              </div>
-            </aside>
+        </section>
+      </header>
 
-            <aside class="tags">
-              <section class="tags-label">Теги:</section>
-              <div class="tags-list">
-                {{#foreach tags}}
-                  <a href="{{url}}" class="tag">
-                    {{name}}
-                  </a>
-                {{/foreach}}
-              </div>
-            </aside>
-          </section>
+      <figure class="overflow-hidden my-10 max-w-5xl mx-auto">
+        <img srcset="{{img_url feature_image size=" s"}} 320w, {{img_url feature_image size="m" }} 600w, {{img_url
+          feature_image size="l" }} 960w, {{img_url feature_image size="xl" }} 1200w, {{img_url feature_image size="xxl"
+          }} 2000w" src="{{img_url feature_image size=" xl"}}" alt="{{title}}" class="object-cover aspect-video w-full">
+        {{#if feature_image_caption}}
+          <figcaption>{{feature_image_caption}}</figcaption>
+        {{/if}}
+      </figure>
 
-        </div>
-      </div>
-    </section>
-    <aside class="suggestions outer">
-      <div class="read-next">
-        <header class="read-next-title">Похожие cтатьи: </header>
-        <div class="read-next-feed">
-          {{#get "posts" include="tags" filter="tags:{{primary_tag.slug}}+id:-{{id}}+featured:false" limit="6"}}
-            {{#foreach posts}}
-              {{> "post-small" }}
+      <article class="prose prose-lg max-w-3xl font-serif gh-content mx-auto text-gray-900 mb-10">
+        {{content}}
+      </article>
+
+      <section class="max-w-3xl mx-auto">
+        {{!-- <aside class="tags">
+          <section class="tags-label">Теги:</section>
+          <div class="flex">
+            {{#foreach tags}}
+              <a href="{{url}}" class="text-sm">
+                {{name}}
+              </a>
             {{/foreach}}
-          {{/get}}
+          </div>
+        </aside> --}}
+
+        <aside class="">
+          <div class="share-label">
+            Поделиться
+          </div>
+          <div class="flex gap-2">
+            <a class="underline hover:no-underline" href="https://vk.com/share.php?url={{url absolute=" true"}}"
+              onclick="window.open(this.href, 'share-vk','width=580,height=296');return false;">
+              Вконтакте
+            </a>
+            <a class="underline hover:no-underline" href="https://t.me/share/url?url={{url absolute="
+              true"}}&text={{encode title}}"
+              onclick="window.open(this.href, 'share-telegram', 'width=550,height=235');return false;">
+              Telegram
+            </a>
+            <a class="underline hover:no-underline"
+              href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute=" true"}}"
+              onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+              Twitter
+            </a>
+          </div>
+        </aside>
+      </section>
+    </section>
+
+    {{#get "posts" include="tags" filter="tags:{{primary_tag.slug}}+id:-{{id}}+featured:false" limit="4"}}
+      <aside class="mt-20 container mx-auto">
+        <header class="uppercase my-4 border-slate-300 border-b pb-2">Похожие cтатьи</header>
+        <div
+          class="grid grid-flow-row md:grid-cols-[repeat(auto-fit,minmax(248px,1fr))] md:-mx-4 [&>*:nth-child(4)]:md:hidden [&>*:nth-child(4)]:lg:block">
+
+          {{#foreach posts}}
+            {{> "post-small" showBorder="false"}}
+          {{/foreach}}
         </div>
-      </div>
-    </aside>
+      </aside>
+    {{/get}}
   </main>
 {{/post}}

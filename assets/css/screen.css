@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/mark_simonson_-_proxima_nova_bold-webfont.woff2")
+      format("woff2"),
+    url("../fonts/mark_simonson_-_proxima_nova_bold-webfont.woff")
+      format("woff"),
+    url("../fonts/mark_simonson_-_proxima_nova_bold-webfont.ttf")
+      format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/mark_simonson_-_proxima_nova_regular-webfont.woff2")
+      format("woff2"),
+    url("../fonts/mark_simonson_-_proxima_nova_regular-webfont.woff")
+      format("woff"),
+    url("../fonts/mark_simonson_-_proxima_nova_regular-webfont.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* 6.3. Dropdown menu */
+
+.navigation .gh-more-toggle {
+    position: relative;
+    margin: 0 -6px;
+    font-size: inherit;
+    text-transform: inherit;
+}
+
+.navigation .gh-more-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+.gh-dropdown {
+    position: absolute;
+    top: 100%;
+    right: -16px;
+    z-index: 90;
+    width: 200px;
+    padding: 12px 0;
+    margin-top: 24px;
+    text-align: left;
+    visibility: hidden;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 0.04), 0 7px 20px -5px rgb(0 0 0 / 0.15);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.2s;
+    transform: translate3d(0, 6px, 0);
+}
+
+.gh-dropdown.is-left {
+    right: auto;
+    left: -16px;
+}
+
+.is-dropdown-mega .gh-dropdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+    column-gap: 40px;
+    width: auto;
+    padding: 20px 32px;
+}
+
+.is-dropdown-open .gh-dropdown {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.is-dropdown-open .navigation-menu {
+  overflow: visible;
+}
+
+.gh-dropdown li a {
+    display: block;
+    padding: 7px 20px;
+    line-height: 1.5;
+    white-space: normal;
+    color: #15171a !important;
+}

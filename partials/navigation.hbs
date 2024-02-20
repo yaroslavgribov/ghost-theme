@@ -1,33 +1,51 @@
-<div id="navigation" class="header clearfloat2">
-  <section class="header-container nav">
-    <button type="button" class="menu-button">
-      <div></div>
-      <div></div>
-      <div></div>
-    </button>
+<header
+  class="header bg-white navigation group [&.is-open]:fixed [&.is-open]:inset-0 [&.is-open]:h-full z-50 [&.is-open]:overflow-y-scroll">
+  <section
+    class="container mx-auto p-4 grid gap-4 items-center justify-between grid-cols-1 md:grid-cols-[auto,1fr,auto] group-[.is-open]:h-full group-[.is-open]:grid-rows-[auto,1fr,auto]">
+    <div class="flex justify-between max-md:col-span-full items-center">
+      <a href="{{@site.url}}" class="block navigation-logo">
+        <img src="{{@site.logo}}" alt="{{@site.title}}" class="h-12 xl:h-14  object-contain" />
+      </a>
 
-    <a class="logo" href="{{@site.url}}">
-      <img src="{{@site.logo}}" alt="{{@site.title}}" />
-    </a>
-
-    <div class="nav-inner">
-      <div class="nav-menu menu">
-        {{#foreach navigation}}
-          <a href="{{url absolute='true'}}">{{label}}</a>
-        {{/foreach}}
-      </div>
-      <div class="nav-socials">
-        <a class="social-link" href="https://vk.com/public.cinemaholics" target="_blank" rel="noopener noreferrer">
-          {{> "icons/vk" }}
-        </a>
-        <a class="social-link" href="http://twitter.com/cinemaholics_" target="_blank" rel="noopener noreferrer">
-          {{> "icons/twitter" }}
-        </a>
+      <div class="flex items-center gap-2">
+        <button type="button" class="button-icon search-init hover:text-gray-700 md:hidden"
+          aria-label="Search this site" data-ghost-search>
+          {{> "icons/search"}}
+        </button>
+        <button type="button" aria-label="Toggle menu" class="burger md:hidden">
+          <span class="inline group-[.is-open]:hidden">{{> "icons/burger"}}</span>
+          <span class="hidden group-[.is-open]:inline">{{> "icons/close"}}</span>
+        </button>
       </div>
     </div>
 
-    <button type="button" class="button-icon search-init" aria-label="Search this site" data-ghost-search>
-      {{> "icons/search"}}
-    </button>
+    <div class="navigation-menu hidden md:block group-[.is-open]:block md:overflow-hidden">
+      <ul
+        class="nav text-sm xl:text-base hidden md:flex md:flex-row gap-4 justify-center items-center tracking-wider group-[.is-open]:flex-col group-[.is-open]:flex group-[.is-open]:col-span-full">
+        {{#foreach navigation}}
+          <li>
+            <a href="{{url absolute='true'}}" class="font-sans font-bold hover:text-gray-700 text-nowrap">{{label}}</a>
+          </li>
+        {{/foreach}}
+      </ul>
+    </div>
+
+    <div
+      class="gap-4 items-center justify-center hidden md:flex group-[.is-open]:flex group-[.is-open]:col-span-full group-[.is-open]:pb-4">
+      <a href="https://vk.com/public.cinemaholics" target="_blank" rel="noopener noreferrer"
+        class="w-6 [&>svg]:w-full hover:text-gray-700">
+        {{> "icons/vk"}}
+      </a>
+
+      <a href="http://twitter.com/cinemaholics_" target="_blank" rel="noopener noreferrer"
+        class="w-6 [&>svg]:w-full hover:text-gray-700">
+        {{> "icons/twitter"}}
+      </a>
+
+      <button type="button" class="button-icon search-init hover:text-gray-700 hidden md:inline-block"
+        aria-label="Search this site" data-ghost-search>
+        {{> "icons/search"}}
+      </button>
+    </div>
   </section>
-</div>
+</header>

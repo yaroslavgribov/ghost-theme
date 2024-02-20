@@ -2,62 +2,26 @@
 <html>
 
 <head>
-  {{!-- Document Settings --}}
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> {{!-- Page Meta --}}
   <title>{{meta_title}}</title>
-  {{!-- Mobile Meta --}}
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> {{!-- Brand icon --}}
-  <link rel="shortcut icon" href="{{asset '/favicon.ico'}}"> {{!-- Styles'n'Scripts --}}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{{asset 'build/source.css' }}" />
   {{!-- Ghost outputs important style and meta data with this tag --}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
   {{ghost_head}}
 </head>
 
-<body class="{{body_class}} nav-closed">
-  <div class="whiteplank"></div>
-  {{!-- The blog navigation links --}}
+<body class="{{body_class}} bg-slate-50">
   {{navigation}}
-  <div class="container">
-    <div class="slider">
-      <img src="{{@site.cover_image}}" />
-    </div>
 
-    {{> "promo" }}
-    {{#is "post, page"}}
-      {{else}}
-        {{> "news" }}
-    {{/is}}
-    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-    {{{body}}}
-  </div>
+  {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+  {{{body}}}
+
   {{!-- The tiny footer at the very bottom --}}
-  <div class="footer">
-    <div class="footer-inner container">
-      <div class="footer-socials">
-        <a href="{{@site.url}}" class="logosmall">
-          <img src="{{asset 'logosmall.png'}}" />
-        </a> {{@site.title}} &copy;
-        {{date format="YYYY"}}
-        <div class="socials">
-          <a href="https://vk.com/public.cinemaholics">
-            <img src="{{asset 'icons/ico_vk.png'}}" />
-          </a>
-          <a href="http://twitter.com/cinemaholics_"><img src="{{asset 'icons/ico_tw.png'}}" /></a>
-        </div>
-      </div>
-
-      <div class="footer-links">
-        <a href="/help/">Помощь</a>
-        <a href="/about/">О сайте </a>
-        <a href="/commercial-cinemaholics/">Рекламодателям </a>
-        <a href="/rules-dont-apply/">Соглашения и правила</a>
-        <a href="/you-gotta-work-bitch/">Вакансии </a>
-        <a href="/contacts">Контакты</a>
-      </div>
-    </div>
-  </div>
+  {{> "components/footer"}}
 
   {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
   <script type="text/javascript" defer src="//code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -65,6 +29,7 @@
   {{ghost_foot}}
   {{!-- The main JavaScript file for Casper --}}
   <script type="text/javascript" defer src="{{asset 'js/lib/reframe.min.js'}}"></script>
+  <script type="text/javascript" defer src="{{asset 'js/lib/imagesloaded.pkgd.min.js'}}"></script>
   <script type="text/javascript" defer src="{{asset 'build/source.js'}}"></script>
 </body>
 

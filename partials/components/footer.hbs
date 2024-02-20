@@ -1,0 +1,37 @@
+<footer class="footer site-footer mt-16 bg-white">
+  <div class="container mx-auto px-4 py-8">
+    <section class="flex gap-8 justify-between">
+      <div class="">
+        <a href="{{@site.url}}">
+          <img src="{{@site.logo}}" class="h-14 object-contain" />
+        </a>
+
+        <p class="text-sm my-4">{{@site.title}} &copy;{{date format="YYYY"}}</p>
+
+        <div class="flex gap-4 items-center">
+          <a href="https://vk.com/public.cinemaholics" target="_blank" rel="noopener noreferrer"
+            class="w-6 block [&>svg]:w-full">
+            {{> "icons/vk"}}
+          </a>
+
+          <a href="http://twitter.com/cinemaholics_" target="_blank" rel="noopener noreferrer"
+            class="w-6 block [&>svg]:w-full">
+            {{> "icons/twitter"}}
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-1 text-right">
+        <a target="_blank" rel="noopener noreferrer" class="hover:underline no-underline" href="/help/">Помощь</a>
+        <a target="_blank" rel="noopener noreferrer" class="hover:underline no-underline" href="/about/">О сайте </a>
+        <a target="_blank" rel="noopener noreferrer" class="hover:underline no-underline"
+          href="/commercial-cinemaholics/">Рекламодателям </a>
+        <a target="_blank" rel="noopener noreferrer" class="hover:underline no-underline"
+          href="/rules-dont-apply/">Соглашения и правила</a>
+        <a target="_blank" rel="noopener noreferrer" class="hover:underline no-underline"
+          href="/you-gotta-work-bitch/">Вакансии </a>
+        <a target="_blank" rel="noopener noreferrer" class="hover:underline no-underline" href="/contacts">Контакты</a>
+      </div>
+  </div>
+  </section>
+</footer>

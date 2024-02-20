@@ -1,18 +1,18 @@
-<div id="news" class="sidebar1 sidebar--news">
-  <h2>Новости</h2>
-  <!-- news block daily-->
-  {{#get "posts" filter="primary_tag:newsblock+feature_image:-null" limit="8" order="published_at desc"}}
-    {{#foreach posts}}
-      <div class="news">
-        <a href="{{url}}">
-          <img src="{{img_url feature_image}}" />
-          {{title}}
-        </a>
-      </div>
-    {{/foreach}}
-    <a href="/tag/newsblock" class="button">
-      <span>еще новости</span>
+<aside class="">
+  <header class="flex justify-between gap-2 border-b border-slate-300 pb-1 mb-4">
+    <h2 class="md:text-lg uppercase">Последние Новости</h2>
+    <a href="/tag/newsblock" class="text-lg underline hover:no-underline">
+      <span>Все новости &rarr;</span>
     </a>
-  {{/get}}
-  <!-- end news block -->
-</div>
+  </header>
+
+  <!-- news block daily-->
+  <section
+    class="grid grid-flow-row md:grid-cols-[repeat(auto-fit,minmax(248px,1fr))] md:-mx-4 [&>*:nth-child(4)]:md:hidden [&>*:nth-child(4)]:lg:block">
+    {{#get "posts" include="authors" filter="primary_tag:newsblock" limit="4" order="published_at desc"}}
+      {{#foreach posts}}
+        {{> "post-small" showBorder="true"}}
+      {{/foreach}}
+    {{/get}}
+  </section>
+</aside>

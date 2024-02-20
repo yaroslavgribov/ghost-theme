@@ -1,6 +1,17 @@
 {{!< default}}
 
 {{!-- The main content area on the homepage --}}
-<main id="content" class="content" role="main">
-  {{>"loop"}}
+
+<main class="container mx-auto px-4" role="main">
+  {{#tag}}
+    <section>
+      <div class="max-w-5xl mx-auto">
+        <header class="mt-8 md:mt-16 border-b border-slate-300 pb-2">
+          <h1 class="text-2xl md:text-4xl font-bold font-sans">{{name}}</h1>
+        </header>
+      </div>
+    </section>
+  {{/tag}}
+
+  {{> "components/post-list" feed="archive" showTitle=false}}
 </main>

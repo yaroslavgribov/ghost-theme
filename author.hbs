@@ -2,40 +2,43 @@
 
 {{#author}}
   <section class="author-block content">
-    <figure class="author-block__image">
-      <div class="image image--rounded">
-        <img src="{{img_url profile_image}}" alt="">
-      </div>
-    </figure>
-    <section class="author-block__info ">
-      <h1>{{name}}</h1>
-      {{#if bio}}
-        <h2 class="author-block-bio">{{bio}}</h2>
-      {{/if}}
-      <span class="author-block-stats">
-        {{plural ../pagination.total empty='Нет постов' singular='% пост' plural='% постов'}}</span>
-      <div class="author-block-socials">
-        {{#if website}}
-          <span class="author-link">
-            <a class="social-link" href="{{website}}">
-              {{> "icons/vk" }}
-            </a>
-          </span>
-        {{/if}}
+    <section>
+      <div class="container mx-auto px-4">
+        <header class="mt-8 md:mt-16 flex gap-4">
+          {{#if profile_image}}
+            <figure class="w-24 h-24 shrink-0 rounded-full overflow-clip">
+              <img src="{{img_url profile_image}}" alt={{name}} class="w-24 h-24 object-cover">
+            </figure>
+          {{/if}}
+          <section class="grow">
+            <div class="flex items-center gap-4 h-10">
+              <h1 class="text-2xl md:text-4xl font-bold font-sans">{{name}}</h1>
+              <div class="flex gap-4 items-center">
+                {{#if website}}
+                  <a href="{{website}}" target="_blank" rel="noopener noreferrer" class="w-6 block [&>svg]:w-full">
+                    {{> "icons/vk"}}
+                  </a>
+                {{/if}}
+                {{#if twitter}}
+                  <a href="{{twitter_url}}" target="_blank" rel="noopener noreferrer" class="w-6 block [&>svg]:w-full">
+                    {{> "icons/twitter"}}
+                  </a>
+                {{/if}}
+              </div>
+            </div>
+            <p>{{bio}}</p>
+            <span class="text-sm">
+              {{plural ../pagination.total empty='Нет постов' singular='% пост' plural='% постов'}}
+            </span>
 
-        {{#if twitter}}
-          <span class="author-link">
-            <a class="social-link" href="{{twitter_url}}">
-              {{> "icons/twitter" }}
-            </a>
-          </span>
-        {{/if}}
+          </section>
+        </header>
+
       </div>
     </section>
   </section>
 {{/author}}
-<main id="content" class="content" role="main">
 
-  {{> "loop"}}
-
+<main id="content" class="container mx-auto px-4" role="main">
+  {{> "components/post-list" feed="archive" showTitle=false}}
 </main>

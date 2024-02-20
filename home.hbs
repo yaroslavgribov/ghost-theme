@@ -1,0 +1,21 @@
+{{!< default}}
+{{!-- Insert back into default --}}
+<section>
+  <section
+    class="relative md:py-64 px-[4vmin] py-40 before:bg-black before:opacity-30 before:absolute before:inset-0 mb-16">
+    {{#if @site.cover_image}}
+      <img src="{{@site.cover_image}}" alt="{{@site.title}}" class="absolute inset-0 w-full h-full object-cover" />
+    {{/if}}
+  </section>
+
+  <section class="container mx-auto px-4">
+    {{> "news" }}
+  </section>
+
+  {{> "components/featured"}}
+
+  <section class="container mx-auto px-4">
+    {{> "components/post-list" feed="home" showTitle=true }}
+  </section>
+</section>
+</section>

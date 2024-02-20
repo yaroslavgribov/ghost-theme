@@ -6,10 +6,6 @@
     "ghost": ">5.0.0"
   },
   "license": "MIT",
-  "screenshots": {
-    "desktop": "assets/screenshot-desktop.jpg",
-    "mobile": "assets/screenshot-mobile.jpg"
-  },
   "author": {
     "name": "Ghost Foundation",
     "email": "hello@ghost.org",
@@ -57,8 +53,11 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.11.0",
+    "@tailwindcss/typography": "^0.5.9",
     "buffer": "^5.5.0||^6.0.0",
-    "parcel": "^2.11.0"
+    "parcel": "^2.11.0",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
   },
   "scripts": {
     "start": "parcel watch",
@@ -89,6 +88,7 @@
   },
   "targets": {
     "default": {
+      "context": "browser",
       "source": "./assets/source.js",
       "distDir": "./assets/build"
     }

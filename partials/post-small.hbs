@@ -1,14 +1,15 @@
-<article class="post-card post-card--sm {{post_class}}">
-  <div class="post-card__content post-card-content">
-    <a class="post-card-content__link" href="{{url}}">
-      <header class="post-card__header">
-        <h2 class="post-card-title">
-          {{title}}
-        </h2>
-      </header>
-      <section class="post-card__excerpt">
-        <p> {{excerpt words="20"}} ... </p>
-      </section>
-    </a>
-  </div>
+<article class="border-slate-300 my-4 first:border-0 md:px-4 {{#if showBorder}}md:border-l{{/if}}">
+  <a href="{{url}}" class="flex gap-4 items-start flex-row-reverse">
+    <figure class="aspect-square w-16 xl:w-20 shrink-0 relative">
+      <img src="{{img_url feature_image size='s'}}" class="object-cover absolute w-full h-full" alt="{{title}}" />
+    </figure>
+
+    <div class="flex flex-col items-stretch grow">
+      <h3 class="col-span-2 font-serif font-bold text-gray-800">{{title}}</h3>
+
+      <p class="text-slate-500 text-sm">
+        <time datetime="{{date format=" YYYY-MM-DD"}}">{{date}}</time>
+      </p>
+    </div>
+  </a>
 </article>

@@ -1,0 +1,26 @@
+{{#get "posts" filter="featured:true" include="authors" limit="10" as |featured|}}
+  <section class="site-featured bg-white mt-8 md:mt-16">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-12 gap-8 pt-8 pb-4">
+        <div class="col-span-full lg:col-span-8 xl:col-span-6">
+          {{#foreach featured limit="1"}}
+            {{> "post-card"}}
+          {{/foreach}}
+        </div>
+
+        <div
+          class="col-span-full lg:col-span-4 md:grid md:gap-8 lg:gap-0 grid-cols-[repeat(auto-fit,minmax(248px,1fr))] xl:block xl:col-span-3">
+          {{#foreach featured from="2" limit="2"}}
+            {{> "post-card"}}
+          {{/foreach}}
+        </div>
+
+        <div class="col-span-full grid grid-cols-[repeat(auto-fit,minmax(248px,1fr))] gap-4 xl:col-span-3">
+          {{#foreach featured from="4" limit="6"}}
+            {{> "post-small"}}
+          {{/foreach}}
+        </div>
+      </div>
+    </div>
+  </section>
+{{/get}}

@@ -1,10 +1,11 @@
 export function pagination(isInfinite = true, done, isMasonry = false) {
-  const feedElement = document.querySelector(".post-feed");
+  const feedElement = document.querySelector(".site-feed");
   if (!feedElement) return;
 
+  let loading = false;
   const target =
-    feedElement.nextElementSibling || document.querySelector(".gh-footer");
-  const buttonElement = document.querySelector(".gh-loadmore");
+    feedElement.nextElementSibling || document.querySelector(".site-footer");
+  const buttonElement = document.querySelector(".site-loadmore");
 
   if (!document.querySelector("link[rel=next]") && buttonElement) {
     buttonElement.remove();
@@ -21,8 +22,10 @@ export function pagination(isInfinite = true, done, isMasonry = false) {
       const doc = parser.parseFromString(html, "text/html");
 
       const postElements = doc.querySelectorAll(
-        ".post-feed:not(.featured):not(.gh-related) > *"
+        ".site-feed:not(.site-featured):not(.gh-related) > *"
       );
+
+      console.log(postElements);
       const fragment = document.createDocumentFragment();
       const elems = [];
 
@@ -67,5 +70,37 @@ export function pagination(isInfinite = true, done, isMasonry = false) {
     }
   };
 
-  buttonElement?.addEventListener("click", loadNextPage);
+  const callback = async function(entries) {
+    if (loading) return;
+
+    loading = true;
+
+    if (entries[0].isIntersecting) {
+      // keep loading next page until target is out of the viewport or we've loaded the last page
+      if (!isMasonry) {
+        while (
+          target.getBoundingClientRect().top <= window.innerHeight &&
+          document.querySelector("link[rel=next]")
+        ) {
+          await loadNextPage();
+        }
+      } else {
+        await loadNextPage();
+      }
+    }
+
+    loading = false;
+
+    if (!document.querySelector("link[rel=next]")) {
+      observer.disconnect();
+    }
+  };
+
+  const observer = new IntersectionObserver(callback);
+
+  if (isInfinite) {
+    observer.observe(target);
+  } else {
+    buttonElement.addEventListener("click", loadNextPage);
+  }
 }
