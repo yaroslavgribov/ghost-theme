@@ -1,35 +1,32 @@
-{{!-- Previous/next page links - only displayed on page 2+ --}}
-<!--<div class="extra-pagination inner">-->
+<div class="mateblock post-feed site-feed">
+  {{#foreach posts limit="15"}}
+    <article class="block {{post_class}}">
+      <a href="{{url}}">
+        <div class="rela post__image">
+          <img srcset='{{img_url feature_image size="xs" format="webp"}} 160w,
+                      {{img_url feature_image size="s" format="webp"}} 320w,
+                      {{img_url feature_image size="m" format="webp"}} 600w,
+                      {{img_url feature_image size="l" format="webp"}} 960w,
+                      {{img_url feature_image size="xl" format="webp"}} 1200w,
+                      {{img_url feature_image size="xxl" format="webp"}} 2000w'
+            sizes='{{#if imageSizes}}{{imageSizes}}{{else}}320px{{/if}}' src='{{img_url feature_image size="m"}}'
+            alt='{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}' {{#if lazyLoad}}loading="lazy"
+            {{/if}}>
 
-<!--</div>-->
-
-{{!-- This is the post loop - each post will be output using this markup --}}
-<div class="mateblock post-feed">
-    {{#foreach posts limit="{{@config.posts_per_page}}"}}
-        <article class="block {{post_class}}">
-            <a href="{{url}}">
-
-                <div class="rela post__image">
-                    <img src="{{img_url feature_image}}" />
-
-                    <span class="type">
-                    {{#primary_tag}}
-                        {{name}}
-                    {{/primary_tag}}
-                    </span>
-                </div>
-                <h2 class="post-title">
-                    {{title}}
-                </h2>
-                <span class="text"> {{excerpt words="20"}} </span>
-
-            </a>
-            <!--<div class="comme">21</div>-->
-        </article>
-    {{/foreach}}
+          <span class="type">
+            {{#primary_tag}}
+              {{name}}
+            {{/primary_tag}}
+          </span>
+        </div>
+        <h2 class="post-title">
+          {{title}}
+        </h2>
+        <p class="text"> {{excerpt words="20"}} </p>
+      </a>
+    </article>
+  {{/foreach}}
 </div>
-<button type="button" id="load-posts" class="button more">
-    показать больше
+<button type="button" class="button more site-loadmore">
+  показать больше
 </button>
-
-{{!-- Previous/next page links - displayed on every page --}}

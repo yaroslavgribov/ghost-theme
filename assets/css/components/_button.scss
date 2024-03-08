@@ -7,32 +7,33 @@
   padding: 10px;
   font-size: 16px;
   background-color: transparent;
-  font-family: 'proxima_nova_rgbold';
-  transition: all .2s ease-in-out;
+  font-family: "Noto Sans";
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
-  text-decoration:none !important;
+  text-decoration: none !important;
   border: 2px solid #212020;
-  
+
   &:hover {
-      background-color: #212020;
-      color: #fff !important;
-      text-decoration:none;
+    background-color: #212020;
+    color: #fff !important;
+    text-decoration: none;
   }
 
   &.more {
-      font-size: 18px;
-      padding: 17px 20px;
-      margin-bottom: 15px;
-      border: 2px solid #212020;
+    font-size: 18px;
+    padding: 17px 20px;
+    margin-bottom: 15px;
+    border: 2px solid #212020;
   }
 
   span {
-      text-decoration:none !important;
+    text-decoration: none !important;
   }
 
   &-icon {
     padding: 0;
-    width: 18px;
+    width: 24px;
 
     & .size-large {
       width: 26px;

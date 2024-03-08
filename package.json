@@ -1,10 +1,9 @@
 {
   "name": "cinemaholics",
   "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
-  "demo": "https://demo.ghost.io",
-  "version": "2.0.1",
+  "version": "3.0.4",
   "engines": {
-    "ghost": ">1.0.0"
+    "ghost": ">5.0.0"
   },
   "license": "MIT",
   "screenshots": {
@@ -24,41 +23,76 @@
     ]
   },
   "keywords": [
-    "ghost",
-    "theme"
+    "ghost-theme"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/TryGhost/Casper.git"
   },
   "bugs": "https://github.com/TryGhost/Casper/issues",
-  "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
+  "contributors": [
+    "https://github.com/TryGhost/Casper/graphs/contributors"
+  ],
   "dependencies": {
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.0.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.4",
-    "extract-text-webpack-plugin": "^2.1.2",
-    "fs-extra": "^7.0.1",
-    "ignore-loader": "^0.1.2",
+    "@tryghost/content-api": "^1.11.20",
     "image-size": "0.5.1",
     "intl": "1.2.5",
     "lodash": "^4.17.11",
-    "node-sass": "^4.11.0",
-    "path-match": "1.2.4",
-    "prettier": "^1.18.2",
-    "resolve-url-loader": "^2.1.0",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.2",
-    "webpack": "^2.7.0"
+    "prettier": "^1.18.2"
   },
-  "devDependencies": {},
+  "prettier": {
+    "printWidth": 80,
+    "useTabs": false,
+    "bracketSpacing": true,
+    "tabWidth": 2,
+    "overrides": [
+      {
+        "files": "*.hbs",
+        "options": {
+          "singleQuote": false,
+          "tabWidth": 2
+        }
+      }
+    ]
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.11.0",
+    "buffer": "^5.5.0||^6.0.0",
+    "parcel": "^2.11.0"
+  },
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "start": "webpack --config webpack.dev.js --watch"
+    "start": "parcel watch",
+    "build": "parcel build"
   },
   "config": {
-    "posts_per_page": 16
-  }
+    "card_assets": true,
+    "posts_per_page": 22,
+    "image_sizes": {
+      "xs": {
+        "width": 160
+      },
+      "s": {
+        "width": 320
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 960
+      },
+      "xl": {
+        "width": 1200
+      },
+      "xxl": {
+        "width": 2000
+      }
+    }
+  },
+  "targets": {
+    "default": {
+      "source": "./assets/source.js",
+      "distDir": "./assets/build"
+    }
+  },
+  "browserslist": "defaults"
 }
