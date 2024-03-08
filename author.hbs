@@ -4,7 +4,7 @@
   <section class="author-block content">
     <figure class="author-block__image">
       <div class="image image--rounded">
-          <img src="{{img_url profile_image}}" alt="">
+        <img src="{{img_url profile_image}}" alt="">
       </div>
     </figure>
     <section class="author-block__info ">
@@ -12,24 +12,17 @@
       {{#if bio}}
         <h2 class="author-block-bio">{{bio}}</h2>
       {{/if}}
-      <span class="author-block-stats"> {{plural ../pagination.total empty='Нет постов' singular='% пост' plural='% постов'}}</span>
+      <span class="author-block-stats">
+        {{plural ../pagination.total empty='Нет постов' singular='% пост' plural='% постов'}}</span>
       <div class="author-block-socials">
-        {{#if facebook}}
-          <span class="author-link ">
-            <a class="social-link" href="{{facebook_url}}">
-              {{> "icons/facebook"}}
-            </a>
-          </span>
-        {{/if}}
-        
         {{#if website}}
           <span class="author-link">
-            <a class="social-link" href="{{website}}" >
+            <a class="social-link" href="{{website}}">
               {{> "icons/vk" }}
             </a>
           </span>
         {{/if}}
-        
+
         {{#if twitter}}
           <span class="author-link">
             <a class="social-link" href="{{twitter_url}}">
@@ -43,6 +36,6 @@
 {{/author}}
 <main id="content" class="content" role="main">
 
-    {{> "loop"}}
+  {{> "loop"}}
 
 </main>
