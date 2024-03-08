@@ -65,6 +65,7 @@
     "build": "parcel build"
   },
   "config": {
+    "card_assets": true,
     "posts_per_page": 22,
     "image_sizes": {
       "xs": {
@@ -87,7 +88,6 @@
       }
     }
   },
-  "card_assets": true,
   "targets": {
     "default": {
       "source": "./assets/source.js",
