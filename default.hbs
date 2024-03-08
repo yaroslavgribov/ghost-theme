@@ -12,12 +12,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,700;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
-  <link rel="shortcut icon" href="{{asset '/favicon.ico'}}"> {{!-- Styles'n'Scripts --}}
+  <link rel="shortcut icon" href="{{asset '/favicon.ico'}}">
   <link rel="stylesheet" type="text/css" href="{{asset 'build/source.css' }}" />
-
-  {{!-- Ghost outputs important style and meta data with this tag --}}
+  <script src="https://unpkg.com/reframe.js@latest/dist/reframe.min.js"></script>
   {{ghost_head}}
 </head>
 
@@ -70,7 +69,6 @@
   {{!-- Ghost outputs important scripts and data with this tag --}}
   {{ghost_foot}}
   {{!-- The main JavaScript file for Casper --}}
-  <script type="text/javascript" defer src="{{asset 'js/lib/reframe.min.js'}}"></script>
   <script type="text/javascript" defer src="{{asset 'build/source.js'}}"></script>
 </body>
 

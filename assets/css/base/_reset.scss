@@ -6,15 +6,23 @@ hr {
   border: 0px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
 }
-ul, ol, dl {
+ul,
+ol,
+dl {
   padding: 0;
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   padding-right: 0;
-  font-family: 'proxima_nova_rgbold';
+  font-family: "Noto Sans";
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: $letter-spacing-headings;
   line-height: 1.4;
@@ -26,26 +34,34 @@ a img {
 }
 
 a:link {
-  color: #42413C;
+  color: #42413c;
 }
 
 a:visited {
-  color: #42413C;
+  color: #42413c;
 }
 
 body {
-  font: 16px/1.625 'PT Serif', serif;
+  font: 16px/1.625 "PT Serif", serif;
   margin: 0;
   padding: 0;
   color: #212020;
   background-color: #efefef;
 }
 
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
 img {
   vertical-align: middle;
 }
 
-a:hover, a:active, a:focus {
+a:hover,
+a:active,
+a:focus {
   text-decoration: none;
 }
 
@@ -55,8 +71,6 @@ figure {
 
 button {
   &[type="button"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     background: none;
     outline: none;
     border: none;

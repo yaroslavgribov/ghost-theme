@@ -3,7 +3,7 @@
   background-color: #262626;
   position: relative;
   margin-top: 110px;
-  font-family: 'proxima_nova_rgregular';
+  font-family: "Noto Sans";
 }
 
 .footer-inner {
@@ -29,6 +29,7 @@
 
 .footer .socials img {
   width: 38px;
+  display: inline-block;
 }
 
 .footer .socials {
@@ -56,4 +57,3 @@
     text-decoration: underline;
   }
 }
-

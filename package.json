@@ -1,7 +1,7 @@
 {
   "name": "cinemaholics",
   "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "engines": {
     "ghost": ">5.0.0"
   },
@@ -87,6 +87,7 @@
       }
     }
   },
+  "card_assets": true,
   "targets": {
     "default": {
       "source": "./assets/source.js",
