@@ -1,55 +1,43 @@
 .poster {
-  padding: 20px;
+  padding: var(--spacing-large);
   border: 2px solid black;
-  -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.15);
 
   @media (max-width: 1280px) {
-    padding: 10px;
+    padding: var(--spacing);
   }
   @media (max-width: 1160px) {
     padding: 0px;
   }
 
   &__content {
-    display: block;
     background-color: white;
-    color: #32e49b;
     font-size: 18px;
     text-align: center;
-    font-family: "Noto Sans";
-    font-weight: 700;
-    text-decoration: none !important;
 
     figure {
-      margin: 0;
       height: 175px;
       position: relative;
-      overflow: hidden;
 
       @media (min-width: 1366px) {
         height: 225px;
       }
 
       img {
-        width: auto;
-        height: 100%;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        height: 100%;
+        object-fit: cover;
       }
     }
 
     h2 {
-      padding: 15px 20px 15px;
+      padding: var(--base-spacing) var(--spacing-large) var(--base-spacing);
       margin: 0;
       font-size: 22px;
       text-decoration: none;
 
       @media (min-width: 1366px) {
-        padding: 45px 20px 30px;
+        padding: 45px var(--spacing-large) 30px;
       }
 
       @media (max-width: 1366px) {
@@ -65,7 +53,7 @@
       color: #1ed2cc;
       margin: 0;
       font-size: 22px;
-      padding-bottom: 15px;
+      padding-bottom: var(--base-spacing);
 
       @media (min-width: 1366px) {
         padding-bottom: 35px;
@@ -76,4 +64,19 @@
       }
     }
   }
+}
+
+.commercial {
+  float: right;
+  max-width: 380px;
+  width: 22.35294117647059%;
+  padding: 0px 0;
+
+  @media (max-width: 690px) {
+    display: none;
+  }
+}
+
+.banner {
+  width: 100%;
 }

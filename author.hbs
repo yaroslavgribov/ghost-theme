@@ -2,40 +2,36 @@
 
 {{#author}}
   <section class="author-block content">
-    <figure class="author-block__image">
-      <div class="image image--rounded">
-        <img src="{{img_url profile_image}}" alt="">
-      </div>
-    </figure>
-    <section class="author-block__info ">
-      <h1>{{name}}</h1>
-      {{#if bio}}
-        <h2 class="author-block-bio">{{bio}}</h2>
-      {{/if}}
-      <span class="author-block-stats">
-        {{plural ../pagination.total empty='Нет постов' singular='% пост' plural='% постов'}}</span>
-      <div class="author-block-socials">
-        {{#if website}}
-          <span class="author-link">
-            <a class="social-link" href="{{website}}">
-              {{> "icons/vk" }}
-            </a>
-          </span>
-        {{/if}}
+    {{#if profile_image}}<img src="{{img_url profile_image}}" alt={{name}}>{{/if}}
 
+    <section class="author-block__info">
+      {{#if website}}
+        <a href={{website}} class="author-block__website">
+      {{/if}}
+      <h1>{{name}}</h1>
+      {{#if website}}
+        </a>
+      {{/if}}
+
+      {{#if bio}}
+        <p>{{bio}}</p>
+      {{/if}}
+
+      <p>
+        {{plural ../pagination.total empty='Нет постов' singular='% пост' plural='% постов'}}
+      </p>
+
+      <div class="author-block__socials">
         {{#if twitter}}
-          <span class="author-link">
-            <a class="social-link" href="{{twitter_url}}">
-              {{> "icons/twitter" }}
-            </a>
-          </span>
+          <a class="social-link author-block__social-link" href="{{twitter_url}}">
+            {{> "icons/twitter" }}
+          </a>
         {{/if}}
       </div>
     </section>
   </section>
 {{/author}}
+
 <main id="content" class="content" role="main">
-
   {{> "loop"}}
-
 </main>

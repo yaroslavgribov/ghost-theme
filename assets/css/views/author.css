@@ -1,0 +1,49 @@
+.author-block {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--spacing-large);
+  background: white;
+  padding: var(--spacing-large);
+  margin-bottom: var(--spacing-large);
+
+  img {
+    height: 120px;
+    width: 120px;
+    border-radius: 9999px;
+    object-fit: cover;
+  }
+
+  &__info {
+    flex: 1;
+
+    h1 {
+      font-size: 32px;
+      text-transform: none;
+    }
+  }
+
+  &__socials {
+    margin-top: var(--base-spacing);
+  }
+
+  &__social-link {
+    svg {
+      height: auto;
+    }
+  }
+
+  &__website {
+    &:hover {
+      color: var(--color-active);
+      transition: color 0.2s ease-out;
+    }
+  }
+}
+
+.image--rounded {
+  position: relative;
+  border-radius: 100%;
+  vertical-align: center;
+  text-align: center;
+  overflow: hidden;
+}

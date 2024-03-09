@@ -56,7 +56,6 @@
     ]
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "2.11.0",
     "buffer": "^5.5.0||^6.0.0",
     "parcel": "^2.11.0"
   },
@@ -66,32 +65,18 @@
   },
   "config": {
     "card_assets": true,
-    "posts_per_page": 22,
-    "image_sizes": {
-      "xs": {
-        "width": 160
-      },
-      "s": {
-        "width": 320
-      },
-      "m": {
-        "width": 600
-      },
-      "l": {
-        "width": 960
-      },
-      "xl": {
-        "width": 1200
-      },
-      "xxl": {
-        "width": 2000
-      }
-    }
+    "posts_per_page": 16
   },
   "targets": {
     "default": {
+      "context": "browser",
       "source": "./assets/source.js",
       "distDir": "./assets/build"
+    }
+  },
+  "@parcel/transformer-css": {
+    "drafts": {
+      "nesting": true
     }
   },
   "browserslist": "defaults"

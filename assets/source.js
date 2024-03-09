@@ -1,2 +1,2 @@
-import "./css/screen.scss";
+import "./css/screen.css";
 import "./js/main.js";

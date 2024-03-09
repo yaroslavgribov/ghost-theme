@@ -1,0 +1,27 @@
+.read-next-title {
+  margin: var(--spacing-large) 0;
+  font-family: "Noto Sans";
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.prev-next {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  font-family: "Noto Sans";
+}
+
+.prev {
+  margin-right: var(--spacing-large);
+}
+
+.prev-title,
+.next-title {
+  margin: var(--spacing-large) 0;
+}
+.read-next-feed {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 -var(--spacing-large);
+}

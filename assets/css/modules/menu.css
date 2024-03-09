@@ -22,7 +22,7 @@
 
   @media (max-width: 1470px) {
     font-size: 14px;
-    padding-left: 20px;
+    padding-left: var(--spacing-large);
   }
 }
 
@@ -79,7 +79,7 @@
   flex: 1 0 auto;
 }
 
-@media all and (max-width: 1170px) {
+@media (max-width: 1170px) {
   .nav-inner {
     position: absolute;
     transform: translateY(-100%);

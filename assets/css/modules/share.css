@@ -1,7 +1,7 @@
 .share {
   display: flex;
   flex-direction: row;
-  margin: $spacing-large auto;
+  margin: var(--spacing-large) auto;
   width: 100%;
   font-family: "Noto Sans";
   max-width: 800px;

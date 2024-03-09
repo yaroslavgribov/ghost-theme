@@ -15,7 +15,7 @@
   background-color: transparent;
   color: #707070;
   font-size: 16px;
-  padding: 6px 20px 20px 20px;
+  padding: 6px var(--spacing-large) var(--spacing-large) var(--spacing-large);
 }
 
 .footer .logosmall {
@@ -33,7 +33,7 @@
 }
 
 .footer .socials {
-  margin-top: 20px;
+  margin-top: var(--spacing-large);
   opacity: 0.2;
 }
 

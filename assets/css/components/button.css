@@ -1,0 +1,25 @@
+.button {
+  display: block;
+  background-color: transparent;
+  border: 2px solid #212020;
+  color: #212020;
+  font-family: "Noto Sans";
+  font-weight: 700;
+  padding: var(--spacing);
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 0.2s ease-in, background-color 0.2s ease-in;
+
+  &:hover {
+    background-color: #212020;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &.more {
+    font-size: 18px;
+    padding: 17px var(--spacing-large);
+    margin-bottom: var(--base-spacing);
+    border: 2px solid #212020;
+  }
+}

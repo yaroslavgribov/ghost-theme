@@ -1,0 +1,12 @@
+:root {
+  --spacing-small: 5px;
+  --spacing: 10px;
+  --base-spacing: 15px;
+  --spacing-large: 20px;
+  --spacing-xl: 30px;
+  --color-default: #42413c;
+  --color-gray: #989898;
+  --color-active: #1ed2cc;
+  --text-lg: 3rem;
+  --text-sm: 1.4rem;
+}

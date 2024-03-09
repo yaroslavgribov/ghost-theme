@@ -8,10 +8,6 @@
   float: left;
   position: absolute;
   text-transform: uppercase;
-  -webkit-transform-origin: 0% 0%;
-  -moz-transform-origin: 0% 0%;
-  -o-transform-origin: 0% 0%;
-  -ms-transform-origin: 0% 0%;
   transform-origin: 0% 0%;
 }
 
@@ -26,10 +22,6 @@
   top: -68px;
   height: 25px;
   line-height: 17px;
-  -webkit-transform-origin: 0% 100%;
-  -moz-transform-origin: 0% 100%;
-  -o-transform-origin: 0% 100%;
-  -ms-transform-origin: 0% 100%;
   transform-origin: 0% 100%;
   text-align: right;
 }
@@ -43,47 +35,12 @@
   width: 47%;
   background-color: #fff;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: var(--spacing);
   position: relative;
   margin-bottom: 6%;
 
-  .full & {
-    width: 23%;
-
-    @media (max-width: 1160px) {
-      width: 47%;
-    }
-
-    @media (max-width: 800px) {
-      width: 100%;
-    }
-  }
-
   &.post.featured {
     margin-bottom: 6%;
-  }
-
-  &--search {
-    max-width: 100%;
-    width: 100%;
-    margin: $base-spacing 0 !important;
-    padding: $base-spacing 0;
-
-    .post-title {
-      margin-bottom: 0;
-
-      p {
-        margin-bottom: 0;
-      }
-    }
-
-    .post__image {
-      display: none;
-    }
-
-    .text {
-      margin-bottom: 0;
-    }
   }
 
   &:nth-of-type(1) {
@@ -97,15 +54,6 @@
     }
   }
 
-  &:last-child,
-  &:nth-last-child(2) {
-  }
-
-  a {
-    display: block;
-    text-decoration: none;
-  }
-
   img {
     width: 100%;
   }
@@ -116,7 +64,7 @@
       margin-top: 50px;
       margin-left: 0;
       font-size: 16px;
-      bottom: 30px;
+      bottom: var(--spacing-xl);
       position: absolute;
 
       @media (max-width: 960px) {
@@ -129,7 +77,7 @@
     display: block;
     color: #212020;
     font: 14px/1.25 "PT Serif", serif;
-    margin: 0px 20px 10px 20px;
+    margin: 0px var(--spacing-large) var(--spacing) var(--spacing-large);
   }
 }
 
@@ -178,8 +126,6 @@
   text-transform: none;
   letter-spacing: 0px;
   color: white;
-  font-family: "Noto Sans";
-  font-weight: 700;
 
   @media (min-width: 960px) {
     font-size: 22px;
@@ -196,7 +142,7 @@
 }
 
 .fulltext {
-  padding: 8.333333333333333% 8.333333333333333% $spacing-large;
+  padding: 8.333333333333333% 8.333333333333333% var(--spacing-large);
   font-size: 18px;
   line-height: 1.625;
 
@@ -240,10 +186,10 @@
       font-size: 16px;
       font-style: normal;
       font-weight: 600;
-      padding: 20px 10px;
+      padding: var(--spacing-large) var(--spacing);
       color: black;
 
-      margin: 10px 0 50px;
+      margin: var(--spacing) 0 50px;
       border: 1px solid #eaeaea;
       border-left: 0;
       border-right: 0;
@@ -255,7 +201,7 @@
       }
 
       @media (min-width: 1366px) {
-        padding: 20px 40px;
+        padding: var(--spacing-large) 40px;
       }
 
       &:before {
@@ -335,12 +281,12 @@ blockquote {
   position: relative;
   display: block;
   font-style: italic;
-  padding: 15px 0px;
-  color: #989898;
+  padding: var(--base-spacing) 0px;
+  color: var(--color-gray);
 }
 
 blockquote:before {
-  color: #989898;
+  color: var(--color-gray);
   content: "\201C";
   font-size: 3em;
   line-height: 0.1em;
@@ -350,7 +296,7 @@ blockquote:before {
 }
 
 blockquote:after {
-  color: #989898;
+  color: var(--color-gray);
   content: "\201D"; /* Непечатаемый символ справа */
   font-size: 3em;
   line-height: 0.1em;
@@ -363,85 +309,30 @@ blockquote > p:first-child {
 }
 
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
   margin: 40px 0;
-  overflow: hidden;
-}
-
-.autor {
-  color: #989898;
-  margin-top: 30px;
 }
 
 .author .text > a {
   color: white;
 }
 
-a.feeadback {
-  max-width: 180px;
-  text-align: center;
-  color: #ababab;
-  background-color: #343434;
-  border-radius: 5px;
-  font-size: 16px;
-  display: block;
-  padding: 10px 0px;
-  text-decoration: none;
-  margin-bottom: 48px;
-}
-
-a.copyright {
-  color: #ababab;
-}
-
 .inside {
-  margin-bottom: 10px;
+  margin-bottom: var(--spacing);
 }
 
-.commen {
-  padding: 20px 20px;
-  margin-bottom: 70px;
-}
+.post-title {
+  font-size: 16px;
+  margin: 0 var(--spacing-large) var(--spacing) var(--spacing-large);
 
-.video-container embed,
-.video-container iframe,
-.video-container object {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+  transition: all 0.2s, transform 0.2s;
 
-.entry-content .video-container embed,
-.entry-content .video-container iframe,
-.entry-content .video-container object {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.post {
-  &-title {
-    font-size: 16px;
-    margin: 0 20px 10px 20px;
-
-    webkit-transition: all 0.2s, -webkit-transform 0.2s;
-    transition: all 0.2s, transform 0.2s;
-
-    &:hover {
-      color: #1ed2cc;
-    }
+  &:hover {
+    color: #1ed2cc;
   }
 }
 
 .post-footer {
-  padding: $spacing-large 8.3333333% 8.33333333%;
+  padding: var(--spacing-large) 8.3333333% 8.33333333%;
 
   @media (max-width: 1280px) {
     font-size: 16px;

@@ -1,9 +1,5 @@
 {{!< default}}
 
-{{!-- The comment above "< default" means - insert everything in this file into
-    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
-
-{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
   <main class="content content--post">
     <section class="{{post_class}}">
@@ -30,32 +26,18 @@
               </section>
             </div>
 
-            <div class="type">{{tags limit="1"}}</div>
+            <span class="type">
+              <a href="{{primary_tag.url}}">
+                {{primary_tag.name}}
+              </a>
+            </span>
           </div>
+
           <article class="fulltext gh-content">
             {{content}}
           </article>
-          <section class="post-footer">
-            <aside class="share">
-              <div class="share-label">
-                Поделиться:
-              </div>
-              <div class="share-list">
-                <a class="" href="https://vk.com/share.php?url={{url absolute=" true"}}"
-                  onclick="window.open(this.href, 'share-vk','width=580,height=296');return false;">
-                  Вконтакте
-                </a>
-                <a class="" href="https://t.me/share/url?url={{url absolute=" true"}}&text={{encode title}}"
-                  onclick="window.open(this.href, 'share-telegram', 'width=550,height=235');return false;">
-                  Telegram
-                </a>
-                <a class="" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute=" true"}}"
-                  onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
-                  Twitter
-                </a>
-              </div>
-            </aside>
 
+          <section class="post-footer">
             <aside class="tags">
               <section class="tags-label">Теги:</section>
               <div class="tags-list">
@@ -67,7 +49,6 @@
               </div>
             </aside>
           </section>
-
         </div>
       </div>
     </section>

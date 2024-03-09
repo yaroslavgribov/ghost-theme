@@ -1,0 +1,29 @@
+.news {
+  padding: var(--spacing-large) 0px;
+  border-bottom: 1px solid #e8e8e8;
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  img {
+    margin-bottom: var(--spacing-large);
+  }
+}
+
+.sidebar1 {
+  float: left;
+  padding: var(--spacing-large);
+  max-width: 380px;
+  width: 22.35294117647059%;
+  background-color: #ffffff;
+  margin-bottom: var(--spacing-large);
+
+  @media (max-width: 690px) {
+    display: none;
+  }
+
+  h2 {
+    text-align: center;
+  }
+}

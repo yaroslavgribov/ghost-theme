@@ -1,41 +1,29 @@
-import { hideMainBanner, splitDateAndTitle } from "./helpers";
 import { pagination } from "./pagination";
 
-$(document).ready(() => {
-  splitDateAndTitle();
-  hideMainBanner();
-});
+(function() {
+  const menuButton = document.querySelector(".menu-button");
 
-$(".menu-button").on("click", function() {
-  let nav = $("div.menu"),
-    link_pad = $("div.menu a").height();
-  $(this).toggleClass("active");
-  $("body").toggleClass("pmt");
-  let menu_oheight = nav.outerHeight(),
-    menu_iheight = $("div.menu a:last-child").position();
-});
+  menuButton.addEventListener("click", function() {
+    menuButton.classList.toggle("active");
+    document.body.classList.toggle("pmt");
+  });
 
-$(".js-toggleBanner").on("click", function() {
-  let imageContainer = $(".js-mainImageContainer"),
-    src = imageContainer.attr("src");
+  const imgs = document.querySelectorAll("img");
 
-  imageContainer.toggleClass("js-isVisible is-visible");
-
-  if (imageContainer.hasClass("js-isVisible")) {
-    imageContainer.show();
-    window.localStorage.setItem("mainImgSrc", "");
-  } else {
-    imageContainer.hide();
-    window.localStorage.setItem("mainImgSrc", src);
+  for (const img of imgs) {
+    if (img.parentElement.tagName === Node.ELEMENT_NODE) {
+      img.parentElement.classList.add("picture");
+    }
   }
-});
 
-$("img")
-  .parent("p")
-  .addClass("picture");
-$(".cite")
-  .parent("p")
-  .addClass("paragraph--has-cite");
+  const cites = document.querySelectorAll(".cite");
+
+  for (const cite of cites) {
+    if (cite.parentElement.nodeType === Node.ELEMENT_NODE) {
+      cite.parentElement.classList.add("paragraph--has-cite");
+    }
+  }
+})();
 
 (function() {
   const sources = [

@@ -1,14 +1,14 @@
 .tags {
   max-width: 800px;
   margin: 0 auto;
-  padding: $spacing-large 0;
-  border-top: solid 1px black ;
-  font-family: $font-family-regular;
+  padding: var(--spacing-large) 0;
+  border-top: solid 1px black;
+  font-family: "Noto Sans";
   display: flex;
   flex-direction: row;
 
   .tag-label {
-    flex: 0
+    flex: 0;
   }
 
   .tags-list {
@@ -18,21 +18,22 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     text-transform: uppercase;
-    margin-left: $spacing-large;
+    margin-left: var(--spacing-large);
   }
 
-  .tag, a.tag {
+  .tag,
+  a.tag {
     background: black;
     padding: 3px 5px;
     background-color: #000;
     color: #fff;
     position: relative;
     height: 25px;
-    line-height: 20px;
+    line-height: var(--spacing-large);
     transform-origin: 0% 100%;
     text-align: right;
-    margin-right: $spacing-small;
+    margin-right: var(--spacing-small);
     text-transform: uppercase;
-    font-family: $font-family-regular;
+    font-family: "Noto Sans";
   }
 }

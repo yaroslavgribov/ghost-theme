@@ -1,0 +1,29 @@
+.clearfloat2:after {
+  clear: both;
+  height: 0;
+  font-size: 1px;
+  line-height: 0px;
+  display: block;
+  content: "";
+}
+
+.rela {
+  position: relative;
+  margin-bottom: var(--base-spacing);
+}
+
+.container {
+  z-index: 2;
+  max-width: 1700px;
+  padding: 0px 50px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.image {
+  max-width: 100%;
+}
+
+body.pmt {
+  overflow: hidden;
+}

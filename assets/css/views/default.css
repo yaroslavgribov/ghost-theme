@@ -8,14 +8,6 @@
   }
 }
 
-.sidebar1 .last {
-  border-bottom: 0px solid #e8e8e8;
-}
-
-.banner {
-  width: 100%;
-}
-
 .mateblock {
   display: flex;
   flex-flow: row wrap;
@@ -40,10 +32,6 @@
   margin-right: 0%;
 }
 
-.mobileblock {
-  display: none;
-}
-
 .post__image {
   height: 160px;
   line-height: 160px;
@@ -52,8 +40,19 @@
   img {
     vertical-align: middle;
     position: absolute;
-    /*top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);*/
+  }
+}
+
+.content {
+  padding: 0px 0;
+  margin: 0 25.35294117647059%;
+
+  &--post {
+    margin: 0 25.35294117647059% 0 0;
+  }
+
+  ul,
+  ol {
+    padding: 0 var(--base-spacing) var(--base-spacing) 40px;
   }
 }
