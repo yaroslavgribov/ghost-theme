@@ -312,9 +312,15 @@
       display: block;
       text-align: center;
       font-style: normal;
-      margin-top: 10px;
+      margin-top: 8px;
       color: $text-color-gray;
     }
+  }
+
+  figcaption {
+    text-align: center;
+    color: $text-color-gray;
+    margin-top: 8px;
   }
 
   .paragraph {
