@@ -2,6 +2,10 @@ hr {
   margin: 11px 0px 60px 0px;
   border: 0px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
+
+  @media (max-width: 1170px) {
+    margin: 11px 0px var(--spacing-xl) 0px;
+  }
 }
 
 h1,
@@ -19,8 +23,6 @@ h6 {
 
 body {
   font: 16px/1.625 "PT Serif", serif;
-  margin: 0;
-  padding: 0;
   color: #212020;
   background-color: #efefef;
 }

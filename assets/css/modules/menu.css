@@ -24,6 +24,11 @@
     font-size: 14px;
     padding-left: var(--spacing-large);
   }
+
+  @media (max-width: 1160px) {
+    font-size: var(--base-spacing);
+    padding-left: var(--spacing-large);
+  }
 }
 
 .menu a:hover {
@@ -129,7 +134,6 @@
 
   body.pmt header {
     overflow: visible;
-    padding-top: 122px;
   }
 
   body.pmt a.logo {

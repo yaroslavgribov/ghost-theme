@@ -7,17 +7,20 @@
   content: "";
 }
 
-.rela {
+.relative {
   position: relative;
-  margin-bottom: var(--base-spacing);
 }
 
 .container {
   z-index: 2;
-  max-width: 1700px;
+  max-width: 1536px;
   padding: 0px 50px;
   margin: 0 auto;
   position: relative;
+
+  @media (max-width: 1170px) {
+    padding: 0px var(--spacing-large);
+  }
 }
 
 .image {

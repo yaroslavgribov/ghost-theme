@@ -2,7 +2,6 @@
   display: flex;
   flex-flow: row wrap;
   gap: var(--spacing-large);
-  background: white;
   padding: var(--spacing-large);
   margin-bottom: var(--spacing-large);
 

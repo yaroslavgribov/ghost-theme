@@ -1,5 +1,5 @@
-<div id="navigation" class="header">
-  <section class="header-container nav">
+<header id="navigation" class="header">
+  <section class="header-container container nav">
     <button type="button" class="menu-button">
       <div></div>
       <div></div>
@@ -11,11 +11,11 @@
     </a>
 
     <div class="nav-inner">
-      <div class="nav-menu menu">
+      <nav class="nav-menu menu">
         {{#foreach navigation}}
           <a href="{{url absolute='true'}}">{{label}}</a>
         {{/foreach}}
-      </div>
+      </nav>
       <div class="nav-socials">
         <a class="social-link" href="https://vk.com/public.cinemaholics" target="_blank" rel="noopener noreferrer">
           {{> "icons/vk" }}
@@ -30,4 +30,4 @@
       {{> "icons/search"}}
     </button>
   </section>
-</div>
+</header>

@@ -1,58 +1,25 @@
-.slider {
+.cover {
   max-height: 530px;
   margin-bottom: 50px;
   overflow: hidden;
-
-  img {
-    width: 100%;
-  }
 }
 
-.mateblock {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: stretch;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 6%;
-}
-
-.post-header {
-  height: 345px;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center center;
-
-  @media (min-width: 1366px) {
-    height: 445px;
-  }
-}
-
-.mateblock .blockbig:nth-child(2n + 1) {
-  margin-right: 0%;
-}
-
-.post__image {
-  height: 160px;
-  line-height: 160px;
-  overflow: hidden;
-
-  img {
-    vertical-align: middle;
-    position: absolute;
-  }
+.post-feed {
+  display: grid;
+  grid-gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .content {
-  padding: 0px 0;
-  margin: 0 25.35294117647059%;
+  grid-column: 1 / -1;
 
-  &--post {
-    margin: 0 25.35294117647059% 0 0;
+  @media (min-width: 768px) {
+    grid-column: 1 / span 12;
   }
+}
 
-  ul,
-  ol {
-    padding: 0 var(--base-spacing) var(--base-spacing) 40px;
-  }
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-gap: 42px;
 }

@@ -6,7 +6,7 @@
 
     <section class="author-block__info">
       {{#if website}}
-        <a href={{website}} class="author-block__website">
+        <a href="{{website}}" class="author-block__website">
       {{/if}}
       <h1>{{name}}</h1>
       {{#if website}}
@@ -32,6 +32,6 @@
   </section>
 {{/author}}
 
-<main id="content" class="content" role="main">
+<section id="content" class="content">
   {{> "loop"}}
-</main>
+</section>

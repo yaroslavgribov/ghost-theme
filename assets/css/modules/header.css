@@ -6,9 +6,6 @@
 
 .header-container {
   position: relative;
-  max-width: 1700px;
-  padding: 0px 50px;
-  margin: 0 auto;
 
   @media (max-width: 975px) {
     padding: 0 var(--spacing-large);
@@ -18,22 +15,18 @@
 .logo {
   float: left;
 
+  @media (max-width: 1280px) {
+    max-width: 220px;
+  }
+
   img {
     max-width: 285px;
     position: relative;
     z-index: 101;
-  }
-}
 
-.whiteplank {
-  height: 36%;
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  background-color: #fff;
-
-  @media all and (max-width: 1170px) {
-    display: none;
+    @media (max-width: 1280px) {
+      max-width: 220px;
+    }
   }
 }
 

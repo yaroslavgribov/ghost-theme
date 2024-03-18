@@ -1,18 +1,23 @@
-<aside class="sidebar1">
+<aside class="sidebar">
   <h2>Новости</h2>
-  <!-- news block daily-->
+
   {{#get "posts" filter="primary_tag:newsblock+feature_image:-null" limit="8" order="published_at desc"}}
     {{#foreach posts}}
       <article class="news">
         <a href="{{url}}">
           <img src="{{img_url feature_image size='m'}}" />
+
           <h3>{{title}}</h3>
+
+          <time datetime="{{date format='YYYY MM DD'}}">
+            {{date}}
+          </time>
         </a>
       </article>
     {{/foreach}}
+
     <a href="/tag/newsblock" class="button">
       <span>еще новости</span>
     </a>
   {{/get}}
-  <!-- end news block -->
 </aside>

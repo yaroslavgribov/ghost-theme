@@ -5,13 +5,11 @@
 
 {{!-- Everything inside the #post tags pulls data from the page --}}
 {{#post}}
-  <main class="content content--post">
-    <div class="mateblock inside">
-      <div class="block blockbig fullnew">
-        <div class="fulltext gh-content">
-          {{content}}
-        </div>
+  <article class="content">
+    <div class="block fullnew">
+      <div class="fulltext gh-content">
+        {{content}}
       </div>
     </div>
-  </main>
+  </article>
 {{/post}}

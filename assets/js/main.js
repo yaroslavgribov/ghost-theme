@@ -8,14 +8,6 @@ import { pagination } from "./pagination";
     document.body.classList.toggle("pmt");
   });
 
-  const imgs = document.querySelectorAll("img");
-
-  for (const img of imgs) {
-    if (img.parentElement.tagName === Node.ELEMENT_NODE) {
-      img.parentElement.classList.add("picture");
-    }
-  }
-
   const cites = document.querySelectorAll(".cite");
 
   for (const cite of cites) {

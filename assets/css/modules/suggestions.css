@@ -1,4 +1,4 @@
-.read-next-title {
+.read-next__title {
   margin: var(--spacing-large) 0;
   font-family: "Noto Sans";
   font-weight: 700;
@@ -20,7 +20,7 @@
 .next-title {
   margin: var(--spacing-large) 0;
 }
-.read-next-feed {
+.read-next__feed {
   display: flex;
   flex-flow: row wrap;
   margin: 0 -var(--spacing-large);

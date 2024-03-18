@@ -2,43 +2,40 @@
 <html>
 
 <head>
-  {{!-- Document Settings --}}
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> {{!-- Page Meta --}}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
   <title>{{meta_title}}</title>
-  {{!-- Mobile Meta --}}
+
   <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> {{!-- Brand icon --}}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
-  <link rel="shortcut icon" href="{{asset '/favicon.ico'}}">
-  <link rel="stylesheet" type="text/css" href="{{asset 'build/source.css' }}" />
+  <link rel="stylesheet" type="text/css" href="{{asset 'build/source.css'}}" />
   <script src="https://unpkg.com/reframe.js@latest/dist/reframe.min.js"></script>
   {{ghost_head}}
 </head>
 
 <body class="{{body_class}} nav-closed">
-  <div class="whiteplank"></div>
-  {{!-- The blog navigation links --}}
   {{navigation}}
-  <div class="container">
-    <div class="slider">
-      <img src="{{@site.cover_image}}" />
-    </div>
 
-    {{> "promo" }}
-    {{#is "post, page"}}
-      {{else}}
-        {{> "news" }}
-    {{/is}}
-    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-    {{{body}}}
+  <div class="cover">
+    <img src="{{@site.cover_image}}" alt="{{@site.description}}" />
   </div>
-  {{!-- The tiny footer at the very bottom --}}
-  <div class="footer">
+
+  <main class="container">
+    <section class="main-container">
+      {{{body}}}
+
+      {{> "news" }}
+    </section>
+  </main>
+
+  <footer class="footer site-footer">
     <div class="footer-inner container">
       <div class="footer-socials">
         <a href="{{@site.url}}" class="logosmall">
@@ -46,10 +43,12 @@
         </a> {{@site.title}} &copy;
         {{date format="YYYY"}}
         <div class="socials">
-          <a href="https://vk.com/public.cinemaholics">
-            <img src="{{asset 'icons/ico_vk.png'}}" />
+          <a href="https://vk.com/public.cinemaholics" target="_blank" rel="noreferrer">
+            {{> "icons/vk"}}
           </a>
-          <a href="http://twitter.com/cinemaholics_"><img src="{{asset 'icons/ico_tw.png'}}" /></a>
+          <a href="http://twitter.com/cinemaholics_" target="_blank" rel="noreferrer">
+            {{> "icons/twitter" }}
+          </a>
         </div>
       </div>
 
@@ -62,13 +61,9 @@
         <a href="/contacts">Контакты</a>
       </div>
     </div>
-  </div>
+  </footer>
 
-  {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
-  <script type="text/javascript" defer src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-  {{!-- Ghost outputs important scripts and data with this tag --}}
   {{ghost_foot}}
-  {{!-- The main JavaScript file for Casper --}}
   <script type="text/javascript" defer src="{{asset 'build/source.js'}}"></script>
 </body>
 

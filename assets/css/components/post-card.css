@@ -1,96 +1,49 @@
 .post-card {
-  display: flex;
-  flex: 1 1 300px;
-  flex-direction: column;
+  background-color: #fff;
   overflow: hidden;
-  margin: 0 var(--spacing-large) 40px;
-  min-height: 300px;
-  background: #fff 50%;
-  background-size: cover;
-  border-radius: 0;
-  box-shadow: 12px 14px 38px rgba(39, 44, 49, 0.06),
-    1px 3px 8px rgba(39, 44, 49, 0.03);
-  transition: all 0.5s ease;
-  border: solid 2px black;
+
+  &:first-of-type {
+    grid-column: span 2 / span 2;
+  }
 
   a {
-    text-decoration: none;
-  }
-
-  &--sm {
-    min-height: 0;
-    margin: var(--spacing-large);
-  }
-
-  &__image {
-    height: 200px;
-    width: auto;
-    background-size: cover;
-    background-position: center;
-  }
-
-  &__content {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  &__excerpt {
-    p {
-      font: 14px/1.25 "PT Serif", serif;
-      margin: 0 0 1.5em;
-    }
-  }
-
-  &__meta {
-    padding: 0 var(--spacing-large) var(--spacing-large);
-    font: 14px/1.25 "PT Serif", serif;
-
-    a {
-      color: var(--color-active);
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-.post-card {
-  &.featured {
-    .post-card-content__link {
-      color: white;
-    }
-
-    .post-card-title {
-      font-size: var(--text-lg);
-      color: white;
-    }
-  }
-}
-.post-card-content {
-  &__link {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    text-decoration: none;
-    padding: var(--spacing-large) var(--spacing-large) 0;
-    color: var(--color-default);
   }
 }
 
-.post-card-title {
+.post-card__image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+  }
+}
+
+.post-card__info {
+  padding: 24px;
+}
+
+.post-card__title {
   font-size: 16px;
-  margin: 0 0 0.5em;
-  transition: all 0.2s, transform 0.2s;
+  transition: color 0.2s ease-in;
 
-  &:hover {
+  .post-card:hover & {
     color: var(--color-active);
   }
 }
 
-.post-card-small {
-  padding: var(--spacing);
-  font-size: var(--text-sm);
-  border-top: solid 2px black;
+.post-card__excerpt {
+  margin-top: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }

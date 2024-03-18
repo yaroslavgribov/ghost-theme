@@ -1,68 +1,74 @@
 {{!< default}}
 
 {{#post}}
-  <main class="content content--post">
+  <article class="content article">
     <section class="{{post_class}}">
-      <div class="mateblock inside">
-        <div class="block blockbig fullnew">
-          <div class="rela post-header" style="background-image: url({{img_url feature_image}})">
-            <div class="zatem">
-              <h1 class="main-post-title">{{title}}</h1>
+      <div class="block fullnew">
+        <header class="post-header relative">
+          <div class="post-header__meta">
+            <h1 class="post-header__title">{{title}}</h1>
 
-              <section class="author">
-                <div class="text">
-                  {{#foreach authors to="3"}}
-                    <a href="{{url}}" class="author__url">{{name}}</a>,
-                  {{/foreach}}
-                  {{#has author="count:>3"}}
-                    {{#foreach authors from="4"}}
-                      <a href="{{url}}" class="author__url">{{name}}</a>,
-                    {{/foreach}}
-                  {{/has}}
-                  <span class="post-date" datetime="{{date published_at timeago=" true" format="YYYY-MM-DD" }}">
-                    {{date published_at format="DD MMMM YYYY"}}
-                  </span>
-                </div>
-              </section>
-            </div>
-
-            <span class="type">
-              <a href="{{primary_tag.url}}">
-                {{primary_tag.name}}
-              </a>
-            </span>
+            <section class="author">
+              {{#foreach authors to="3"}}
+                <a href="{{url}}" class="author__url">{{name}}</a>,
+              {{/foreach}}
+              {{#has author="count:>3"}}
+                {{#foreach authors from="4"}}
+                  <a href="{{url}}" class="author__url">{{name}}</a>,
+                {{/foreach}}
+              {{/has}}
+              <span class="post-date" datetime="{{date published_at timeago='true' format='YYYY-MM-DD' }}">
+                {{date published_at format="DD MMMM YYYY"}}
+              </span>
+            </section>
           </div>
 
-          <article class="fulltext gh-content">
-            {{content}}
-          </article>
+          <img class="post-header__image" srcset='{{img_url feature_image size="xs" format="webp"}} 160w,
+                              {{img_url feature_image size="s" format="webp"}} 320w,
+                              {{img_url feature_image size="m" format="webp"}} 600w,
+                              {{img_url feature_image size="l" format="webp"}} 960w,
+                              {{img_url feature_image size="xl" format="webp"}} 1200w,
+                              {{img_url feature_image size="xxl" format="webp"}} 2000w'
+            sizes='{{#if imageSizes}}{{imageSizes}}{{else}}320px{{/if}}' src='{{img_url feature_image size="l"}}'
+            alt='{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}' {{#if lazyLoad}} loading="lazy"
+            {{/if}}>
 
-          <section class="post-footer">
-            <aside class="tags">
-              <section class="tags-label">Теги:</section>
-              <div class="tags-list">
-                {{#foreach tags}}
-                  <a href="{{url}}" class="tag">
-                    {{name}}
-                  </a>
-                {{/foreach}}
-              </div>
-            </aside>
-          </section>
-        </div>
+          <span class="type">
+            <a href="{{primary_tag.url}}">
+              {{primary_tag.name}}
+            </a>
+          </span>
+        </header>
+
+        <article class="prose">
+          {{content}}
+        </article>
+
+        <footer class="post-footer">
+          <aside class="tags">
+            <span>Теги:</span>
+            <div class="tags__list">
+              {{#foreach tags}}
+                <a href="{{url}}" class="tag">
+                  {{name}}
+                </a>
+              {{/foreach}}
+            </div>
+          </aside>
+        </footer>
       </div>
     </section>
-    <aside class="suggestions outer">
+    <aside class="suggestions">
       <div class="read-next">
-        <header class="read-next-title">Похожие cтатьи: </header>
-        <div class="read-next-feed">
+        <header class="read-next__title">Похожие cтатьи: </header>
+        <div class="read-next__feed">
           {{#get "posts" include="tags" filter="tags:{{primary_tag.slug}}+id:-{{id}}+featured:false" limit="6"}}
             {{#foreach posts}}
-              {{> "post-small" }}
+              {{> "post-card" noImage="true"}}
             {{/foreach}}
           {{/get}}
         </div>
       </div>
     </aside>
-  </main>
+  </article>
 {{/post}}
